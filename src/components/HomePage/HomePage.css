@@ -1,0 +1,64 @@
+body {
+  font-family: 'STIX Two Text', serif;
+  /* font-family: 'Bangers', cursive; */
+
+  height: 100%;
+}
+.home-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-image: url('winery.jpg');
+}
+.columns {
+  justify-content: center;
+  align-items: center;
+}
+.circle-styling {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 150px;
+  background-color: rgba(232, 242, 242, 0.488);
+  border-radius: 50%;
+  border: white 2px solid;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 20px;
+  text-align: center;
+}
+#wine-list-circle {
+  background-image: url('https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8OXx8fGVufDB8fHx8&w=1000&q=80');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  font-weight: bold;
+}
+#taste-profiler-circle {
+  background-image: url('https://jooinn.com/images/pouring-wine-5.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  font-weight: bold;
+}
+#create-circle {
+  background-image: url('https://www.seriouseats.com/thmb/lJ4wi4lMW09QRXBvpxjbR52oJFc=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2020__12__20201203-indonesian-pantry-vicky-wasik-1-b827da1c26134cf18153da281f8efb19.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  font-weight: bold;
+}
+.logo-main {
+  height: 250px;
+
+  position: absolute;
+  left: 50%;
+  right: 50%;
+
+  transform: translate(-50%);
+}
