@@ -1,0 +1,29 @@
+.box-single {
+  height: 100px;
+  width: 100px;
+  opacity: 1;
+  cursor: pointer;
+}
+.fullBody {
+  position: absolute;
+
+  bottom: 0;
+  right: 0px;
+  color: aliceblue;
+  font-weight: bold;
+}
+.lightBody {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  color: aliceblue;
+}
+
+.dry {
+  position: absolute;
+  top: 0;
+  color: aliceblue;
+}
+.sweet {
+  color: aliceblue;
+}

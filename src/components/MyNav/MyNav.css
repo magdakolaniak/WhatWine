@@ -64,6 +64,7 @@
   border-radius: 0%;
   border-color: transparent;
   transform: translate(-50%);
+  z-index: 10;
 }
 .radio-check {
   display: inline-block;
@@ -99,6 +100,13 @@
   background-color: silver;
   border-radius: 0%;
   border-color: darkgray;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top: none;
 }
 .btn-check:active + .btn-primary:focus,
 .btn-check:checked + .btn-primary:focus,

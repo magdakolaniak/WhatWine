@@ -1,11 +1,17 @@
 .wine-list-main {
-  background-image: url(./table-top.jpeg);
+  background-image: url(./wall1.jpg);
   background-position: center;
   background-size: cover;
-
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
   align-items: center;
+  /* padding-bottom: 70px; */
+}
+.nav-position {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+  margin-top: 80px;
 }

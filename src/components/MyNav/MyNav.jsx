@@ -2,26 +2,30 @@ import './MyNav.css';
 import { Nav, Navbar, FormControl, Dropdown, Form } from 'react-bootstrap';
 import logo from './newlogo.jpg';
 import glass from './wines.png';
-import { Link } from 'react-router-dom';
+import { LoginContext } from '../GlobalState/GlobalState.jsx';
+import { useContext } from 'react';
 
 const MyNav = () => {
+  const { style, setStyle, country, setCountry } = useContext(LoginContext);
+
+  const onValueChange = () => {};
   return (
     <>
       <Navbar id="my-nav" variant="dark" expand="lg">
         <div>
-          <Nav variant="pills" defaultActiveKey="/home">
+          <Nav variant="pills" defaultActiveKey="/">
             <Nav.Item>
               <img src={logo} className="logo" alt="logo" />
               <img src={glass} alt="glass" className="glass"></img>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/home" className="link-text">
+              <Nav.Link href="/wineList" className="link-text">
                 WINE LIST
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link
-                // href="/tasteProfiler"
+                href="/tasteProfiler"
                 eventKey="link-1"
                 className="link-text"
               >
@@ -52,79 +56,82 @@ const MyNav = () => {
         <Dropdown.Menu>
           <div className="dropdown-menu-style">
             <span className="menu-label">Select style</span> <br></br>
-            <span className="wrapper">
+            <Form>
               {' '}
+              <span className="wrapper">
+                {' '}
+                <Form.Check
+                  type="radio"
+                  label="red"
+                  name="style"
+                  className="radio-check"
+                />
+              </span>
+              <span className="wrapper">
+                <Form.Check
+                  type="radio"
+                  label="white"
+                  name="style"
+                  className="radio-check"
+                />
+              </span>
+              <span className="wrapper">
+                {' '}
+                <Form.Check
+                  type="radio"
+                  label="sweet"
+                  name="style"
+                  className="radio-check"
+                />
+              </span>
               <Form.Check
-                type="checkbox"
-                label="red"
-                value="1"
+                type="radio"
+                label="sparkling"
+                name="style"
                 className="radio-check"
               />
-            </span>
-            <span className="wrapper">
-              <Form.Check
-                type="checkbox"
-                label="white"
-                value="1"
-                className="radio-check "
-              />
-            </span>
-            <span className="wrapper">
-              {' '}
-              <Form.Check
-                type="checkbox"
-                label="sweet"
-                value="1"
-                className="radio-check"
-              />
-            </span>
-            <Form.Check
-              type="checkbox"
-              label="sparkling"
-              value="1"
-              className="radio-check"
-            />
-            <br></br>
-            <span className="menu-label">Select country</span> <br></br>
-            <span className="wrapper">
-              {' '}
-              <Form.Check
-                type="checkbox"
-                label="Italy"
-                value="1"
-                className="radio-check"
-              />
-            </span>
-            <span className="wrapper">
-              {' '}
-              <Form.Check
-                type="checkbox"
-                label="France"
-                value="1"
-                className="radio-check"
-              />
-            </span>
-            <span className="wrapper">
-              {' '}
-              <Form.Check
-                type="checkbox"
-                label="Germany"
-                value="1"
-                className="radio-check"
-              />
-            </span>
+              <br></br>
+              <span className="menu-label">Select country</span> <br></br>
+              <span className="wrapper">
+                {' '}
+                <Form.Check
+                  type="radio"
+                  label="Italy"
+                  name="country"
+                  className="radio-check"
+                />
+              </span>
+              <span className="wrapper">
+                {' '}
+                <Form.Check
+                  type="radio"
+                  label="France"
+                  name="country"
+                  className="radio-check"
+                />
+              </span>
+              <span className="wrapper">
+                {' '}
+                <Form.Check
+                  type="radio"
+                  label="Germany"
+                  name="country"
+                  className="radio-check"
+                />
+              </span>
+            </Form>
           </div>
           {/* <Form>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Group className="mb-3" controlId="formBasicradio">
               <div>Select style</div>
               <span>
-                <Form.Check type="checkbox" label="red" value="1" />
-                <Form.Check type="checkbox" label="white" value="2" />{' '}
+                <Form.Check type="radio" label="red" value="1" />
+                <Form.Check type="radio" label="white" value="2" />{' '}
               </span>
 
-              <Form.Check type="checkbox" label="Check me out" />
-              <Form.Check type="checkbox" label="Check me out" />
-              <Form.Check type="checkbox" label="Check me out" />
+              <Form.Check type="radio" label="Check me out" />
+              <Form.Check type="radio" label="Check me out" />
+              <Form.Check type="radio" label="Check me out" />
             </Form.Group>
           </Form> */}
         </Dropdown.Menu>

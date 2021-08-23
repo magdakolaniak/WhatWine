@@ -1,10 +1,15 @@
 import './WineList.css';
+import '../Rotate/Rotate.jsx';
 import MyNav from '../MyNav/MyNav';
+import Rotate from '../Rotate/Rotate.jsx';
 
 const WineList = () => {
   return (
     <>
-      <div className="wine-list-main">something here</div>
+      <MyNav />
+      <div className="wine-list-main">
+        <Rotate />
+      </div>
     </>
   );
 };

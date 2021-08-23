@@ -2,10 +2,14 @@ import { Row, Col } from 'react-bootstrap';
 import './HomePage.css';
 import logo from './logo.png';
 import { Link } from 'react-router-dom';
+import video from './movie.mp4';
 
 const HomePage = () => {
   return (
     <>
+      <video autoPlay loop muted id="myVideo">
+        <source src={video} type="video/mp4" />
+      </video>
       <img src={logo} className="logo-main" alt="logo" />
       <div className="home-main">
         <Row>

@@ -1,0 +1,80 @@
+.detail-main-comp {
+  display: flex;
+  background-color: black;
+  height: 100vh;
+}
+.cont-main {
+  border: 50px solid transparent;
+  border-radius: 10px;
+  border-image: url(./wine.png) 60 round;
+  display: flex;
+  height: 80vh;
+  width: 80vw;
+  align-self: center;
+  justify-content: center;
+  background-color: aliceblue;
+}
+.img-styling {
+  height: auto;
+
+  max-height: 70vh;
+  padding-bottom: 10px;
+}
+.col-left {
+  width: 20%;
+}
+
+.full-name-wrapper {
+  color: brown;
+
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.winery {
+  font-style: italic;
+}
+.winery-icon {
+  color: brown;
+  font-size: 20px;
+  margin-right: 5px;
+  padding-bottom: 4px;
+}
+.grape-wrapper {
+  margin-top: 20px;
+}
+.icon1 {
+  font-size: 40px;
+  color: brown;
+  stroke-width: 10px;
+  padding-bottom: 5px;
+}
+.details-column {
+  margin-left: 2rem;
+}
+.right-el {
+  float: right;
+  margin-right: 15rem;
+}
+.description-wrapper {
+  font-weight: bold;
+}
+
+.map-styling {
+  border-radius: 20px;
+}
+.map-wrapper {
+  position: absolute;
+  right: 40%;
+  overflow: hidden;
+}
+.map-wrapper:after {
+  content: '';
+  position: absolute;
+
+  height: 20px;
+  bottom: 1px;
+  left: 0;
+  right: 0;
+
+  background: aliceblue;
+}
