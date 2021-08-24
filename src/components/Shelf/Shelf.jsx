@@ -1,19 +1,35 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, OverlayTrigger } from 'react-bootstrap';
 import './Shelf.css';
+
+import bottle from './bottle.png';
 
 const Shelf = () => {
   return (
     <>
       <Container className="mainShelf">
-        <Row>
-          <Col md={4}>first</Col>
-          <Col md={4}>second</Col>
-          <Col md={4}>last</Col>
-        </Row>
-        <Row>
-          <Col md={4}>first</Col>
-          <Col md={4}>second</Col>
-          <Col md={4}>last</Col>
+        <Row className="mainSingleShelf d-flex">
+          <div className="scroll">
+            <OverlayTrigger
+              key="right"
+              placement="right"
+              overlay={
+                <div className="overlayText">
+                  {' '}
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Quae, iste minima eos aliquid blanditiis perspiciatis illum
+                  earum repellat, itaque, at optio aut. Accusantium repellat
+                  dignissimos voluptatem necessitatibus rerum voluptates sit?
+                </div>
+              }
+            >
+              <img src={bottle} alt="bottle" className="img-fluid bottle" />
+            </OverlayTrigger>
+
+            <img src={bottle} alt="bottle" className="img-fluid bottle" />
+            <img src={bottle} alt="bottle" className="img-fluid bottle" />
+            <img src={bottle} alt="bottle" className="img-fluid bottle" />
+            <img src={bottle} alt="bottle" className="img-fluid bottle" />
+          </div>
         </Row>
       </Container>
     </>

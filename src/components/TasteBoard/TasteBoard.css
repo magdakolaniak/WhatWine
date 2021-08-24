@@ -1,21 +1,56 @@
+.box2 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+
+  justify-content: center;
+
+  align-items: center;
+  color: rgb(8, 8, 8);
+  visibility: hidden;
+  background-color: #800000;
+
+  /* margin-right: 70px; */
+  animation-name: entrance-right;
+  animation-duration: 2s;
+
+  animation-fill-mode: forwards;
+
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 20px;
+  border-image: linear-gradient(45deg, rgb(55, 50, 50), rgb(173, 173, 170)) 1;
+  color: #3d353b;
+}
+
 .box-single {
   height: 100px;
   width: 100px;
   opacity: 1;
   cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  color: transparent;
+}
+.box-single:hover {
+  background-color: rgb(92, 41, 41);
+  border-radius: 10px;
+  color: white;
 }
 .fullBody {
   position: absolute;
 
-  bottom: 0;
-  right: 0px;
+  bottom: 5px;
+  right: 30px;
   color: aliceblue;
   font-weight: bold;
 }
 .lightBody {
   position: absolute;
-  bottom: 0;
-  left: 0px;
+  bottom: 5px;
+  left: 80px;
   color: aliceblue;
 }
 
@@ -26,4 +61,5 @@
 }
 .sweet {
   color: aliceblue;
+  padding-bottom: 5px;
 }

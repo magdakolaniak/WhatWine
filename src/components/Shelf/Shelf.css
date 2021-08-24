@@ -1,6 +1,45 @@
 .mainShelf {
+  position: relative;
   background-image: url(./shelf.jpeg);
   background-size: cover;
-  height: 80vh;
+
+  color: white;
+}
+.mainSingleShelf {
+  background-image: url(./single.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+}
+
+.bottle {
+  display: flex;
+  height: 200px;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.scroll {
+  position: absolute;
+  top: 50px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.overlayText {
+  background-color: rgba(31, 29, 29, 0.249);
+  max-width: 100px;
+  height: 200px;
+  display: block;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
   color: white;
 }

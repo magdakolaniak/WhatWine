@@ -4,16 +4,19 @@ import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
 
 const TasteBoard = () => {
-  const { setTaste } = useContext(LoginContext);
+  const { setFromBoard, grapeColor } = useContext(LoginContext);
 
   const myFunc = (e) => {
     console.log(e.currentTarget.id);
-    setTaste(e.currentTarget.id);
+    setFromBoard(e.currentTarget.id);
   };
 
   return (
     <>
-      <Container className="box2 fluid">
+      <Container
+        style={{ background: grapeColor === 'red' ? '#800000' : '#d4af37' }}
+        className="box2 fluid"
+      >
         <Row>
           <Col xs={2} md={true}>
             <div id="lightDry" className="box-single" onClick={myFunc}>

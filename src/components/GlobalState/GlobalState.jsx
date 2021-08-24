@@ -9,8 +9,8 @@ const GlobalState = ({ children }) => {
   const [long, setLong] = useState('');
   const [style, setStyle] = useState('');
   const [country, setCountry] = useState('');
-  const [taste, setTaste] = useState('');
-
+  const [fromBoard, setFromBoard] = useState('');
+  const [grapeColor, setGrapeColor] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
 
   return (
@@ -30,8 +30,10 @@ const GlobalState = ({ children }) => {
         setStyle,
         country,
         setCountry,
-        taste,
-        setTaste,
+        fromBoard,
+        setFromBoard,
+        grapeColor,
+        setGrapeColor,
       }}
     >
       {children}
