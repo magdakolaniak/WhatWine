@@ -1,34 +1,49 @@
-import { Container, Row, Col, OverlayTrigger } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import './Shelf.css';
-
-import bottle from './bottle.png';
+import { LoginContext } from '../GlobalState/GlobalState.jsx';
+import { useContext } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Shelf = () => {
+  const BASEUrl = process.env.REACT_APP_API;
+
+  const { tasteProfile, grapeColor, pickedFromBoard, setPickedFromBoard } =
+    useContext(LoginContext);
+
+  useEffect(() => {
+    const getWines = async (tasteProfile, grapeColor) => {
+      const wines = await axios(
+        BASEUrl +
+          `?type=${grapeColor}&character.body=${tasteProfile.body}&character.sweetness=${tasteProfile.sweetness}`
+      );
+
+      setPickedFromBoard(wines.data);
+      console.log(wines.data);
+    };
+    getWines(tasteProfile, grapeColor);
+  }, []);
+
   return (
     <>
       <Container className="mainShelf">
         <Row className="mainSingleShelf d-flex">
           <div className="scroll">
-            <OverlayTrigger
-              key="right"
-              placement="right"
-              overlay={
-                <div className="overlayText">
-                  {' '}
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Quae, iste minima eos aliquid blanditiis perspiciatis illum
-                  earum repellat, itaque, at optio aut. Accusantium repellat
-                  dignissimos voluptatem necessitatibus rerum voluptates sit?
-                </div>
-              }
-            >
-              <img src={bottle} alt="bottle" className="img-fluid bottle" />
-            </OverlayTrigger>
-
-            <img src={bottle} alt="bottle" className="img-fluid bottle" />
-            <img src={bottle} alt="bottle" className="img-fluid bottle" />
-            <img src={bottle} alt="bottle" className="img-fluid bottle" />
-            <img src={bottle} alt="bottle" className="img-fluid bottle" />
+            {pickedFromBoard && pickedFromBoard.length >= 1 ? (
+              pickedFromBoard.map((bottle) => (
+                <img
+                  key={bottle._id}
+                  src={bottle.image}
+                  alt="bottle"
+                  className="img-fluid bottle"
+                />
+              ))
+            ) : (
+              <div className="noContent">
+                As our database is still growing, <br></br> we couldn't match
+                the exact requested style for you right now.
+              </div>
+            )}
           </div>
         </Row>
       </Container>

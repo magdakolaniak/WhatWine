@@ -7,10 +7,10 @@ import { ImLibrary } from 'react-icons/im';
 import Geocode from 'react-geocode';
 
 const Detail = () => {
-  const { pickedWine, lat, setLat, long, setLong } = useContext(LoginContext);
+  const { detailed, lat, setLat, long, setLong } = useContext(LoginContext);
 
-  const country = pickedWine[0].origin.country;
-  const region = pickedWine[0].origin.region;
+  const country = detailed[0].origin.country;
+  const region = detailed[0].origin.region;
   const mapKey = process.env.REACT_APP_GOOGLE_KEY;
 
   Geocode.fromAddress(`${region}, ${country}`, `${mapKey}`, 'en').then(
@@ -32,7 +32,7 @@ const Detail = () => {
           <Col md={4} className="mx-auto col-left">
             <div className="img-wrapper container">
               <img
-                src={pickedWine[0].image}
+                src={detailed[0].image}
                 alt="wine-bottle"
                 className="img-fluid img-styling"
               />
@@ -42,15 +42,15 @@ const Detail = () => {
             <div className="grape-wrapper">
               {' '}
               <GiGrapes className="icon1" />
-              {pickedWine[0].grape}
+              {detailed[0].grape}
             </div>
             <div className="full-name-wrapper">
-              <span> {pickedWine[0].fullName}</span>
+              <span> {detailed[0].fullName}</span>
             </div>
             <div className="winery">
               {' '}
               <ImLibrary className="winery-icon" />
-              {pickedWine[0].winery}
+              {detailed[0].winery}
             </div>
             <span className="right-el">
               <span className="description-wrapper">
@@ -60,13 +60,13 @@ const Detail = () => {
                 <span>Country</span>
                 <br></br>
               </span>
-              <span>{pickedWine[0].origin.country}</span>
+              <span>{detailed[0].origin.country}</span>
               <br></br>
               <span className="description-wrapper">
                 <span>Region</span>
                 <br></br>
               </span>
-              <span>{pickedWine[0].origin.region}</span>
+              <span>{detailed[0].origin.region}</span>
               <div className="map-wrapper">
                 <img
                   src={`https://maps.googleapis.com/maps/api/staticmap?zoom=5&size=200x200&markers=icon:https://res.cloudinary.com/dii3cculv/image/upload/v1629457367/favicon-32x32_tgrwgq.png|${lat},${long}&key=${mapKey}&map_id=8c7807d77bef73b2`}
@@ -81,15 +81,15 @@ const Detail = () => {
                 <span>YEAR</span>
                 <br></br>
               </span>
-              <span>{pickedWine[0].year}</span>
+              <span>{detailed[0].year}</span>
             </span>
 
             <div className="description-wrapper">
               <span>FLAVOURS</span>
             </div>
-            {pickedWine[0].flavours.length > 2 &&
-            typeof pickedWine[0].flavours === Array
-              ? pickedWine[0].flavours.map((flav) => <li>{flav}</li>)
+            {detailed[0].flavours.length > 2 &&
+            typeof detailed[0].flavours === Array
+              ? detailed[0].flavours.map((flav) => <li>{flav}</li>)
               : 'nothing to show'}
           </Col>
           <br></br>

@@ -6,9 +6,17 @@ import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
 
 const MyNav = () => {
-  const { style, setStyle, country, setCountry } = useContext(LoginContext);
+  const { style, setStyle, country, setCountry, query, setQuery } =
+    useContext(LoginContext);
 
-  const onValueChange = () => {};
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      let query = event.currentTarget.value;
+      setQuery(event.currentTarget.value);
+      console.log(query);
+      event.currentTarget.value = '';
+    }
+  };
   return (
     <>
       <Navbar id="my-nav" variant="dark" expand="lg">
@@ -38,6 +46,8 @@ const MyNav = () => {
                 type="text"
                 placeholder=""
                 className="searching-navbar"
+                // onChange={(e) => setQuery(e.target.value)}
+                onKeyPress={handleKeyPress}
               />
             </Nav.Item>
             <Nav.Item>

@@ -7,10 +7,26 @@ import { useContext } from 'react';
 import { GiGrapes, GiReturnArrow } from 'react-icons/gi';
 
 const TasteProfiler = () => {
-  const { grapeColor, setGrapeColor, fromBoard } = useContext(LoginContext);
+  const {
+    grapeColor,
+    setGrapeColor,
+    tasteProfile,
+    setTasteProfile,
+    pickedFromBoard,
+    setPickedFromBoard,
+  } = useContext(LoginContext);
+  const handleArrowBack = () => {
+    if (tasteProfile.body.length > 1) {
+      setTasteProfile({ sweetness: '', body: '' });
+      setPickedFromBoard({});
+    } else {
+      setGrapeColor('');
+      setPickedFromBoard({});
+    }
+  };
   let description = '';
-  const styleDescription = (fromBoard) => {
-    if (fromBoard === 'medDry') {
+  const styleDescription = (tasteProfile) => {
+    if (tasteProfile.body === 'medDry') {
       description = 'medium bodied, dry wine with high level of acidity';
     } else {
       description = 'something to think of later on';
@@ -52,7 +68,7 @@ const TasteProfiler = () => {
         </div>
       ) : (
         <Row id="taste-main">
-          <span className="cornerSign">
+          <span className="cornerSign" onClick={handleArrowBack}>
             <GiReturnArrow className="narrow" />
             <br></br>
             RETURN{' '}
@@ -65,16 +81,22 @@ const TasteProfiler = () => {
               </div>
               <br></br>
               <div className="infoDesc">
-                {fromBoard && fromBoard.length > 3
-                  ? `Here you can find our picks for you  ${styleDescription(
-                      fromBoard
-                    )}`
-                  : 'Listen to your taste buds and click the corresponding zone on the grid. We will find that flavour fit for you'}
+                {pickedFromBoard.length > 0 ? (
+                  <div>YOUR WINE IS THIS </div>
+                ) : tasteProfile.body.length < 1 ? (
+                  <div>Click to the div </div>
+                ) : (
+                  ''
+                )}
               </div>
             </div>
           </Col>
           <Col xs={12} md={8} className="boardMain">
-            {fromBoard && fromBoard.length > 3 ? <Shelf /> : <TasteBoard />}
+            {tasteProfile && tasteProfile.body.length > 1 ? (
+              <Shelf />
+            ) : (
+              <TasteBoard />
+            )}
           </Col>
         </Row>
       )}

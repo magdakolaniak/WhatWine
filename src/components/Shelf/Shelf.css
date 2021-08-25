@@ -43,3 +43,12 @@
   text-overflow: ellipsis;
   color: white;
 }
+.noContent {
+  margin-top: 80px;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: lighter;
+  color: #b9b6be;
+  text-align: center;
+  background-color: rgba(157, 161, 164, 0.084);
+}

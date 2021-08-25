@@ -8,6 +8,7 @@ import MyNav from './components/MyNav/MyNav.jsx';
 import TasteProfiler from './components/TasteProfiler/TasteProfiler';
 import Rotate from './components/Rotate/Rotate';
 import Detail from './components/Detail/Detail';
+import TasteBoard from './components/TasteBoard/TasteBoard';
 function App() {
   return (
     <Router>
@@ -17,6 +18,7 @@ function App() {
       <Route component={HomePage} path="/" exact />
       <Route component={TasteProfiler} path="/tasteProfiler" exact />
       <Route component={Detail} path="/detail/:wineId" exact />
+      <Route component={TasteBoard} path="/tasteBoard" exact />
     </Router>
   );
 }

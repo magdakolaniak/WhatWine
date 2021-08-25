@@ -4,11 +4,13 @@ import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
 
 const TasteBoard = () => {
-  const { setFromBoard, grapeColor } = useContext(LoginContext);
+  const { setTasteProfile, grapeColor } = useContext(LoginContext);
 
   const myFunc = (e) => {
-    console.log(e.currentTarget.id);
-    setFromBoard(e.currentTarget.id);
+    setTasteProfile({
+      body: e.currentTarget.id,
+      sweetness: e.currentTarget.innerHTML,
+    });
   };
 
   return (
@@ -19,85 +21,85 @@ const TasteBoard = () => {
       >
         <Row>
           <Col xs={2} md={true}>
-            <div id="lightDry" className="box-single" onClick={myFunc}>
-              light dry
+            <div id="light" value="dry" className="box-single" onClick={myFunc}>
+              dry
             </div>
           </Col>
           <Col xs={2} md={true}>
             {' '}
-            <div id="med-Dry" className="box-single" onClick={myFunc}>
-              med - dry
+            <div id="medium minus" className="box-single" onClick={myFunc}>
+              dry
             </div>
           </Col>
           <Col xs={2} md={true}>
-            <div id="medDry" className="box-single" onClick={myFunc}>
-              med dry
-            </div>
-          </Col>
-          <Col xs={2} md={true}>
-            {' '}
-            <div id="med+Dry" className="box-single" onClick={myFunc}>
-              med + dry
+            <div id="medium" className="box-single" onClick={myFunc}>
+              dry
             </div>
           </Col>
           <Col xs={2} md={true}>
             {' '}
-            <div id="fullDry" className="box-single" onClick={myFunc}>
-              full dry
+            <div id="medium plus" className="box-single" onClick={myFunc}>
+              dry
+            </div>
+          </Col>
+          <Col xs={2} md={true}>
+            {' '}
+            <div id="full" className="box-single" onClick={myFunc}>
+              dry
             </div>
           </Col>
         </Row>
         <Row>
           <Col xs={2} md={true}>
-            <div id="lightOff" className="box-single" onClick={myFunc}>
-              light off dry
+            <div id="light" className="box-single" onClick={myFunc}>
+              off dry
             </div>
           </Col>
           <Col xs={2} md={true}>
-            <div id="med-Off" className="box-single" onClick={myFunc}>
-              med - off dry
+            <div id="medium minus" className="box-single" onClick={myFunc}>
+              off dry
             </div>
           </Col>
           <Col xs={2} md={true}>
-            <div id="medOff" className="box-single" onClick={myFunc}>
-              med off dry
+            <div id="medium" className="box-single" onClick={myFunc}>
+              off dry
             </div>
           </Col>
           <Col xs={2} md={true}>
-            <div id="med+Off" className="box-single" onClick={myFunc}>
-              med + off dry
+            <div id="medium plus" className="box-single" onClick={myFunc}>
+              off dry
             </div>
           </Col>
           <Col xs={2} md={true}>
-            <div id="fullOff" className="box-single" onClick={myFunc}>
-              full off dry
+            <div id="full" className="box-single" onClick={myFunc}>
+              off dry
             </div>
           </Col>
         </Row>
         <Row>
           <Col xs={2} md={true}>
-            <div id="lightSweet" className="box-single" onClick={myFunc}>
-              light sweet
+            <div id="light" className="box-single" onClick={myFunc}>
+              sweet
             </div>
           </Col>
           <Col xs={2} md={true}>
-            <div id="med-Sweet" className="box-single" onClick={myFunc}>
-              med - sweet
+            <div id="medium minus" className="box-single" onClick={myFunc}>
+              sweet
             </div>
           </Col>
           <Col xs={2} md={true}>
-            <div id="medSweet" className="box-single" onClick={myFunc}>
-              med sweet
+            <div id="medium" className="box-single" onClick={myFunc}>
+              sweet
             </div>
           </Col>
           <Col xs={2} md={true}>
-            <div id="med+Sweet" className="box-single" onClick={myFunc}>
-              med + sweet
+            <div id="medium plus" className="box-single" onClick={myFunc}>
+              sweet
             </div>
           </Col>
           <Col xs={2} md={true}>
-            <div id="fullSweet" className="box-single" onClick={myFunc}>
-              full sweet
+            <div id="full" className="box-single" onClick={myFunc}>
+              sweet
             </div>
           </Col>
         </Row>

@@ -3,19 +3,37 @@ import './Rotate.css';
 import wine from '../Carousel/wine.json';
 import { useHistory } from 'react-router';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
+import axios from 'axios';
 
 import { RiArrowRightSLine, RiArrowLeftSLine } from 'react-icons/ri';
 
-const data = wine;
-
-export default function Rotate() {
+export default function Rotate(wines) {
   const [activeSlide, setactiveSlide] = useState(0);
+
   const history = useHistory();
-  const { setPickedWine } = useContext(LoginContext);
+  const { setDetailed, query, mainData } = useContext(LoginContext);
+
+  const BASEUrl = process.env.REACT_APP_API;
+  const searchURL = BASEUrl + `/search/${query}`;
+
+  // useEffect(() => {
+  //   const getWines = async () => {
+  //     if (!query) {
+  //       let wines = await axios(BASEUrl);
+  //       console.log('no query here', wines.data);
+  //       setData(wines.data);
+  //     } else {
+  //       let wines = await axios(searchURL);
+  //       console.log('with query here', wines.data);
+  //       setData(wines.data);
+  //     }
+  //   };
+  //   getWines();
+  // });
 
   const next = () =>
-    activeSlide < data.length - 1 && setactiveSlide(activeSlide + 1);
+    activeSlide < mainData.length - 1 && setactiveSlide(activeSlide + 1);
 
   const prev = () => activeSlide > 0 && setactiveSlide(activeSlide - 1);
 
@@ -48,7 +66,7 @@ export default function Rotate() {
     });
     history.push(`/detail/${id}`);
     console.log(object);
-    setPickedWine(object);
+    setDetailed(object);
   };
   const getStyles = (index) => {
     if (activeSlide === index)
@@ -125,7 +143,7 @@ export default function Rotate() {
     <>
       {/* carousel */}
       <div className="slideC">
-        {wine.map((item, i) => (
+        {mainData.map((item, i) => (
           <div className="slide" style={getStyles(i)} key={item._id}>
             <img
               id={item._id}

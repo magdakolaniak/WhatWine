@@ -4,14 +4,17 @@ export const LoginContext = React.createContext();
 
 const GlobalState = ({ children }) => {
   const [user, setUser] = useState({});
-  const [pickedWine, setPickedWine] = useState({});
+  const [detailed, setDetailed] = useState({});
   const [lat, setLat] = useState('');
   const [long, setLong] = useState('');
   const [style, setStyle] = useState('');
   const [country, setCountry] = useState('');
-  const [fromBoard, setFromBoard] = useState('');
+  const [tasteProfile, setTasteProfile] = useState({ body: '', sweetness: '' });
   const [grapeColor, setGrapeColor] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
+  const [pickedFromBoard, setPickedFromBoard] = useState({});
+  const [query, setQuery] = useState();
+  const [mainData, setMainData] = useState([]);
 
   return (
     <LoginContext.Provider
@@ -20,8 +23,8 @@ const GlobalState = ({ children }) => {
         setUser,
         loggedIn,
         setLoggedIn,
-        pickedWine,
-        setPickedWine,
+        detailed,
+        setDetailed,
         lat,
         setLat,
         long,
@@ -30,10 +33,16 @@ const GlobalState = ({ children }) => {
         setStyle,
         country,
         setCountry,
-        fromBoard,
-        setFromBoard,
+        tasteProfile,
+        setTasteProfile,
         grapeColor,
         setGrapeColor,
+        pickedFromBoard,
+        setPickedFromBoard,
+        query,
+        setQuery,
+        mainData,
+        setMainData,
       }}
     >
       {children}
