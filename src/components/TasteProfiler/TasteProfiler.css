@@ -5,7 +5,7 @@
   height: 100vh;
   align-items: center;
   align-content: center;
-  background-color: rgb(20, 18, 18);
+  background-color: #303841;
   padding-right: 2rem;
 }
 .box1 {
@@ -30,9 +30,9 @@
   padding-left: 60px;
   padding-bottom: 10px;
 
-  background-color: #b9b6be;
+  background-color: #d3d6db;
 
-  color: 14, 14, 14;
+  color: #303841;
   font-size: 20px;
   cursor: pointer;
   /* writing-mode: vertical-lr; */
@@ -81,14 +81,14 @@
   border-image-slice: 1;
   border-width: 10px;
   border-image-source: linear-gradient(to right, #b9b6be, #3d353b);
-  color: #3d353b;
+  color: #d3d6db;
 }
 .title {
   font-size: 36px;
   margin-left: 50px;
 }
 .tasteText {
-  color: #b9b6be;
+  color: #d3d6db;
 }
 .infoDesc {
   font-size: 20px;
@@ -98,7 +98,7 @@
   color: white;
 }
 .welcomePage {
-  background-color: rgb(14, 14, 14);
+  background-color: #303841;
   display: flex;
   align-items: center;
   justify-content: center;

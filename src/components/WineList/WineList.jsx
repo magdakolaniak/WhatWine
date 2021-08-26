@@ -2,26 +2,29 @@ import './WineList.css';
 import '../Rotate/Rotate.jsx';
 import MyNav from '../MyNav/MyNav';
 import Rotate from '../Rotate/Rotate.jsx';
-import { useEffect, useContext, useState } from 'react';
+import { useEffect, useContext } from 'react';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import axios from 'axios';
 
 const WineList = () => {
-  const { setDetailed, query, mainData, setMainData } =
-    useContext(LoginContext);
-
+  const { setMainData, query } = useContext(LoginContext);
   const BASEUrl = process.env.REACT_APP_API;
+  const searchURL = BASEUrl + `/search/${query}`;
 
   useEffect(() => {
-    console.log('ANYTHING');
     const getWines = async () => {
-      const wines = await axios(BASEUrl + `/`);
+      if (!query) {
+        const wines = await axios(BASEUrl + `/`);
 
-      console.log(wines.data);
-      setMainData(wines.data);
+        setMainData(wines.data);
+      } else {
+        const wines = await axios(searchURL);
+
+        setMainData(wines.data);
+      }
     };
     getWines();
-  }, []);
+  }, [query]);
 
   return (
     <>

@@ -9,6 +9,7 @@ import TasteProfiler from './components/TasteProfiler/TasteProfiler';
 import Rotate from './components/Rotate/Rotate';
 import Detail from './components/Detail/Detail';
 import TasteBoard from './components/TasteBoard/TasteBoard';
+import MealMain from './components/MealComposer/MealMain.jsx';
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
       <Route component={TasteProfiler} path="/tasteProfiler" exact />
       <Route component={Detail} path="/detail/:wineId" exact />
       <Route component={TasteBoard} path="/tasteBoard" exact />
+      <Route component={MealMain} path="/mealComposer" exact />
     </Router>
   );
 }

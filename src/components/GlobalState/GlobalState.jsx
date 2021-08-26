@@ -9,13 +9,22 @@ const GlobalState = ({ children }) => {
   const [long, setLong] = useState('');
   const [style, setStyle] = useState('');
   const [country, setCountry] = useState('');
-  const [tasteProfile, setTasteProfile] = useState({ body: '', sweetness: '' });
+  const [tasteProfile, setTasteProfile] = useState({
+    body: '',
+    sweetness: '',
+    type: '',
+  });
   const [grapeColor, setGrapeColor] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
   const [pickedFromBoard, setPickedFromBoard] = useState({});
   const [query, setQuery] = useState();
   const [mainData, setMainData] = useState([]);
-
+  const [ingredients, setIngredients] = useState({
+    main: [],
+    method: [],
+    side: [],
+    spices: [],
+  });
   return (
     <LoginContext.Provider
       value={{
@@ -43,6 +52,8 @@ const GlobalState = ({ children }) => {
         setQuery,
         mainData,
         setMainData,
+        ingredients,
+        setIngredients,
       }}
     >
       {children}

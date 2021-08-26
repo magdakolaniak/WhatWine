@@ -13,13 +13,21 @@ const Shelf = () => {
 
   useEffect(() => {
     const getWines = async (tasteProfile, grapeColor) => {
-      const wines = await axios(
-        BASEUrl +
-          `?type=${grapeColor}&character.body=${tasteProfile.body}&character.sweetness=${tasteProfile.sweetness}`
-      );
+      if (grapeColor === 'white') {
+        const wines = await axios(
+          BASEUrl +
+            `?type=${tasteProfile.type},sparkling&character.body=${tasteProfile.body}&character.sweetness=${tasteProfile.sweetness}`
+        );
 
-      setPickedFromBoard(wines.data);
-      console.log(wines.data);
+        setPickedFromBoard(wines.data);
+      } else {
+        const wines = await axios(
+          BASEUrl +
+            `?type=${tasteProfile.type},sparkling&character.body=${tasteProfile.body}&character.sweetness=${tasteProfile.sweetness}`
+        );
+
+        setPickedFromBoard(wines.data);
+      }
     };
     getWines(tasteProfile, grapeColor);
   }, []);

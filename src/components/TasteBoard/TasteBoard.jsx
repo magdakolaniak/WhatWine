@@ -4,13 +4,24 @@ import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
 
 const TasteBoard = () => {
-  const { setTasteProfile, grapeColor } = useContext(LoginContext);
+  const { tasteProfile, setTasteProfile, grapeColor } =
+    useContext(LoginContext);
 
   const myFunc = (e) => {
     setTasteProfile({
       body: e.currentTarget.id,
       sweetness: e.currentTarget.innerHTML,
+      type:
+        e.currentTarget.innerHTML === 'sweet'
+          ? e.currentTarget.innerHTML
+          : grapeColor,
     });
+    console.log(
+      'body:',
+      e.currentTarget.id,
+      'sweetness:',
+      e.currentTarget.innerHTML
+    );
   };
 
   return (
