@@ -5,6 +5,7 @@ import Shelf from '../Shelf/Shelf.jsx';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
 import { GiGrapes, GiReturnArrow } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
 
 const TasteProfiler = () => {
   const {
@@ -24,6 +25,7 @@ const TasteProfiler = () => {
       setPickedFromBoard({});
     }
   };
+
   let description = '';
   const styleDescription = (tasteProfile) => {
     if (tasteProfile.body === 'medDry') {
@@ -41,6 +43,13 @@ const TasteProfiler = () => {
     <>
       {grapeColor.length === 0 ? (
         <div className="welcomePage">
+          <Link to="/home">
+            <span className="cornerSign">
+              <GiReturnArrow className="narrow" />
+              <br></br>
+              HOME{' '}
+            </span>
+          </Link>
           <Row>
             <Col xs={12} md={12}>
               <div className="writingText">
@@ -82,9 +91,16 @@ const TasteProfiler = () => {
               <br></br>
               <div className="infoDesc">
                 {pickedFromBoard.length > 0 ? (
-                  <div>YOUR WINE IS THIS </div>
+                  <div>
+                    Your personality shines!
+                    <br></br>
+                    <br></br> You may really enjoy these wines!{' '}
+                  </div>
                 ) : tasteProfile.body.length < 1 ? (
-                  <div>Click to the div </div>
+                  <div>
+                    Listen to your taste buds and click the corresponding zone
+                    on the grid. We'll find the flavour fit for you{' '}
+                  </div>
                 ) : (
                   ''
                 )}

@@ -4,12 +4,31 @@ import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router';
 
 const Shelf = () => {
+  const history = useHistory();
   const BASEUrl = process.env.REACT_APP_API;
 
-  const { tasteProfile, grapeColor, pickedFromBoard, setPickedFromBoard } =
-    useContext(LoginContext);
+  const {
+    tasteProfile,
+    grapeColor,
+    pickedFromBoard,
+    setPickedFromBoard,
+    setDetailed,
+  } = useContext(LoginContext);
+
+  const myFunc = (e) => {
+    e.preventDefault();
+
+    let id = e.currentTarget.id;
+    const object = pickedFromBoard.filter((wine) => {
+      return wine._id === id;
+    });
+    history.push(`/detail/${id}`);
+    console.log(object);
+    setDetailed(object);
+  };
 
   useEffect(() => {
     const getWines = async (tasteProfile, grapeColor) => {
@@ -40,10 +59,12 @@ const Shelf = () => {
             {pickedFromBoard && pickedFromBoard.length >= 1 ? (
               pickedFromBoard.map((bottle) => (
                 <img
+                  id={bottle._id}
                   key={bottle._id}
                   src={bottle.image}
                   alt="bottle"
                   className="img-fluid bottle"
+                  onClick={myFunc}
                 />
               ))
             ) : (

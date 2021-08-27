@@ -1,13 +1,13 @@
 import './MyNav.css';
 import { Nav, Navbar, FormControl, Dropdown, Form } from 'react-bootstrap';
-import logo from './newlogo.jpg';
+import { GiGrapes } from 'react-icons/gi';
 import glass from './wines.png';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 const MyNav = () => {
-  const { style, setStyle, country, setCountry, query, setQuery } =
-    useContext(LoginContext);
+  const { setQuery } = useContext(LoginContext);
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
@@ -23,7 +23,12 @@ const MyNav = () => {
         <div>
           <Nav variant="pills" defaultActiveKey="/">
             <Nav.Item>
-              <img src={logo} className="logo" alt="logo" />
+              <Link to="/home" style={{ textDecoration: 'none' }}>
+                <span className="logoText">
+                  <GiGrapes className="iconNav" />
+                  WhatWine?
+                </span>
+              </Link>
               <img src={glass} alt="glass" className="glass"></img>
             </Nav.Item>
             <Nav.Item>
@@ -44,15 +49,19 @@ const MyNav = () => {
             <Nav.Item>
               <FormControl
                 type="text"
-                placeholder=""
+                placeholder="e.g year, grape, country"
                 className="searching-navbar"
                 // onChange={(e) => setQuery(e.target.value)}
                 onKeyPress={handleKeyPress}
               />
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="link-2" className="link-text">
-                SAVED
+              <Nav.Link
+                eventKey="link-2"
+                className="link-text"
+                href="/mealComposer"
+              >
+                MEAL COMPOSER
               </Nav.Link>
             </Nav.Item>
           </Nav>

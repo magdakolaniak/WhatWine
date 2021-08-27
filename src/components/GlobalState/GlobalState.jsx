@@ -4,6 +4,7 @@ export const LoginContext = React.createContext();
 
 const GlobalState = ({ children }) => {
   const [user, setUser] = useState({});
+
   const [detailed, setDetailed] = useState({});
   const [lat, setLat] = useState('');
   const [long, setLong] = useState('');

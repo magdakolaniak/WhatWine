@@ -1,0 +1,166 @@
+/* //--------FROM LOGIN PAGE--------// */
+
+.background {
+  height: 100vh;
+  background-color: #800;
+}
+.mainDiv {
+  background-color: #d3d6db;
+  border-radius: 5px;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  /* /* z-index: 1; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.loginTitle {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  align-content: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  align-items: center;
+}
+.logoTitle {
+  padding-top: 20px;
+  color: #800;
+  font-size: 36px;
+}
+.loginIcon {
+  padding-bottom: 8px;
+  font-size: 50px;
+}
+.underText {
+  font-weight: 600;
+  /* font-style: italic; */
+  padding-left: 30px;
+  padding-bottom: 40px;
+}
+.quote {
+  font-style: italic;
+  font-size: 18px;
+  padding-bottom: 10px;
+  /* margin-top: 30px; */
+}
+.underQuote {
+  font-size: 14px;
+  color: #303841;
+}
+.LoginLi {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4a4a4a;
+}
+
+.LiBold {
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+@media (min-width: 900px) {
+  .LoginTitle {
+    margin-bottom: 36px;
+    font-size: 28px;
+  }
+  .LoginLi {
+    line-height: 28px;
+    font-size: 18px;
+  }
+  .LiBold {
+    line-height: 24px;
+    font-size: 18px;
+  }
+  .mainDiv {
+    min-width: 908px;
+  }
+}
+@media only screen and (min-width: 661px) and (max-width: 899px) {
+  .mainDiv {
+    top: 93px;
+  }
+  .LoginTitle {
+    margin-bottom: 28px;
+    font-size: 26px;
+  }
+  .LoginLi {
+    line-height: 25px;
+    font-size: 16px;
+  }
+  .LiBold {
+    line-height: 25px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 660px) {
+  .LoginTitle {
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+  .LoginLi {
+    line-height: 24px;
+    font-size: 16px;
+  }
+  .LiBold {
+    line-height: 24px;
+    font-size: 16px;
+  }
+}
+
+.disabledButton {
+  background-color: #303841;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  transition: 0.2s linear;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  cursor: not-allowed;
+}
+.login-main {
+  margin-top: 150px;
+  padding-left: 250px;
+  padding-right: 250px;
+}
+
+.login-header {
+  margin-bottom: 30px;
+  font-size: large;
+  font-weight: bold;
+}
+
+/* //------------FROM REGISTRATION------------// */
+
+.formExit {
+  font-size: 2rem;
+  color: #303841;
+  cursor: pointer;
+}
+
+.loginFormButton {
+  background-color: #303841;
+  color: #d3d6db;
+  border-radius: 5px;
+  border: none;
+  transition: 0.2s linear;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.loginFormButton:hover {
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+  color: #d3d6db;
+}
+
+.wrongValidation {
+  color: rgb(220, 53, 69);
+}
+*:focus {
+  outline: none;
+  box-shadow: none;
+}

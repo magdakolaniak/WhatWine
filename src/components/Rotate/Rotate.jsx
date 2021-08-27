@@ -97,7 +97,7 @@ export default function Rotate(wines) {
         opacity: 1,
         transform: 'translateX(-600px) translateZ(-500px) rotateY(0deg)',
         zIndex: 8,
-        filter: 'blur(2px)',
+        filter: 'blur(1px)',
         animationName: 'myAnim',
       };
     else if (activeSlide - 3 === index)
@@ -105,7 +105,7 @@ export default function Rotate(wines) {
         opacity: 1,
         transform: 'translateX(-900px) translateZ(-700px) rotateY(0deg)',
         zIndex: 8,
-        filter: 'blur(5px)',
+        filter: 'blur(2px)',
         animationName: 'myAnim',
         animationDuration: 1,
       };
@@ -114,28 +114,28 @@ export default function Rotate(wines) {
         opacity: 1,
         transform: 'translateX(600px) translateZ(-500px) rotateY(0deg)',
         zIndex: 8,
-        filter: 'blur(2px)',
+        filter: 'blur(1px)',
       };
     else if (activeSlide + 3 === index)
       return {
         opacity: 1,
         transform: 'translateX(900px) translateZ(-700px) rotateY(0deg)',
         zIndex: 8,
-        filter: 'blur(5px)',
+        filter: 'blur(2px)',
       };
     else if (index < activeSlide - 3)
       return {
         opacity: 0,
         transform: 'translateX(-480px) translateZ(-700px) rotateY(0deg)',
         zIndex: 7,
-        filter: 'blur(6px)',
+        filter: 'blur(2px)',
       };
     else if (index > activeSlide + 3)
       return {
         opacity: 0,
         transform: 'translateX(480px) translateZ(-500px) rotateY(0deg)',
         zIndex: 7,
-        filter: 'blur(6px)',
+        filter: 'blur(2px)',
       };
   };
 

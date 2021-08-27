@@ -5,8 +5,9 @@
   height: 100vh;
   align-items: center;
   align-content: center;
-  background-color: #303841;
-  padding-right: 2rem;
+  background-color: rgba(22, 26, 29, 1);
+  padding-right: 3rem;
+  overflow-x: hidden;
 }
 .box1 {
   visibility: hidden;
@@ -80,7 +81,7 @@
   border-top: 10px solid;
   border-image-slice: 1;
   border-width: 10px;
-  border-image-source: linear-gradient(to right, #b9b6be, #3d353b);
+  border-image-source: linear-gradient(to right, #d3d6db, #303841);
   color: #d3d6db;
 }
 .title {
@@ -93,7 +94,8 @@
 .infoDesc {
   font-size: 20px;
   font-style: italic;
-  text-align: center;
+  padding-left: 50px;
+  /* text-align: center; */
   padding-bottom: 15px;
   color: white;
 }
@@ -115,7 +117,7 @@
   font-size: 64px;
 }
 #mainText {
-  background: -webkit-linear-gradient(#eee, #333);
+  background: -webkit-linear-gradient(#d3d6db, #303841);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 72px;

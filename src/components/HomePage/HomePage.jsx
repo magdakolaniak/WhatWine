@@ -10,7 +10,7 @@ const HomePage = () => {
       <video autoPlay loop muted id="myVideo">
         <source src={video} type="video/mp4" />
       </video>
-      <img src={logo} className="logo-main" alt="logo" />
+      {/* <img src={logo} className="logo-main" alt="logo" /> */}
       <div className="home-main">
         <Row>
           <Col s={12} xs={12} md={4}>
@@ -24,14 +24,18 @@ const HomePage = () => {
             <div></div>
           </Col>
           <Col xs={12} s={12} md={4}>
-            <div id="taste-profiler-circle" className="circle-styling">
-              {/* TASTE PROFILER */}
-            </div>{' '}
+            <Link to="/tasteProfiler">
+              <div id="taste-profiler-circle" className="circle-styling">
+                {/* TASTE PROFILER */}
+              </div>
+            </Link>
           </Col>
           <Col xs={12} md={4}>
-            <div id="create-circle" className="circle-styling">
-              {/* CREATE */}
-            </div>
+            <Link to="/mealComposer">
+              <div id="create-circle" className="circle-styling">
+                {/* CREATE */}
+              </div>
+            </Link>
           </Col>
         </Row>
       </div>

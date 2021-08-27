@@ -135,41 +135,21 @@ const LeftNav = () => {
           </Accordion.Item>
           <Accordion.Item eventKey="2">
             <Accordion.Header>Side Dishes</Accordion.Header>
-            <Accordion.Body id="cookingMethod">
+            <Accordion.Body id="sideDishes">
               <div>
                 {' '}
                 Here is place for you to pick main ingredient that will be
                 dominant in your dish. Click on icon to ADD!
               </div>
-              <div className="iconsWrapper">
-                <img
-                  src={fry}
-                  id="fried"
-                  alt="chicken-logo"
-                  className="iconSize"
-                  onClick={handleClickMethod}
-                />
-                <div className="middle"> frying</div>
-              </div>
-              <div className="iconsWrapper">
-                <img
-                  src={boil}
-                  id="boiled"
-                  alt="chicken-logo"
-                  className="iconSize"
-                  onClick={handleClickMethod}
-                />
-                <div className="middle"> boiling</div>
-              </div>
-              <div className="iconsWrapper">
-                <img
-                  src={bake}
-                  id="baked"
-                  alt="chicken-logo"
-                  className="iconSize"
-                  onClick={handleClickMethod}
-                />
-                <div className="middle"> baking</div>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="3">
+            <Accordion.Header>Spices</Accordion.Header>
+            <Accordion.Body id="spices">
+              <div>
+                {' '}
+                Here is place for you to pick main ingredient that will be
+                dominant in your dish. Click on icon to ADD!
               </div>
             </Accordion.Body>
           </Accordion.Item>

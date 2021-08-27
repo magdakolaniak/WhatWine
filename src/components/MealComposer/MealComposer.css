@@ -1,22 +1,31 @@
-/* ------------------STYLING FOR MELA MAIN----------------*/
+/* ------------------STYLING FOR MEAL MAIN----------------*/
 .mealMainDiv {
-  background-color: #303841;
-  height: 100vh;
+  background-color: #800000;
+  height: 90vh;
   color: #303841;
+  overflow: hidden;
+  overflow-x: hidden;
 }
 .mealMainRightCol {
   padding-top: 30px;
+
   padding-right: 30px;
+  padding-left: 30px;
 }
 /* ------------------STYLING FOR LEFT NAV----------------*/
 
 .navMainDiv {
   flex-direction: column;
+  margin-left: 10px;
 }
 .instructions {
+  margin-top: 30px;
+  margin-bottom: 10px;
   padding-top: 10px;
-
+  background-color: #d3d6db;
   text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
 }
 .accordion-button {
   position: relative;
@@ -57,9 +66,7 @@
 button:focus:not(:focus-visible) {
   outline: none;
 }
-#mainIngred {
-  background-color: aliceblue;
-}
+
 .accordion-button:not(.collapsed) {
   color: #d3d6db;
   background-color: #3a4750;
@@ -116,4 +123,84 @@ button:focus:not(:focus-visible) {
   background-color: #d3d6db;
   border-radius: 3px;
   box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  min-height: 220px;
+}
+.entranceList {
+  -webkit-animation: bounce-in-top 1.5s ease-in-out both;
+  animation: bounce-in-top 1.5s ease-in-out both;
+  padding: 10px;
+}
+.choiceColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.listColumn {
+  padding-left: 60px;
+}
+.plateTitle {
+  padding-top: 70px;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: large;
+}
+
+*p {
+  margin-bottom: 0px !important;
+}
+@keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+    transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+    transform: translateY(-65px);
+    font-size: 20px;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+    transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    font-size: 14px;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
 }

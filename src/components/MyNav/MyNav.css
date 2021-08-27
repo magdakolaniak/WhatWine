@@ -1,10 +1,20 @@
 #my-nav {
   background-color: #303841;
-  color: rgb(164, 185, 204) !important;
-  color: white;
+  color: #d3d6db;
   -webkit-box-shadow: 9px 6px 15px -2px #000000;
   box-shadow: 9px 6px 15px -2px #000000;
   width: 100vw !important;
+}
+.logoText {
+  margin-left: 20px;
+  color: #d3d6db;
+  font-size: 20px;
+}
+.iconNav {
+  padding-top: 5px;
+
+  padding-bottom: 5px;
+  font-size: 46px;
 }
 
 .navbar-nav {
@@ -23,7 +33,7 @@
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px !important;
   background-color: white !important;
-  /* padding-left: 20px !important; */
+  padding-left: 20px !important;
   height: 45px;
 }
 .searching-navbar:focus {
@@ -32,7 +42,7 @@
   border-left-style: none;
   box-shadow: none !important;
   outline: none !important;
-  background-color: #998d8d !important;
+  background-color: #d3d6db !important;
 }
 
 .navbar-dark .navbar-nav .nav-link.active,

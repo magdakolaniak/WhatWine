@@ -2,11 +2,15 @@
   background-image: url(./wall1.jpg);
   background-position: center;
   background-size: cover;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 90vh;
   align-items: center;
+  /* overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden; */
   /* padding-bottom: 70px; */
 }
 .nav-position {
