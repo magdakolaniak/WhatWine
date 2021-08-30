@@ -12,7 +12,56 @@
   width: 80vw;
   align-self: center;
   justify-content: center;
-  background-color: aliceblue;
+  background-color: #d3d6db;
+}
+.cornerSignDetail {
+  position: absolute;
+  display: flex;
+  transform: rotate(-45deg);
+  top: -15px;
+  left: -70px;
+  width: 200px;
+  height: 100px;
+  z-index: 5;
+  text-align: center;
+  align-items: flex-end;
+  padding-left: 60px;
+  padding-bottom: 10px;
+
+  background-color: #d3d6db;
+
+  color: #303841;
+  font-size: 20px;
+  cursor: pointer;
+  /* writing-mode: vertical-lr; */
+}
+.bookmarkDetail {
+  position: relative;
+  font-size: 86px;
+  color: #303841;
+  fill: #d3d6db;
+  stroke-width: 0.5px;
+}
+.saveDetailed {
+  position: absolute;
+  color: #303841;
+  top: 20px;
+  left: 24px;
+  z-index: 1;
+}
+.bookmarkWrapper {
+  position: absolute;
+  top: 55px;
+  right: 200px;
+}
+.checkedIcon {
+  font-size: 36px;
+}
+.narrow {
+  position: absolute;
+  bottom: 40px;
+  left: 80px;
+  font-size: 26px;
 }
 .img-styling {
   height: auto;
@@ -60,7 +109,8 @@
 }
 
 .map-styling {
-  border-radius: 20px;
+  box-shadow: #303841;
+  /* border-radius: 50px; */
 }
 .map-wrapper {
   position: absolute;
@@ -70,11 +120,13 @@
 .map-wrapper:after {
   content: '';
   position: absolute;
-
+  /* border-bottom-left-radius: 30px;
+  border: 3px solid black; */
   height: 20px;
-  bottom: 1px;
+  bottom: 0px;
   left: 0;
   right: 0;
+  transform: rotate(0deg);
 
-  background: aliceblue;
+  background: #d3d6db;
 }

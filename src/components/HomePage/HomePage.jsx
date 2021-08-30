@@ -1,6 +1,6 @@
 import { Row, Col } from 'react-bootstrap';
 import './HomePage.css';
-import logo from './logo.png';
+
 import { Link } from 'react-router-dom';
 import video from './movie.mp4';
 

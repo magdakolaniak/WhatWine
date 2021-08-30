@@ -6,7 +6,7 @@
 }
 .mainDiv {
   background-color: #d3d6db;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
   /* /* z-index: 1; */
   position: absolute;
@@ -35,11 +35,48 @@
   font-size: 50px;
 }
 .underText {
-  font-weight: 600;
+  /* font-weight: 600; */
   /* font-style: italic; */
-  padding-left: 30px;
-  padding-bottom: 40px;
+  padding-left: 10px;
+  padding-bottom: 1px;
+
+  position: relative;
+  top: 50%;
+  /* width: 10em; */
+  color: #303841;
+  margin: 0 auto;
+  border-right: 2px solid #303841;
+  font-size: 18px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
 }
+.underTextWrapper {
+  padding-top: 10px;
+  padding-left: 33px;
+}
+.anim-typewriter {
+  animation: typewriter 4s steps(30) 1s 1 normal both,
+    blinkTextCursor 500ms steps(30) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 237px;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: #303841;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
 .quote {
   font-style: italic;
   font-size: 18px;
