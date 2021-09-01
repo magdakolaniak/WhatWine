@@ -10,12 +10,12 @@
   overflow-x: hidden;
 }
 .box1 {
-  visibility: hidden;
+  visibility: visible;
 
   animation-name: entrance-left;
-  animation-duration: 2s;
+  animation-duration: 3s;
 
-  animation-fill-mode: forwards;
+  /* animation-fill-mode: forwards; */
 }
 .cornerSign {
   position: absolute;
@@ -49,13 +49,13 @@
     visibility: visible;
     -webkit-transform: translateX(-1000px);
     transform: translateX(-1000px);
-    opacity: 0;
+    /* opacity: 0; */
   }
   100% {
     visibility: visible;
     -webkit-transform: translateX(0);
     transform: translateX(0);
-    opacity: 1;
+    /* opacity: 1; */
   }
 }
 

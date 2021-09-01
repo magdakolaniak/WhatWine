@@ -3,16 +3,12 @@ import { LoginContext } from '../GlobalState/GlobalState';
 import { useContext } from 'react';
 import { Col, Container } from 'react-bootstrap';
 import { GiGrapes, GiReturnArrow } from 'react-icons/gi';
-import { FcCheckmark } from 'react-icons/fc';
 import { ImLibrary } from 'react-icons/im';
-import { ImBookmark } from 'react-icons/im';
 import Geocode from 'react-geocode';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 const Detail = () => {
   const { detailed, lat, setLat, long, setLong } = useContext(LoginContext);
-  const [saved, setSaved] = useState(false);
 
   const country = detailed[0].origin.country;
   const region = detailed[0].origin.region;
@@ -28,9 +24,7 @@ const Detail = () => {
       console.error(error);
     }
   );
-  const addToFav = () => {
-    setSaved(true);
-  };
+
   return (
     <>
       <div className="detail-main-comp">
@@ -53,16 +47,6 @@ const Detail = () => {
             </div>
           </Col>
           <Col xs={10} md={8} className="details-column">
-            {/* <span className="bookmarkWrapper" onClick={addToFav}>
-              <span className="saveDetailed">
-                {saved === false ? (
-                  'Save'
-                ) : (
-                  <FcCheckmark className="checkedIcon" />
-                )}
-              </span>
-              <ImBookmark className="bookmarkDetail" />
-            </span> */}
             <div className="grape-wrapper">
               {' '}
               <GiGrapes className="icon1" />
@@ -111,6 +95,7 @@ const Detail = () => {
             <div className="description-wrapper">
               <span>FLAVOURS</span>
             </div>
+
             {/* {detailed[0].flavours.map((flav) => (
               <li>{flav}</li>
             ))} */}
