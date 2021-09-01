@@ -29,7 +29,7 @@ const WineList = () => {
   return (
     <>
       <MyNav />
-      <div className="wine-list-main">
+      <div className="wineListMain">
         <Rotate />
       </div>
     </>

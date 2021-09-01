@@ -106,19 +106,20 @@ export default function Rotate(wines) {
 
   return (
     <>
-      {/* carousel */}
-      <div className="slideC">
-        {mainData.map((item, i) => (
-          <div className="slide" style={getStyles(i)} key={item._id}>
-            <img
-              id={item._id}
-              src={item.image}
-              alt="bottle"
-              className={getClassName(i)}
-              onClick={myFunc}
-            />
-          </div>
-        ))}
+      <div className="rotateContainer">
+        <div className="slideC">
+          {mainData.map((item, i) => (
+            <div className="slide" style={getStyles(i)} key={item._id}>
+              <img
+                id={item._id}
+                src={item.image}
+                alt="bottle"
+                className={getClassName(i)}
+                onClick={myFunc}
+              />
+            </div>
+          ))}
+        </div>
       </div>
       {/* carousel */}
 

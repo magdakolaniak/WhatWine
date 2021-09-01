@@ -1,4 +1,4 @@
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import LeftNav from './LeftNav.jsx';
 import Plate from './Plate.jsx';
 import './MealComposer.css';
@@ -7,8 +7,8 @@ import MyNav from '../MyNav/MyNav.jsx';
 const MealMain = () => {
   return (
     <>
-      <MyNav />
       <div className="mealMainDiv">
+        <MyNav />
         <Row>
           <Col md={4}>
             <LeftNav />

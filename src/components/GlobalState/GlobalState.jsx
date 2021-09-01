@@ -20,12 +20,13 @@ const GlobalState = ({ children }) => {
   const [pickedFromBoard, setPickedFromBoard] = useState({});
   const [query, setQuery] = useState();
   const [mainData, setMainData] = useState([]);
-  const [ingredients, setIngredients] = useState({
-    main: [],
-    method: [],
-    side: [],
-    spices: [],
+  const [recipe, setRecipe] = useState({
+    cuisine: '',
+    ingredients: [],
+    mealType: '',
   });
+  const [dishes, setDishes] = useState([]);
+  const [wineModalShow, setWineModalShow] = useState(false);
   return (
     <LoginContext.Provider
       value={{
@@ -53,8 +54,12 @@ const GlobalState = ({ children }) => {
         setQuery,
         mainData,
         setMainData,
-        ingredients,
-        setIngredients,
+        recipe,
+        setRecipe,
+        dishes,
+        setDishes,
+        wineModalShow,
+        setWineModalShow,
       }}
     >
       {children}

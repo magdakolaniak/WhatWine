@@ -43,7 +43,7 @@ const Detail = () => {
         </Link>
         <Container className="cont-main">
           {/* <Row className="row-detail"> */}
-          <Col md={4} className="mx-auto col-left">
+          <Col xs={2} md={4} className="mx-auto col-left">
             <div className="img-wrapper container">
               <img
                 src={detailed[0].image}
@@ -52,8 +52,8 @@ const Detail = () => {
               />
             </div>
           </Col>
-          <Col md={8} className="details-column">
-            <span className="bookmarkWrapper" onClick={addToFav}>
+          <Col xs={10} md={8} className="details-column">
+            {/* <span className="bookmarkWrapper" onClick={addToFav}>
               <span className="saveDetailed">
                 {saved === false ? (
                   'Save'
@@ -62,7 +62,7 @@ const Detail = () => {
                 )}
               </span>
               <ImBookmark className="bookmarkDetail" />
-            </span>
+            </span> */}
             <div className="grape-wrapper">
               {' '}
               <GiGrapes className="icon1" />
@@ -111,10 +111,9 @@ const Detail = () => {
             <div className="description-wrapper">
               <span>FLAVOURS</span>
             </div>
-            {detailed[0].flavours.length > 2 &&
-            typeof detailed[0].flavours === Array
-              ? detailed[0].flavours.map((flav) => <li>{flav}</li>)
-              : 'nothing to show'}
+            {/* {detailed[0].flavours.map((flav) => (
+              <li>{flav}</li>
+            ))} */}
           </Col>
           <br></br>
 

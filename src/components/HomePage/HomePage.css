@@ -4,6 +4,9 @@ body {
 
   height: 100%;
 }
+a {
+  text-decoration: none;
+}
 #myVideo {
   position: fixed;
   right: 0;
@@ -25,6 +28,7 @@ body {
   align-items: center;
 }
 .circle-styling {
+  opacity: 1;
   display: flex;
   flex-direction: column;
   height: 150px;
@@ -36,6 +40,88 @@ body {
   margin: auto;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.middle {
+  position: relative;
+  bottom: 53%;
+  font-size: 22px;
+  font-style: oblique;
+  font-weight: bold;
+  border-radius: 50%;
+  left: 1%;
+  opacity: 0;
+  background-color: #30384189;
+  padding: 5px;
+  color: white;
+}
+
+.circle-styling:hover + .middle {
+  opacity: 1;
+  z-index: 3;
+}
+.circle-styling-meal {
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 150px;
+  background-color: rgba(232, 242, 242, 0.488);
+  border-radius: 50%;
+  border: white 2px solid;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.middleMeal {
+  position: relative;
+  bottom: 53%;
+  left: 8%;
+  font-size: 22px;
+  font-style: oblique;
+  font-weight: bold;
+  border-radius: 50%;
+  opacity: 0;
+  text-align: center;
+  background-color: #3038419a;
+  padding: 5px;
+  color: white;
+}
+
+.circle-styling-meal:hover + .middleMeal {
+  opacity: 1;
+}
+.circle-styling-list {
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 150px;
+  background-color: rgba(232, 242, 242, 0.488);
+  border-radius: 50%;
+  border: white 2px solid;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.middleList {
+  position: relative;
+  bottom: 53%;
+  left: 10%;
+  font-size: 22px;
+  font-style: oblique;
+  font-weight: bold;
+  border-radius: 50%;
+  opacity: 0;
+  text-align: center;
+  background-color: #3038419a;
+  padding: 5px;
+  color: white;
+}
+.circle-styling-list:hover + .middleList {
+  opacity: 1;
 }
 #wine-list-circle {
   background-image: url('https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8OXx8fGVufDB8fHx8&w=1000&q=80');
@@ -53,6 +139,9 @@ body {
   color: white;
   font-weight: bold;
 }
+#taste-profiler-circle:hover {
+  background-color: beige;
+}
 #create-circle {
   background-image: url('https://www.seriouseats.com/thmb/lJ4wi4lMW09QRXBvpxjbR52oJFc=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2020__12__20201203-indonesian-pantry-vicky-wasik-1-b827da1c26134cf18153da281f8efb19.jpg');
   background-repeat: no-repeat;
@@ -61,7 +150,10 @@ body {
   color: white;
   font-weight: bold;
 }
-.logo-main {
+.linkTest {
+  background-color: black;
+}
+/* .logo-main {
   height: 250px;
 
   position: absolute;
@@ -69,4 +161,4 @@ body {
   right: 50%;
 
   transform: translate(-50%);
-}
+} */

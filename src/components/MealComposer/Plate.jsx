@@ -1,73 +1,84 @@
 import './MealComposer.css';
-import { Table, Row, Col } from 'react-bootstrap';
+import { Row, Col, Card, Button, Modal } from 'react-bootstrap';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import WineModal from './WineModal';
+import { GiGrapes } from 'react-icons/gi';
+import { Loading } from 'react-loading-dot';
 
 const Plate = () => {
-  const { ingredients, setIngredients } = useContext(LoginContext);
+  const { dishes, recipe } = useContext(LoginContext);
+  const [modalShow, setModalShow] = useState(false);
+  const [dishId, setDishId] = useState('');
 
   return (
-    <div className="plateMainDiv">
-      {ingredients.main.length === 0 ? (
-        <div className="plateTitle ">
-          Let's add some ingredients from the left and explore the wine options
-          that will match!
-        </div>
-      ) : (
-        <>
-          <br></br>
-          <br></br>
-          <Row className="d-flex">
-            <Col s={6} md={6} className="listColumn">
-              {' '}
-              {ingredients.main.length > 1 ? (
-                <div className="entranceList">MAIN INGREDIENTS</div>
-              ) : (
-                ''
-              )}
-              {ingredients.method.length > 1 ? (
-                <div className="entranceList">COOKING METHOD</div>
-              ) : (
-                ''
-              )}
-              {ingredients.side.length > 1 ? (
-                <div className="entranceList">SIDE DISHES</div>
-              ) : (
-                ''
-              )}
-              {ingredients.spices.length > 1 ? (
-                <div className="entranceList">SPICES</div>
-              ) : (
-                ''
-              )}
-            </Col>
-            <Col md={6} className="choiceColumn">
-              {' '}
-              {ingredients.main.length > 1 ? (
-                <div className="entranceList">{ingredients.main}</div>
-              ) : (
-                ''
-              )}
-              {ingredients.method.length > 1 ? (
-                <div className="entranceList">{ingredients.method}</div>
-              ) : (
-                ''
-              )}
-              {ingredients.side.length > 1 ? (
-                <div className="entranceList">{ingredients.side}</div>
-              ) : (
-                ''
-              )}
-              {ingredients.spices.length > 1 ? (
-                <div className="entranceList">{ingredients.spices}</div>
-              ) : (
-                ''
-              )}
-            </Col>
-          </Row>{' '}
-        </>
-      )}
-    </div>
+    <>
+      <div
+        className="plateMainDiv"
+        style={dishes.length > 0 ? { height: '800px' } : { height: '300px' }}
+      >
+        {recipe.ingredients.length <= 0 ? (
+          <>
+            <div className="welcomePart">
+              Use panel on the left to describe dish you are looking for!
+            </div>
+            <div className="welcomePart">
+              Your recipies ideas will show up here once selected
+            </div>
+            <div className="dotsLoading">
+              <div className="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </>
+        ) : (
+          ''
+        )}
+        <Row className="d-flex">
+          {dishes.length > 0
+            ? dishes.map((dish) => (
+                <Col md={4}>
+                  <Card className="cardWrapper entranceList">
+                    <Card.Img src={dish.image} className="imgCard" />
+                    <Card.Body>
+                      <Card.Title>{dish.title}</Card.Title>
+                      <Card.Text>
+                        <Row>
+                          {/* <Col md={4}>one part</Col>
+                    <Col md={8}> second part</Col> */}
+                          {dish.id}
+                        </Row>
+                      </Card.Text>
+                      <button
+                        className="buttonStyling"
+                        onClick={() => {
+                          setModalShow(true);
+                          setDishId(dish.id);
+                        }}
+                      >
+                        <span style={{ padding: '5px' }}>
+                          <GiGrapes
+                            style={{ fontSize: '36px', padding: '2px' }}
+                          />
+                          WhatWine?
+                        </span>
+                      </button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))
+            : ''}
+        </Row>{' '}
+        <WineModal
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+          dishId={dishId}
+        />
+      </div>
+    </>
   );
 };
+
 export default Plate;

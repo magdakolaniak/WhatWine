@@ -1,3 +1,7 @@
+.rotateContainer {
+  display: flexbox;
+}
+
 .slideC {
   position: relative;
   perspective: 1000px;

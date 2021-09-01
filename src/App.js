@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './components/HomePage/HomePage.jsx';
 import WineList from './components/WineList/WineList';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import MyNav from './components/MyNav/MyNav.jsx';
+
 import TasteProfiler from './components/TasteProfiler/TasteProfiler';
 import Rotate from './components/Rotate/Rotate';
 import Detail from './components/Detail/Detail';
@@ -16,7 +16,7 @@ function App() {
     <Router>
       <Route component={Rotate} path="/rotate" />
       <Route component={LoginPage} path="/" exact />
-      {/* <MyNav /> */}
+
       <Route component={WineList} path="/wineList" exact />
       <Route component={HomePage} path="/home" exact />
       <Route component={TasteProfiler} path="/tasteProfiler" exact />
