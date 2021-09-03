@@ -11,12 +11,14 @@ import Detail from './components/Detail/Detail';
 import TasteBoard from './components/TasteBoard/TasteBoard';
 import MealMain from './components/MealComposer/MealMain.jsx';
 import LoginPage from './components/Login/LoginPage';
+import MyNav from './components/MyNav/MyNav';
+
 function App() {
   return (
     <Router>
       <Route component={Rotate} path="/rotate" />
       <Route component={LoginPage} path="/" exact />
-
+      <Route component={MyNav} path="/nav" exact />
       <Route component={WineList} path="/wineList" exact />
       <Route component={HomePage} path="/home" exact />
       <Route component={TasteProfiler} path="/tasteProfiler" exact />

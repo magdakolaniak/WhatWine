@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import './Rotate.css';
-import wine from '../Carousel/wine.json';
+
 import { useHistory } from 'react-router';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
 
 import { RiArrowRightSLine, RiArrowLeftSLine } from 'react-icons/ri';
 
-export default function Rotate(wines) {
+export default function Rotate() {
   const [activeSlide, setactiveSlide] = useState(0);
 
   const history = useHistory();
@@ -22,7 +22,7 @@ export default function Rotate(wines) {
     e.preventDefault();
 
     let id = e.currentTarget.id;
-    const object = wine.filter((wine) => {
+    const object = mainData.filter((wine) => {
       return wine._id === id;
     });
     history.push(`/detail/${id}`);

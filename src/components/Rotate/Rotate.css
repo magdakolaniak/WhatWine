@@ -46,7 +46,7 @@
 
 .img-height {
   height: 500px;
-  filter: drop-shadow(20px 20px 1px #2d2d354f);
+  filter: drop-shadow(14px -2px 2px rgba(0, 0, 0, 0.468));
   cursor: pointer;
 }
 

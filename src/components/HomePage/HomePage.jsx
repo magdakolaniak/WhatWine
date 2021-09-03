@@ -7,14 +7,14 @@ import video from './movie.mp4';
 import axios from 'axios';
 
 const HomePage = () => {
-  const BASEUrl = process.env.REACT_APP_API;
-  const { setMainData } = useContext(LoginContext);
+  // const BASEUrl = process.env.REACT_APP_API;
+  // const { setMainData } = useContext(LoginContext);
 
-  const mainDataWines = async () => {
-    let data = await axios(BASEUrl + `/`);
-    setMainData(data.data);
-  };
-  mainDataWines();
+  // const mainDataWines = async () => {
+  //   let data = await axios(BASEUrl + `/`);
+  //   setMainData(data.data);
+  // };
+  // mainDataWines();
   return (
     <>
       <video autoPlay loop muted id="myVideo">

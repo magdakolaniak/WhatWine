@@ -4,6 +4,7 @@
   background-size: cover;
 
   color: white;
+  transition: all ease-in-out;
 }
 .mainSingleShelf {
   background-image: url(./single.png);
@@ -12,6 +13,27 @@
   background-repeat: no-repeat;
   height: 500px;
 }
+.swing-in-top-fwd {
+  -webkit-animation: swing-in-top-fwd 2s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+    both;
+  animation: swing-in-top-fwd 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+}
 
 .bottle {
   display: flex;
@@ -19,6 +41,45 @@
   margin-left: 20px;
   margin-right: 20px;
   cursor: pointer;
+  filter: drop-shadow(10px -2px 2px rgba(0, 0, 0, 0.468));
+}
+.fade-in-right {
+  -webkit-animation: fade-in-right 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+  animation: fade-in-right 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+  animation-delay: 1s;
+}
+.fade-in-right1 {
+  -webkit-animation: fade-in-right 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+  animation: fade-in-right 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+  animation-delay: 2s;
+}
+
+.fade-in-right2 {
+  -webkit-animation: fade-in-right 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+  animation: fade-in-right 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+  animation-delay: 3s;
+}
+.fade-in-right3 {
+  -webkit-animation: fade-in-right 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+  animation: fade-in-right 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+  animation-delay: 4s;
+}
+.fade-in-right4 {
+  -webkit-animation: fade-in-right 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+  animation: fade-in-right 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+  animation-delay: 5s;
+}
+@keyframes fade-in-right {
+  0% {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .scroll {

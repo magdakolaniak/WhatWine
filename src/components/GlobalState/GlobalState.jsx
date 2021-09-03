@@ -24,6 +24,7 @@ const GlobalState = ({ children }) => {
     cuisine: '',
     ingredients: [],
     mealType: '',
+    intolerances: [],
   });
   const [dishes, setDishes] = useState([]);
   const [wineModalShow, setWineModalShow] = useState(false);

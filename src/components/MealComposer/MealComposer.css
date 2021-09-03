@@ -101,12 +101,38 @@
   outline: none !important;
   background-color: #d3d6db !important;
 }
+.bakeIcon {
+  height: 60px;
+
+  padding-top: 10px;
+}
+.cuisineIcon {
+  height: 50px;
+  margin-left: 70px;
+  cursor: pointer;
+  padding-top: 10px;
+  transition: transform 1s ease-in-out;
+}
+.cuisineIcon:hover {
+  transform: scale(1.4);
+
+  filter: drop-shadow(3px -1px 1px rgba(0, 0, 0, 0.468));
+}
+.cuisineStyleHeader {
+  font-weight: bolder;
+  text-align: center;
+  font-style: italic;
+  padding-bottom: 10px;
+}
 
 .tickIcon {
   color: green;
   font-size: 30px;
 }
 .instructions {
+  font-style: italic;
+  font-weight: bold;
+  padding-bottom: 10px;
   margin-top: 30px;
   margin-bottom: 10px;
   padding-top: 10px;

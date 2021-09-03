@@ -1,15 +1,29 @@
 import './MealComposer.css';
-import { Row, Col, Card, Button, Modal } from 'react-bootstrap';
+import { Row, Col, Card } from 'react-bootstrap';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext, useState } from 'react';
 import WineModal from './WineModal';
 import { GiGrapes } from 'react-icons/gi';
-import { Loading } from 'react-loading-dot';
+import cuisine from '../assets/images/cuisine.png';
+
+import RecipeModal from './RecipeModal';
+import axios from 'axios';
 
 const Plate = () => {
   const { dishes, recipe } = useContext(LoginContext);
-  const [modalShow, setModalShow] = useState(false);
+  const [wineModalShow, setWineModalShow] = useState(false);
+  const [recipeModalShow, setRecipeModalShow] = useState(false);
   const [dishId, setDishId] = useState('');
+  const [dishFullName, setDishFullName] = useState('');
+  const [cardUrl, setCardUrl] = useState('');
+
+  const getCard = async () => {
+    let APIUrl = 'https://api.spoonacular.com/recipes/';
+    let key = process.env.REACT_APP_API_KEY_M;
+    const card = await axios(APIUrl + `${dishId}/card?&apiKey=${key}`);
+    console.log(card.data.url);
+    setCardUrl(card.data.url);
+  };
 
   return (
     <>
@@ -48,13 +62,28 @@ const Plate = () => {
                         <Row>
                           {/* <Col md={4}>one part</Col>
                     <Col md={8}> second part</Col> */}
-                          {dish.id}
+                          <div
+                            onClick={() => {
+                              getCard();
+                              setDishId(dish.id);
+                              setDishFullName(dish.title);
+                              setRecipeModalShow(true);
+                            }}
+                          >
+                            <div>
+                              <img
+                                src={cuisine}
+                                className="cuisineIcon"
+                                alt="bake-icon"
+                              />
+                            </div>
+                          </div>
                         </Row>
                       </Card.Text>
                       <button
                         className="buttonStyling"
                         onClick={() => {
-                          setModalShow(true);
+                          setWineModalShow(true);
                           setDishId(dish.id);
                         }}
                       >
@@ -72,9 +101,16 @@ const Plate = () => {
             : ''}
         </Row>{' '}
         <WineModal
-          show={modalShow}
-          onHide={() => setModalShow(false)}
+          show={wineModalShow}
+          onHide={() => setWineModalShow(false)}
           dishId={dishId}
+        />
+        <RecipeModal
+          show={recipeModalShow}
+          onHide={() => setRecipeModalShow(false)}
+          dishId={dishId}
+          dishName={dishFullName}
+          cardUrl={cardUrl}
         />
       </div>
     </>

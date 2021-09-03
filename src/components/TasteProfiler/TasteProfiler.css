@@ -2,26 +2,27 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  height: 100vh;
+  height: 90vh;
   align-items: center;
   align-content: center;
   background-color: rgba(22, 26, 29, 1);
   padding-right: 3rem;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .box1 {
-  visibility: visible;
+  visibility: hidden;
 
   animation-name: entrance-left;
-  animation-duration: 3s;
+  animation-duration: 2s;
 
-  /* animation-fill-mode: forwards; */
+  animation-fill-mode: forwards;
 }
 .cornerSign {
   position: absolute;
   display: flex;
   transform: rotate(-45deg);
-  top: -15px;
+  top: 50px;
   left: -70px;
   width: 200px;
   height: 100px;
@@ -49,20 +50,16 @@
     visibility: visible;
     -webkit-transform: translateX(-1000px);
     transform: translateX(-1000px);
-    /* opacity: 0; */
+    opacity: 0;
   }
   100% {
     visibility: visible;
     -webkit-transform: translateX(0);
     transform: translateX(0);
-    /* opacity: 1; */
+    opacity: 1;
   }
 }
 
-/* .slide-in-left {
-	-webkit-animation: slide-in-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
-	        animation: slide-in-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
-} */
 @keyframes entrance-right {
   0% {
     visibility: visible;
@@ -100,13 +97,15 @@
   color: white;
 }
 .welcomePage {
-  background-color: #303841;
+  background-color: rgba(22, 26, 29, 1);
   display: flex;
   align-items: center;
   justify-content: center;
   align-self: center;
-  height: 100vh;
+  height: 90vh;
   flex-direction: column;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 .writingText {
   color: linear-gradient(red, yellow);
@@ -158,10 +157,10 @@
   -moz-animation: blur 4s ease 0s forwards;
   fill: #800000;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 .pickRed:hover {
-  transform: scale(1.5);
+  transform: scale(1.3);
 }
 .pickRedWrapper {
   margin-top: 20px;
@@ -174,10 +173,10 @@
   -moz-animation: blur 4s ease 0s forwards;
   fill: #d4af37;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 .pickWhite:hover {
-  transform: scale(1.5);
+  transform: scale(1.3);
 }
 .pickWhiteWrapper {
   margin-right: 30px;

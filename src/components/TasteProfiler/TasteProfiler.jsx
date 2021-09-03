@@ -6,6 +6,7 @@ import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
 import { GiGrapes, GiReturnArrow } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
+import MyNav from '../MyNav/MyNav.jsx';
 
 const TasteProfiler = () => {
   const {
@@ -41,15 +42,10 @@ const TasteProfiler = () => {
   };
   return (
     <>
+      {' '}
+      <MyNav />
       {grapeColor.length === 0 ? (
         <div className="welcomePage">
-          <Link to="/home">
-            <span className="cornerSign">
-              <GiReturnArrow className="narrow" />
-              <br></br>
-              HOME{' '}
-            </span>
-          </Link>
           <Row>
             <Col xs={12} md={12}>
               <div className="writingText">
@@ -83,7 +79,7 @@ const TasteProfiler = () => {
             RETURN{' '}
           </span>
           <Col xs={12} md={4}>
-            <div className="box1 slide-in-left">
+            <div className="box1 entrance-left">
               <div className="title">
                 <span className="tasteText">TASTE</span> <br></br>{' '}
                 <span className="profilerTextWrapper">PROFILER</span>

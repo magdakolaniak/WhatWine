@@ -2,7 +2,7 @@ import { Container, Row } from 'react-bootstrap';
 import './Shelf.css';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router';
 
@@ -30,6 +30,24 @@ const Shelf = () => {
     setDetailed(object);
   };
 
+  const getClassName = (index) => {
+    if (index === 0) {
+      return 'img-fluid bottle fade-in-right';
+    }
+    if (index === 1) {
+      return 'img-fluid bottle fade-in-right1';
+    }
+    if (index === 2) {
+      return 'img-fluid bottle fade-in-right2';
+    }
+    if (index === 3) {
+      return 'img-fluid bottle fade-in-right3';
+    }
+    if (index === 4) {
+      return 'img-fluid bottle fade-in-right4';
+    }
+  };
+
   useEffect(() => {
     const getWines = async (tasteProfile, grapeColor) => {
       if (grapeColor === 'white') {
@@ -53,17 +71,17 @@ const Shelf = () => {
 
   return (
     <>
-      <Container className="mainShelf">
+      <Container className="mainShelf swing-in-top-fwd">
         <Row className="mainSingleShelf d-flex">
           <div className="scroll">
             {pickedFromBoard && pickedFromBoard.length >= 1 ? (
-              pickedFromBoard.map((bottle) => (
+              pickedFromBoard.map((bottle, i) => (
                 <img
                   id={bottle._id}
                   key={bottle._id}
                   src={bottle.image}
                   alt="bottle"
-                  className="img-fluid bottle"
+                  className={getClassName(i)}
                   onClick={myFunc}
                 />
               ))
