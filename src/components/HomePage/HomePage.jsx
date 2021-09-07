@@ -1,10 +1,8 @@
 import { Row, Col } from 'react-bootstrap';
 import './HomePage.css';
-import { useContext } from 'react';
-import { LoginContext } from '../GlobalState/GlobalState.jsx';
+
 import { Link } from 'react-router-dom';
 import video from './movie.mp4';
-import axios from 'axios';
 
 const HomePage = () => {
   // const BASEUrl = process.env.REACT_APP_API;

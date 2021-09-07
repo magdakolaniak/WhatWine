@@ -12,7 +12,7 @@
   /* margin-top: 200px; */
 }
 
-.slide {
+.slideRotate {
   width: 320px;
 
   height: 272px;
@@ -27,7 +27,7 @@
 }
 
 /* 3d reflection effect */
-.slide::after {
+.slideRotate::after {
   content: '';
   position: absolute;
   width: 45%;
@@ -37,7 +37,7 @@
   background: linear-gradient(to bottom, rgba(49, 26, 19, 0.735), transparent);
 }
 
-.slide {
+.slideRotate {
   display: flex;
   justify-content: center;
   align-items: center;

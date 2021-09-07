@@ -16,11 +16,36 @@ const LoginPage = ({ history }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { setLoggedIn, setUser } = useContext(LoginContext);
+  const { setLoggedIn, setUser, setWeather, setNews } =
+    useContext(LoginContext);
   const URL = process.env.REACT_APP_BE_URL;
 
   const base64 = (input) => {
     return new Buffer(input).toString('base64');
+  };
+
+  const getUserWeather = async (city) => {
+    try {
+      const api = '5a17452b42ea63a877f8f2b5ea332bf5';
+      const data = await axios(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}`
+      );
+      setWeather(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const getNews = async () => {
+    try {
+      const key = 'b26bae29738f43acaa41e51752b4186b';
+      const news = await axios(
+        `https://newsapi.org/v2/everything?q=winery&from=2021-08-07&sortBy=publishedAt&apiKey=${key}`
+      );
+      setNews(news.data.articles);
+      console.log('NEWS', news.data.articles);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const submitHandler = async () => {
@@ -35,6 +60,10 @@ const LoginPage = ({ history }) => {
       if (res.status === 200) {
         setLoggedIn(true);
         setUser(res.data);
+
+        getUserWeather(res.data.city);
+        getNews();
+
         history.push('/home');
       }
     }

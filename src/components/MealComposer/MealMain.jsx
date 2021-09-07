@@ -2,13 +2,13 @@ import { Row, Col, Container } from 'react-bootstrap';
 import LeftNav from './LeftNav.jsx';
 import Plate from './Plate.jsx';
 import './MealComposer.css';
-import MyNav from '../MyNav/MyNav.jsx';
+import NewNav from '../MyNav/NewNav.jsx';
 
 const MealMain = () => {
   return (
     <>
       <div className="mealMainDiv">
-        <MyNav />
+        <NewNav />
         <Row>
           <Col md={4}>
             <LeftNav />

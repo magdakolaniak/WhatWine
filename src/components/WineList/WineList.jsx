@@ -1,6 +1,6 @@
 import './WineList.css';
 import '../Rotate/Rotate.jsx';
-import MyNav from '../MyNav/MyNav';
+import NewNav from '../MyNav/NewNav';
 import Rotate from '../Rotate/Rotate.jsx';
 import { useEffect, useContext } from 'react';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
@@ -28,7 +28,7 @@ const WineList = () => {
 
   return (
     <>
-      <MyNav />
+      <NewNav />
       <div className="wineListMain">
         <Rotate />
       </div>

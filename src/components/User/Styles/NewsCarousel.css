@@ -1,0 +1,19 @@
+#newsCarousel {
+  position: relative;
+  /* top: 50px; */
+}
+.getNewsButton {
+  background-color: #3a4750;
+  border: none;
+  color: #d3d6db;
+  padding: 10px;
+  border-radius: 10px;
+  transition: transform 1s ease-in-out;
+  width: 100px;
+  margin-left: 70px;
+  margin-bottom: 5px;
+}
+.getNewsButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+}

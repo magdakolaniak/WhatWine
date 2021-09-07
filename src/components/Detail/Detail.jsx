@@ -1,9 +1,10 @@
 import './Detail.css';
 import { LoginContext } from '../GlobalState/GlobalState';
 import { useContext } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { GiGrapes, GiReturnArrow } from 'react-icons/gi';
 import { ImLibrary, ImArrowRight } from 'react-icons/im';
+import { BsFillHeartFill } from 'react-icons/bs';
 import Geocode from 'react-geocode';
 import { Link } from 'react-router-dom';
 import book from '../../components/assets/images/book.png';
@@ -11,9 +12,14 @@ import winery from '../../components/assets/images/winery.png';
 import DetailModal from './DetailModal.jsx';
 import { useState } from 'react';
 
+import axios from 'axios';
+import SuccessModal from './SuccessModal';
+
 const Detail = () => {
-  const { detailed, lat, setLat, long, setLong } = useContext(LoginContext);
+  const { detailed, lat, setLat, long, setLong, user } =
+    useContext(LoginContext);
   const [detailModalShow, setDetailModalShow] = useState(false);
+  const [addedModalShow, setAddedModal] = useState(false);
 
   const country = detailed[0].origin.country;
   const region = detailed[0].origin.region;
@@ -29,6 +35,28 @@ const Detail = () => {
       console.error(error);
     }
   );
+  const handleClick = (e) => {
+    let URL = process.env.REACT_APP_BE_URL;
+    e.preventDefault();
+    let id = e.currentTarget.id;
+    console.log(id);
+    let button = document.getElementById(id);
+    button.style.color = '#800';
+
+    const addWine = async () => {
+      try {
+        const res = await axios.post(URL + `/user/${user._id}/addToList/${id}`);
+        console.log(res.data);
+        if (res.status === 200) {
+          setAddedModal(true);
+          user.wines.push(id);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    addWine();
+  };
 
   return (
     <>
@@ -58,7 +86,27 @@ const Detail = () => {
                 {detailed[0].grape}
               </div>
               <div className="full-name-wrapper">
-                <span> {detailed[0].fullName}</span>
+                <span>
+                  {' '}
+                  {detailed[0].fullName}
+                  <OverlayTrigger
+                    key="top"
+                    placement="top"
+                    overlay={
+                      <Tooltip id="tooltip-top">
+                        Click to add to your list
+                      </Tooltip>
+                    }
+                  >
+                    <span
+                      className="addToFavWrapper"
+                      id={detailed[0]._id}
+                      onClick={handleClick}
+                    >
+                      <BsFillHeartFill style={{ marginBottom: '25px' }} />
+                    </span>
+                  </OverlayTrigger>
+                </span>
               </div>
 
               <div className="winery">
@@ -174,6 +222,10 @@ const Detail = () => {
             </Row>
           </Col>
         </Row>
+        <SuccessModal
+          show={addedModalShow}
+          onHide={() => setAddedModal(false)}
+        />
         <DetailModal
           show={detailModalShow}
           onHide={() => setDetailModalShow(false)}

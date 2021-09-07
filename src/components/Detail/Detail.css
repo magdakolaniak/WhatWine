@@ -50,6 +50,24 @@
   top: 55px;
   right: 200px;
 }
+.addToFavWrapper {
+  cursor: pointer;
+  float: right;
+  margin-right: 100px;
+
+  font-size: 36px;
+  color: #303841;
+  /* color: transparent; */
+}
+.addToFavWrapperClicked {
+  cursor: pointer;
+  float: right;
+
+  margin-right: 100px;
+
+  font-size: 36px;
+  color: #800;
+}
 .checkedIcon {
   font-size: 36px;
 }

@@ -1,0 +1,122 @@
+.weather-icon {
+  height: 50px;
+}
+.title {
+  color: rgb(38, 69, 136);
+  font-size: 16px;
+  /* font-weight: 600; */
+  /* margin-bottom: 30px; */
+  padding-top: 20px;
+}
+.sky-description {
+  padding-left: 10px;
+  color: rgb(70, 65, 65);
+  font-size: 16px;
+  font-weight: 550;
+}
+.weatherReccom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-temp {
+  padding-top: 10px;
+  font-size: 20px;
+  color: rgb(70, 65, 65);
+}
+.main-features {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.main-features-title {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.weather-icons {
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+.deg {
+  font-weight: 800;
+  font-size: 20px;
+  color: rgb(38, 69, 136);
+}
+.results {
+  color: rgb(38, 69, 136);
+  font-weight: 550;
+}
+.results-description {
+  font-weight: 600;
+  color: rgb(70, 65, 65);
+  padding-right: 80px;
+}
+.results-description-wind {
+  font-weight: 600;
+  color: rgb(70, 65, 65);
+  padding-right: 112px;
+}
+.main-temp-left {
+  color: rgb(70, 65, 65);
+  font-size: 18px;
+  font-weight: 550;
+}
+.city {
+  color: rgb(70, 65, 65);
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 10px;
+  /* padding-left: 80px; */
+  /* padding-left: 30px; */
+}
+.error-case {
+  margin-top: 20px;
+  padding-left: 10px;
+  text-align: center;
+  color: rgb(70, 65, 65);
+  font-size: 20px;
+  font-weight: 500;
+}
+.forecast-icon-url {
+  height: 80px;
+  padding-left: -10px;
+}
+
+.forecast-degrees {
+  margin-top: 20px;
+  padding-left: -10px;
+  font-size: 18px;
+}
+.my-own {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.forecast-max {
+  margin-right: 14px;
+}
+.forecast-header {
+  margin-left: 260px;
+  padding-bottom: 30px !important;
+  padding-top: 30px !important;
+
+  color: rgb(94, 89, 89);
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.button-style-forecast {
+  background-color: rgba(186, 209, 245, 0.968) !important;
+  border: none !important;
+  margin-top: 30px;
+  margin-left: 280px;
+  color: rgb(94, 89, 89) !important;
+  font-weight: 600 !important;
+}
+.button-umbrella {
+  height: 20px;
+}
+.dates-forecast {
+  margin-left: 30px;
+  color: rgb(94, 89, 89) !important;
+  font-weight: 600 !important;
+}

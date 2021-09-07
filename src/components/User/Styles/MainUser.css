@@ -1,0 +1,63 @@
+.userMainDiv {
+  background-color: #800000;
+  height: 100vh;
+  color: #303841;
+  /* /* overflow: hidden; */
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
+}
+.mainBoardUser {
+  background-color: #d3d6db;
+  margin-bottom: 15px;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  border-radius: 10px;
+}
+.recipeList {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.nav-link {
+  display: block;
+  padding: 10px;
+  color: #303841;
+  text-decoration: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: #d3d6db;
+  background-color: #303841;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+}
+
+.nav-link:hover {
+  color: #303841;
+}
+.nav-tabs .nav-link {
+  background: 0 0;
+  border: none;
+}
+.emptyTable {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.removeIcon {
+  font-size: 22px;
+  cursor: pointer;
+}
+table {
+  margin: 15px;
+}

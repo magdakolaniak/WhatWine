@@ -28,6 +28,10 @@ const GlobalState = ({ children }) => {
   });
   const [dishes, setDishes] = useState([]);
   const [wineModalShow, setWineModalShow] = useState(false);
+  const [weather, setWeather] = useState({});
+  const [userWines, setUserWines] = useState([]);
+  const [news, setNews] = useState({});
+
   return (
     <LoginContext.Provider
       value={{
@@ -61,6 +65,12 @@ const GlobalState = ({ children }) => {
         setDishes,
         wineModalShow,
         setWineModalShow,
+        weather,
+        setWeather,
+        userWines,
+        setUserWines,
+        news,
+        setNews,
       }}
     >
       {children}
