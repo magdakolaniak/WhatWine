@@ -39,7 +39,7 @@ const LoginPage = ({ history }) => {
     try {
       const key = 'b26bae29738f43acaa41e51752b4186b';
       const news = await axios(
-        `https://newsapi.org/v2/everything?q=winery&from=2021-08-07&sortBy=publishedAt&apiKey=${key}`
+        `https://newsapi.org/v2/everything?q=winery&from=2021-08-15&sortBy=publishedAt&apiKey=${key}`
       );
       setNews(news.data.articles);
       console.log('NEWS', news.data.articles);
@@ -111,6 +111,7 @@ const LoginPage = ({ history }) => {
                       type="text"
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email"
+                      className="loginInputs"
                     />
                   </Form.Group>
 
@@ -121,6 +122,7 @@ const LoginPage = ({ history }) => {
                       type="password"
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Password"
+                      className="loginInputs"
                     />
                   </Form.Group>
                   {!validation && (

@@ -57,8 +57,7 @@ const LeftNav = () => {
       cuisine: id,
     });
     let cuisineTypeItem = document.getElementById(id);
-    cuisineTypeItem.style.backgroundColor = '#d3d6db';
-    cuisineTypeItem.style.borderBottom = 'black solid 2px';
+    cuisineTypeItem.classList.toggle('cuisineItemClicked');
   };
   const mealTypeChoice = (e) => {
     let id = e.currentTarget.id;
@@ -67,8 +66,7 @@ const LeftNav = () => {
       mealType: id,
     });
     let mealTypeItem = document.getElementById(id);
-    mealTypeItem.style.backgroundColor = '#d3d6db';
-    mealTypeItem.style.borderBottom = 'black solid 2px';
+    mealTypeItem.classList.toggle('cuisineItemClicked');
   };
   const intoleranceChoice = (e) => {
     let id = e.currentTarget.id;
@@ -76,9 +74,8 @@ const LeftNav = () => {
       ...recipe,
       intolerances: [...recipe.intolerances, id],
     });
-    let mealTypeItem = document.getElementById(id);
-    mealTypeItem.style.backgroundColor = '#d3d6db';
-    mealTypeItem.style.borderBottom = 'black solid 2px';
+    let intoleranceItem = document.getElementById(id);
+    intoleranceItem.classList.toggle('cuisineItemClicked');
   };
 
   const handleKeyPress = (event) => {
@@ -112,7 +109,17 @@ const LeftNav = () => {
   }, [recipe]);
 
   const refresh = () => {
-    window.location.reload();
+    let list = document.querySelectorAll('.cuisineItemClicked');
+    console.log(list);
+    list.forEach((el) => el.classList.remove('cuisineItemClicked'));
+
+    setRecipe({
+      cuisine: '',
+      ingredients: [],
+      mealType: '',
+      intolerances: [],
+    });
+    setDishes([]);
   };
 
   return (
@@ -124,7 +131,7 @@ const LeftNav = () => {
             <img src={bake} className="bakeIcon" alt="bake-icon" />
           </div>
         </div>
-        <Accordion>
+        <Accordion id="myAccordion">
           <Accordion.Item eventKey="0">
             <Accordion.Header>Cuisine style</Accordion.Header>
             <Accordion.Body id="mainIngred" className="d-flex">

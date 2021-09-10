@@ -31,9 +31,11 @@ const MainUser = () => {
 
       if (res.status === 200) {
         const list = userWines;
+        console.log('UserWineBefore', userWines);
         const newList = list.filter(
-          (element) => element.toString() !== id.toString()
+          (element) => element._id.toString() !== id.toString()
         );
+
         setUserWines(newList);
       }
     } catch (error) {
@@ -47,7 +49,7 @@ const MainUser = () => {
     const getWines = async () => {
       try {
         const data = await axios(URL + `${user._id}/wines`);
-        console.log(data.data.wines);
+
         setUserWines(data.data.wines);
       } catch (error) {
         console.log('HAPPENING HERE', error.message);
@@ -55,8 +57,8 @@ const MainUser = () => {
     };
     getWines();
 
-    console.log('USER WINES', userWines);
-  }, [userWines]);
+    console.log('USER WINES', userWines.length);
+  }, [userWines.length]);
 
   const count = (type) => {
     let filtered = userWines.filter((el) => el.type === `${type}`);
@@ -219,15 +221,16 @@ const MainUser = () => {
         </Row>
         <Row>
           <Col md={12} className="mainBoardUser">
-            <h4
+            <h5
               style={{
                 padding: '10px',
                 marginLeft: '180px',
                 fontWeight: 'bold',
+                fontStyle: 'italic',
               }}
             >
               Read latest news from wine world!
-            </h4>
+            </h5>
           </Col>
         </Row>
         <Row style={{ marginBottom: '60px' }}>

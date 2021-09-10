@@ -8,123 +8,10 @@ import { GiGrapes } from 'react-icons/gi';
 
 const WineModal = (props) => {
   const BASEUrl = process.env.REACT_APP_API;
-  const { recipe } = useContext(LoginContext);
+  const { recipe, dishes } = useContext(LoginContext);
   const [choice, setChoice] = useState([]);
-  const [filter, setFilter] = useState({
-    type: '',
-    body: '',
-  });
+
   const [pickedBottles, setPickedBottles] = useState([]);
-  const [series, setSeries] = useState([
-    {
-      name: 'series-1',
-      data: [],
-    },
-  ]);
-  const [profile, setProfile] = useState({
-    bitternes: '',
-    fattiness: '',
-    saltiness: '',
-    savorines: '',
-    sourness: '',
-    spiciness: '',
-    sweetness: '',
-  });
-
-  const getClassName = (index) => {
-    if (index === 0) {
-      return 'columnSingle slide-in-left';
-    }
-    if (index === 1) {
-      return 'columnSingle slide-in-left1';
-    }
-    if (index === 2) {
-      return 'columnSingle slide-in-left2';
-    }
-    if (index === 3) {
-      return 'columnSingle slide-in-left3';
-    }
-    if (index === 4) {
-      return 'columnSingle slide-in-left4';
-    }
-  };
-  let currentId = props.dishId;
-
-  let APIUrl = 'https://api.spoonacular.com/recipes/';
-  let key = process.env.REACT_APP_API_KEY_M;
-  // let keyM = process.env.REACT_APP_API_KEY;
-
-  useEffect(() => {
-    const getWidget = async (currentId) => {
-      const data = await axios(
-        APIUrl + `${currentId}/tasteWidget.json?&apiKey=${key}`
-      );
-
-      setSeries([
-        {
-          name: 'level',
-          data: [
-            data.data.bitterness,
-            data.data.fattiness,
-            data.data.saltiness,
-            data.data.savoriness,
-            data.data.sourness,
-            data.data.spiciness,
-            data.data.sweetness,
-          ],
-        },
-      ]);
-      setProfile({
-        bitternes: data.data.bitterness,
-        fattiness: data.data.fattiness,
-        saltiness: data.data.saltiness,
-        savorines: data.data.savoriness,
-        sourness: data.data.sourness,
-        spiciness: data.data.spiciness,
-        sweetness: data.data.sweetness,
-      });
-    };
-    const setFiltering = () => {
-      if (recipe.ingredients.includes('beef') && profile.fattiness > 50) {
-        setFilter({
-          type: 'red',
-          body: 'full',
-        });
-      }
-      if (recipe.ingredients.includes('beef') && profile.fattiness < 50) {
-        setFilter({
-          type: 'red',
-          body: 'medium plus',
-        });
-      }
-      if (recipe.ingredients.includes('cheese') && profile.fattiness < 50) {
-        setFilter({
-          type: 'white',
-          body: 'medium',
-        });
-      }
-      if (recipe.ingredients.includes('cheese') && profile.fattiness > 50) {
-        setFilter({
-          type: 'white',
-          body: 'medium plus',
-        });
-      }
-    };
-    setFiltering();
-
-    const getWines = async (filter) => {
-      const wines = await axios(
-        BASEUrl + `?type=${filter.type}&character.body=${filter.body}`
-      );
-
-      setChoice(wines.data);
-    };
-
-    getWines(filter);
-
-    getWidget(currentId);
-  }, [currentId]);
-
   const [chart, setChart] = useState({
     options: {
       chart: {
@@ -165,6 +52,120 @@ const WineModal = (props) => {
       colors: ['#d3d6db'],
     },
   });
+  const [series, setSeries] = useState([
+    {
+      name: 'series-1',
+      data: [],
+    },
+  ]);
+  const [profile, setProfile] = useState([]);
+
+  const getClassName = (index) => {
+    if (index === 0) {
+      return 'columnSingle fade-in-top';
+    }
+    if (index === 1) {
+      return 'columnSingle fade-in-top2';
+    }
+    if (index === 2) {
+      return 'columnSingle fade-in-top3';
+    }
+    if (index === 3) {
+      return 'columnSingle fade-in-top4';
+    }
+    if (index === 4) {
+      return 'columnSingle fade-in-top5';
+    }
+  };
+  let currentId = props.dishId;
+
+  let APIUrl = 'https://api.spoonacular.com/recipes/';
+  let key = process.env.REACT_APP_API_KEY_M;
+
+  useEffect(() => {
+    const getWidget = async () => {
+      console.log('entering widget heeeeeere');
+      const data = await axios(
+        APIUrl + `${currentId}/tasteWidget.json?&apiKey=${key}`
+      );
+
+      setSeries([
+        {
+          name: 'level',
+          data: [
+            data.data.bitterness,
+            data.data.fattiness,
+            data.data.saltiness,
+            data.data.savoriness,
+            data.data.sourness,
+            data.data.spiciness,
+            data.data.sweetness,
+          ],
+        },
+      ]);
+      setProfile({
+        bitternes: data.data.bitterness,
+        fattiness: data.data.fattiness,
+        saltiness: data.data.saltiness,
+        savorines: data.data.savoriness,
+        sourness: data.data.sourness,
+        spiciness: data.data.spiciness,
+        sweetness: data.data.sweetness,
+      });
+    };
+    const setFiltering = () => {
+      console.log('Entering filter');
+      if (recipe.ingredients.includes('beef') && profile.fattiness > 50) {
+        let filter = {
+          type: 'red',
+          body: 'full',
+        };
+        return filter;
+      }
+      if (recipe.ingredients.includes('beef') && profile.fattiness < 50) {
+        let filter = {
+          type: 'red',
+          body: 'medium plus',
+        };
+        return filter;
+      }
+      if (recipe.ingredients.includes('cheese') && profile.fattiness < 50) {
+        let filter = {
+          type: 'white',
+          body: 'medium',
+        };
+        return filter;
+      }
+      if (recipe.ingredients.includes('cheese') && profile.fattiness > 50) {
+        let filter = {
+          type: 'white',
+          body: 'medium plus',
+        };
+        return filter;
+      } else {
+        let filter = {
+          type: 'black',
+          body: 'medium plus',
+        };
+        return filter;
+      }
+    };
+
+    const getWines = async () => {
+      let filter = setFiltering();
+      console.log(filter);
+      const wines = await axios(
+        BASEUrl + `?type=${filter.type}&character.body=${filter.body}`
+      );
+
+      setChoice(wines.data);
+    };
+    if (currentId) {
+      getWidget();
+      console.log(currentId, 'entering hereeee');
+      getWines();
+    }
+  }, [currentId]);
 
   return (
     <>
@@ -176,24 +177,20 @@ const WineModal = (props) => {
         className="modalComponent"
       >
         <Modal.Header closeButton>
-          <Modal.Title
-            id="contained-modal-title-vcenter"
-            className="modalTitle"
-          >
+          <div className="modalTitle">
             Graph below is representing your chosen dish Taste Profile.<br></br>
-            According to collected data we selected perfect wine match!<hr></hr>
-            <Chart
-              options={chart.options}
-              series={series}
-              type="bar"
-              width={600}
-              height={320}
-            />
-            <div></div>
-          </Modal.Title>
+            According to collected data we selected perfect wine match!<hr></hr>{' '}
+          </div>
         </Modal.Header>
         <Modal.Body className="modalBody">
-          <Row>
+          <Chart
+            options={chart.options}
+            series={series}
+            type="bar"
+            width={600}
+            height={320}
+          />
+          <Row style={{ paddingLeft: '50px', paddingRight: '50px' }}>
             {choice.slice(0, 5).map((item, i) => (
               <Col md={12} className={getClassName(i)} key={i}>
                 <Row className="singleRow">

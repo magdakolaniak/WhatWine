@@ -31,7 +31,7 @@ const Plate = () => {
         className="plateMainDiv"
         style={dishes.length > 0 ? { height: '800px' } : { height: '300px' }}
       >
-        {recipe.ingredients.length <= 0 ? (
+        {recipe.ingredients.length === 0 ? (
           <>
             <div className="welcomePart">
               Use panel on the left to describe dish you are looking for!
@@ -53,16 +53,18 @@ const Plate = () => {
         <Row className="d-flex">
           {dishes.length > 0
             ? dishes.map((dish) => (
-                <Col md={4}>
+                <Col md={4} key={dish.id}>
                   <Card className="cardWrapper entranceList">
                     <Card.Img src={dish.image} className="imgCard" />
                     <Card.Body>
-                      <Card.Title>{dish.title}</Card.Title>
+                      <Card.Title className="dishTitle">
+                        {dish.title}
+                      </Card.Title>
                       <Card.Text>
                         <Row>
                           {/* <Col md={4}>one part</Col>
                     <Col md={8}> second part</Col> */}
-                          <div
+                          {/* <div
                             onClick={() => {
                               getCard();
                               setDishId(dish.id);
@@ -77,23 +79,27 @@ const Plate = () => {
                                 alt="bake-icon"
                               />
                             </div>
-                          </div>
+                          </div> */}
                         </Row>
                       </Card.Text>
-                      <button
-                        className="buttonStyling"
-                        onClick={() => {
-                          setWineModalShow(true);
-                          setDishId(dish.id);
-                        }}
-                      >
-                        <span style={{ padding: '5px' }}>
-                          <GiGrapes
-                            style={{ fontSize: '36px', padding: '2px' }}
-                          />
-                          WhatWine?
-                        </span>
-                      </button>
+
+                      <div className="buttonDiv">
+                        <button
+                          className="buttonWineModal"
+                          onClick={() => {
+                            setDishId(dish.id);
+
+                            setWineModalShow(true);
+                          }}
+                        >
+                          <span style={{ padding: '5px' }}>
+                            <GiGrapes
+                              style={{ fontSize: '36px', padding: '2px' }}
+                            />
+                            WhatWine?
+                          </span>
+                        </button>
+                      </div>
                     </Card.Body>
                   </Card>
                 </Col>
@@ -105,13 +111,13 @@ const Plate = () => {
           onHide={() => setWineModalShow(false)}
           dishId={dishId}
         />
-        <RecipeModal
+        {/* <RecipeModal
           show={recipeModalShow}
           onHide={() => setRecipeModalShow(false)}
           dishId={dishId}
           dishName={dishFullName}
           cardUrl={cardUrl}
-        />
+        /> */}
       </div>
     </>
   );

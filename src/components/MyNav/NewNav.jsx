@@ -16,7 +16,7 @@ import { useContext } from 'react';
 const NewNav = () => {
   const { setQuery, loggedIn, user } = useContext(LoginContext);
   const location = useLocation();
-  console.log('LOCATION HERE:', location.pathname);
+
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       let query = event.currentTarget.value;

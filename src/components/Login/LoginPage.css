@@ -175,13 +175,13 @@
   border-radius: 10px;
   transition: transform 1s ease-in-out;
   font-weight: bolder;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
   /* position: absolute;
   bottom: 10px;
   left: 40px; */
 }
 .buttonLoginPage:hover {
-  transform: scale(1.1);
-  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  transform: scale(0.9);
 }
 .rightColumnLogin {
   display: flex;
@@ -195,4 +195,28 @@
   padding: 20px;
   margin-bottom: 30px;
   cursor: pointer;
+}
+.loginInputs {
+  display: inline !important;
+  border-left-style: none !important;
+  border-right-style: none !important;
+  border-top-style: none !important;
+  border-bottom-style: none !important;
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  border-top-left-radius: 8px !important;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px !important;
+  background-color: white !important;
+  padding-left: 20px !important;
+  height: 45px;
+  transition: all 0.2s;
+}
+.loginInputs:focus {
+  color: black;
+  border: 2px solid #800 !important;
+  border-left-style: none;
+  box-shadow: none !important;
+  outline: none !important;
+  background-color: whitesmoke !important;
 }

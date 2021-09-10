@@ -73,17 +73,12 @@
 
   padding: 5px;
   width: 100px;
-  /* border: #800000 solid 2px;
-  border-radius: 20px; */
 }
 .inputLeftNav {
   margin-bottom: 20px;
   margin-top: 10px;
   display: inline !important;
-  /* border-left-style: none !important;
-  border-right-style: none !important;
-  border-top-style: none !important;
-  border-bottom-style: none !important; */
+
   border-top-right-radius: 8px !important;
   border-bottom-right-radius: 8px !important;
   border-top-left-radius: 8px !important;
@@ -106,7 +101,7 @@
 
   padding-top: 10px;
 }
-.cuisineIcon {
+/* .cuisineIcon {
   height: 50px;
   margin-left: 70px;
   cursor: pointer;
@@ -117,7 +112,7 @@
   transform: scale(1.4);
 
   filter: drop-shadow(3px -1px 1px rgba(0, 0, 0, 0.468));
-}
+} */
 .cuisineStyleHeader {
   font-weight: bolder;
   text-align: center;
@@ -194,29 +189,24 @@ button:focus:not(:focus-visible) {
 .accordion-button:not(.collapsed) {
   color: #d3d6db;
   background-color: #3a4750;
-  /* box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%); */
 }
 
 .cuisineItem {
   margin: 2px;
   padding: 10px;
-  /* border: #800000 solid 2px; */
+
   border-radius: 20px;
-  /* transition: all 1s ease-in-out; */
+  transition: all 0.2s ease-in-out;
 }
 .cuisineItem:hover {
   background-color: #d3d6db;
+  transform: scale(0.9);
+  padding: 10px;
 }
 .cuisineItemClicked {
   background-color: #d3d6db;
-  margin: 2px;
-  padding: 10px;
+
   border-bottom: black solid 2px;
-  border-radius: 20px;
-  transition: all 1s ease-in-out;
-  font-style: oblique;
-  font-weight: bold;
-  /* transform: scale(0.9); */
 }
 #mainIngred {
   display: flex;
@@ -224,26 +214,30 @@ button:focus:not(:focus-visible) {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.searchButton {
-  margin-top: 30px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  background-color: #d3d6db;
+.dishTitle {
   text-align: center;
-  border-radius: 3px;
-  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
-  cursor: pointer;
+  height: 60px;
+
+  padding-top: 10px;
 }
-.buttonStyling {
+.buttonDiv {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonWineModal {
+  width: 250px;
   background-color: #3a4750;
   border: none;
+  padding: 5px;
   color: #d3d6db;
-  padding: 10px;
+
   border-radius: 10px;
-  transition: transform 1s ease-in-out;
-  position: absolute;
-  bottom: 10px;
-  left: 40px;
+  transition: all 0.2s ease-in-out;
+
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
 }
 .buttonStylingClear {
   background-color: #3a4750;
@@ -251,32 +245,18 @@ button:focus:not(:focus-visible) {
   color: #d3d6db;
   padding: 10px;
   border-radius: 10px;
-  transition: transform 1s ease-in-out;
-
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
   bottom: 10px;
   left: 40px;
 }
-.buttonStyling:hover {
-  transform: scale(1.1);
-  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+.buttonWineModal:hover {
+  transform: scale(0.9);
 }
 .buttonStylingClear:hover {
-  transform: scale(1.1);
-  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  transform: scale(0.9);
 }
 
-@keyframes slide-out-tr {
-  0% {
-    -webkit-transform: translateY(0) translateX(0);
-    transform: translateY(0) translateX(0);
-    opacity: 1;
-  }
-  100% {
-    /* -webkit-transform: translateY(500px) translateX(1500px); */
-    transform: translateY(-60px) translateX(150px);
-    opacity: 0;
-  }
-}
 /* ------------------STYLING FOR MAIN PLATE----------------*/
 
 .plateMainDiv {
