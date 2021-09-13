@@ -144,8 +144,8 @@ const WineModal = (props) => {
         return filter;
       } else {
         let filter = {
-          type: 'black',
-          body: 'medium plus',
+          type: 'red',
+          body: 'medium',
         };
         return filter;
       }
@@ -175,6 +175,7 @@ const WineModal = (props) => {
         aria-labelledby="contained-modal-title-vcenter"
         centered
         className="modalComponent"
+        id="wineModal"
       >
         <Modal.Header closeButton>
           <div className="modalTitle">

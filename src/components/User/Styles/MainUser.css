@@ -18,6 +18,32 @@
   margin-right: auto;
   text-align: center;
 }
+.recipeCol {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-right: 40px;
+}
+.recipeWrapper {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.imageRecipe {
+  height: 250px;
+
+  cursor: pointer;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  transition: all 0.2s ease-in-out;
+  filter: drop-shadow(8px 10px 15px rgba(0, 0, 0, 0.468));
+}
+.imageRecipe:hover {
+  transform: scale(0.9);
+}
 .nav-link {
   display: block;
   padding: 10px;

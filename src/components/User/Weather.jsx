@@ -40,7 +40,7 @@ const Weather = () => {
         (wine) =>
           wine.type === 'white' && wine.character.body === 'medium minus'
       );
-      return [description, [pickedRed, pickedWhite]];
+      return [description, [...pickedRed, ...pickedWhite]];
     }
     if (temp >= 21 && temp <= 25) {
       let description = 'Light and fresh white wine';
@@ -48,7 +48,7 @@ const Weather = () => {
         (wine) =>
           wine.type === 'white' && wine.character.body === 'medium minus'
       );
-      return [description, picked];
+      return [description, [...picked]];
     }
     if (temp > 25) {
       let description = 'Refreshing bubbles!';
@@ -208,14 +208,14 @@ const Weather = () => {
                     src={wine.image}
                     style={{
                       height: '150px',
-                      filter: 'drop-shadow(8px -2px 2px rgba(0, 0, 0, 0.468)',
+                      filter: 'drop-shadow(8px 5px 8px rgba(0, 0, 0, 0.468)',
                       cursor: 'pointer',
                     }}
                     alt="reccom"
                   />
                 </span>
               ))}
-              {/* {picked[1].map((wine) => (
+              {/* {picked[1][1].map((wine) => (
                 <span style={{ padding: '20px' }}>
                   <img
                     src={wine.image}

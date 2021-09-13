@@ -1,10 +1,12 @@
 import { Row, Col } from 'react-bootstrap';
 import './HomePage.css';
+import { GiGrapes } from 'react-icons/gi';
 
 import { Link } from 'react-router-dom';
 import video from './movie.mp4';
 
 const HomePage = () => {
+  let text = '{ Your personal Sommelier }';
   // const BASEUrl = process.env.REACT_APP_API;
   // const { setMainData } = useContext(LoginContext);
 
@@ -21,13 +23,22 @@ const HomePage = () => {
 
       <div className="home-main">
         <Row>
+          <Col xs={12} className="colLogoHome">
+            <div className="loginTitleHome">
+              <span className="logoTitleHome">
+                <GiGrapes className="loginIcon" />
+                WhatWine?
+              </span>
+              <span className="underTextWrapper">
+                <p className="underText anim-typewriter"> {text}</p>
+              </span>
+            </div>
+          </Col>
           <Col xs={4}>
             <Link to="/wineList">
               <div id="wine-list-circle" className="circle-styling-list"></div>
               <span className="middleList">Wine List</span>
             </Link>
-
-            <div></div>
           </Col>
           <Col xs={4}>
             <Link to="/tasteProfiler">

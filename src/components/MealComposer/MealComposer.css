@@ -190,6 +190,19 @@ button:focus:not(:focus-visible) {
   color: #d3d6db;
   background-color: #3a4750;
 }
+.recipeIcon {
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.recipeIcon:hover {
+  height: 50px;
+  transform: scale(0.8);
+}
+.buttonRecipe {
+  background-color: transparent;
+  border: none;
+}
 
 .cuisineItem {
   margin: 2px;
@@ -215,18 +228,29 @@ button:focus:not(:focus-visible) {
   justify-content: space-around;
 }
 .dishTitle {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
   text-align: center;
+
   height: 60px;
 
   padding-top: 10px;
 }
 .buttonDiv {
-  padding-top: 40px;
+  padding-top: 10px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
-
+.recipeDiv {
+  padding-top: 15px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
 .buttonWineModal {
   width: 250px;
   background-color: #3a4750;
@@ -301,7 +325,7 @@ button:focus:not(:focus-visible) {
   font-size: large;
 }
 .cardWrapper {
-  height: 400px;
+  height: 450px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 20px;
@@ -317,9 +341,9 @@ button:focus:not(:focus-visible) {
   padding: 10px;
   border-radius: 20px;
 }
-.whatWineButton {
+/* .whatWineButton {
   position: absolute;
-}
+} */
 
 *p {
   margin-bottom: 0px !important;

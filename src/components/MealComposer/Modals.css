@@ -1,4 +1,4 @@
-.modal-content {
+#wineModal > .modal-content {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@
   left: 75px;
   user-select: none;
 }
-.btn-close {
+#wineModal > .btn-close {
   position: relative;
   top: -70px;
 
@@ -42,7 +42,7 @@
 .modal-footer {
   border: none;
 }
-.modal-header {
+#wineModal > .modal-header {
   border: none;
   display: flex;
   flex-direction: column;
@@ -148,13 +148,37 @@
   max-width: 650px;
   margin-left: 50px;
 }
+.modalBodyRecipe {
+  display: flex;
+  align-items: center;
+  border: none !important;
+  flex-direction: column;
+  width: 100%;
+}
+.dotsLoadingRecipe {
+  display: block;
+  position: relative;
+  bottom: -10%;
+}
 .recipeModalTitle {
-  /* display: flex;
-  text-align: center; */
+  display: flex;
+  /* text-align: center; */
   margin-left: 20px;
+}
+.addToRecipe {
+  cursor: pointer;
+  float: right;
+  /*  */
+  margin-top: 8px;
+
+  font-size: 26px;
+  color: #303841;
 }
 .propsTitle {
   /* font-size: larger; */
   font-weight: bolder;
   font-style: italic;
+}
+.something {
+  color: #ece1e1;
 }

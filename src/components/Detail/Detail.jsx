@@ -225,6 +225,7 @@ const Detail = () => {
         <SuccessModal
           show={addedModalShow}
           onHide={() => setAddedModal(false)}
+          added={'wine'}
         />
         <DetailModal
           show={detailModalShow}

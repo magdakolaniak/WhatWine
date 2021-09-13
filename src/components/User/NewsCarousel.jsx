@@ -16,8 +16,8 @@ const NewsCarousel = () => {
       <Carousel activeIndex={index} onSelect={handleSelect} id="newsCarousel">
         <Carousel.Item>
           <Row>
-            {news.slice(6, 9).map((el) => (
-              <Col xs={4} key={el.publishedAt} style={{ padding: '10px;' }}>
+            {news.slice(6, 9).map((el, i) => (
+              <Col xs={4} key={i} style={{ padding: '10px;' }}>
                 <Card className="cardNews" style={{ height: '350px' }}>
                   <Card.Img
                     className="cardNewsImg"

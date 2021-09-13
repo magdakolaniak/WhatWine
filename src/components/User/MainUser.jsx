@@ -58,7 +58,7 @@ const MainUser = () => {
     getWines();
 
     console.log('USER WINES', userWines.length);
-  }, [userWines.length]);
+  }, [userWines.length, user.recipes.length]);
 
   const count = (type) => {
     let filtered = userWines.filter((el) => el.type === `${type}`);
@@ -213,8 +213,51 @@ const MainUser = () => {
                   </table>
                 )}
               </Tab>
-              <Tab eventKey="recipes" title="Saved recipes">
-                content
+              <Tab
+                eventKey="recipes"
+                title={`Saved recipes [${user.recipes.length}] `}
+              >
+                {user.recipes.length === 0 ? (
+                  <div className="emptyTable">
+                    {' '}
+                    Your saved recipes will show up here!
+                  </div>
+                ) : (
+                  <Row>
+                    {user.recipes.map((recipe) => (
+                      <Col xs={12} s={6} md={4} className="recipeCol">
+                        <div className="recipeWrapper">
+                          {' '}
+                          <span>{recipe.fullName}</span>
+                          <img
+                            src={recipe.url}
+                            alt="recipe-img"
+                            className="imageRecipe img-fluid"
+                            style={{
+                              height: '100px',
+                              cursor: 'pointer',
+                              paddingLeft: '10px',
+                              marginBottom: '20px',
+                            }}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              window.open(`${recipe.url}`, '_blank');
+                            }}
+                          />
+                        </div>
+                        {/* <span
+                          style={{
+                            marginLeft: '10px',
+                            fontSize: '18px',
+                            fontWeight: 'bold',
+                          }}
+                        >
+                          {recipe.fullName}
+                        </span> */}
+                      </Col>
+                    ))}
+                  </Row>
+                )}
               </Tab>
             </Tabs>
           </Col>{' '}

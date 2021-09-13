@@ -21,7 +21,7 @@ const SuccessModal = (props) => {
           }}
         >
           {' '}
-          Your wine was succesfully saved!
+          Your {props.added}&nbsp; was succesfully saved!
         </Modal.Header>
         <Modal.Body
           style={{

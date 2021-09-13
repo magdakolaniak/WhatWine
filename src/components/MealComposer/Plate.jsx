@@ -14,16 +14,8 @@ const Plate = () => {
   const [wineModalShow, setWineModalShow] = useState(false);
   const [recipeModalShow, setRecipeModalShow] = useState(false);
   const [dishId, setDishId] = useState('');
+  const [recipeDishId, setRecipeDishId] = useState('');
   const [dishFullName, setDishFullName] = useState('');
-  const [cardUrl, setCardUrl] = useState('');
-
-  const getCard = async () => {
-    let APIUrl = 'https://api.spoonacular.com/recipes/';
-    let key = process.env.REACT_APP_API_KEY_M;
-    const card = await axios(APIUrl + `${dishId}/card?&apiKey=${key}`);
-    console.log(card.data.url);
-    setCardUrl(card.data.url);
-  };
 
   return (
     <>
@@ -60,28 +52,23 @@ const Plate = () => {
                       <Card.Title className="dishTitle">
                         {dish.title}
                       </Card.Title>
-                      <Card.Text>
-                        <Row>
-                          {/* <Col md={4}>one part</Col>
-                    <Col md={8}> second part</Col> */}
-                          {/* <div
-                            onClick={() => {
-                              getCard();
-                              setDishId(dish.id);
-                              setDishFullName(dish.title);
-                              setRecipeModalShow(true);
-                            }}
-                          >
-                            <div>
-                              <img
-                                src={cuisine}
-                                className="cuisineIcon"
-                                alt="bake-icon"
-                              />
-                            </div>
-                          </div> */}
-                        </Row>
-                      </Card.Text>
+
+                      <div className="recipeDiv">
+                        <button
+                          className="buttonRecipe"
+                          onClick={() => {
+                            setRecipeDishId(dish.id);
+                            setDishFullName(dish.title);
+                            setRecipeModalShow(true);
+                          }}
+                        >
+                          <img
+                            src={cuisine}
+                            className="recipeIcon"
+                            alt="recipe-icon"
+                          />
+                        </button>
+                      </div>
 
                       <div className="buttonDiv">
                         <button
@@ -111,13 +98,12 @@ const Plate = () => {
           onHide={() => setWineModalShow(false)}
           dishId={dishId}
         />
-        {/* <RecipeModal
+        <RecipeModal
           show={recipeModalShow}
           onHide={() => setRecipeModalShow(false)}
-          dishId={dishId}
+          recipeId={recipeDishId}
           dishName={dishFullName}
-          cardUrl={cardUrl}
-        /> */}
+        />
       </div>
     </>
   );
