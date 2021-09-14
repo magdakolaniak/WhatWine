@@ -16,7 +16,8 @@ import { IoMdHeartDislike } from 'react-icons/io';
 import NewsCarousel from './NewsCarousel';
 
 const MainUser = () => {
-  const { user, setUser, setUserWines, userWines } = useContext(LoginContext);
+  const { user, setUser, setUserWines, userWines, news } =
+    useContext(LoginContext);
 
   const removeWine = async (e) => {
     let URL = process.env.REACT_APP_BE_URL;
@@ -284,7 +285,11 @@ const MainUser = () => {
           </Col>
         </Row>
         <Row style={{ marginBottom: '60px' }}>
-          <NewsCarousel />
+          {news && news.length > 0 ? (
+            <NewsCarousel />
+          ) : (
+            <div>News will show up here </div>
+          )}
         </Row>
       </Container>
     </>

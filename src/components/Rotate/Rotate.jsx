@@ -108,7 +108,7 @@ export default function Rotate() {
     <>
       <div className="rotateContainer">
         <div className="slideC">
-          {mainData.map((item, i) => (
+          {mainData?.map((item, i) => (
             <div className="slideRotate" style={getStyles(i)} key={item._id}>
               <img
                 id={item._id}
