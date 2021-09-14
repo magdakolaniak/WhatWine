@@ -26,7 +26,7 @@ export default function Rotate() {
       return wine._id === id;
     });
     history.push(`/detail/${id}`);
-    console.log(object);
+
     setDetailed(object);
   };
 

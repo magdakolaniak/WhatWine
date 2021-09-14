@@ -19,22 +19,19 @@ const RecipeModal = (props) => {
   useEffect(() => {
     const getCard = async () => {
       const response = await axios(
-        APIUrl + `${props.recipeId}/card?&apiKey=${key}`
+        APIUrl + `${props.recipe}/card?&apiKey=${key}`
       );
       if (response.status === 200) {
         setCardUrl(response.data.url);
         setIsLoading(false);
       }
-
-      console.log('Url state here', cardUrl);
     };
-    if (props.recipeId) {
+    if (props.recipe) {
       setIsLoading(true);
-      console.log('new url is coming');
+
       getCard();
-      console.log('current state', cardUrl);
     }
-  }, [props.recipeId]);
+  }, [props.recipe]);
 
   const addRecipe = async (e) => {
     e.preventDefault();
@@ -43,7 +40,7 @@ const RecipeModal = (props) => {
 
     try {
       const resp = await axios.post(URL + `/user/${user._id}/addRecipe`, {
-        fullName: props.dishName,
+        fullName: props.dish,
         url: cardUrl,
       });
       if (resp.status === 200) {
@@ -63,12 +60,13 @@ const RecipeModal = (props) => {
         aria-labelledby="contained-modal-title-vcenter"
         centered
         className="modalComponent"
+        id="recipeModal"
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
             <div className="recipeModalTitle">
               Here is your full &nbsp;
-              <span className="propsTitle">{props.dishName} &nbsp;</span>
+              <span className="propsTitle">{props.dish} &nbsp;</span>
               recipe
               <OverlayTrigger
                 key="right"

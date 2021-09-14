@@ -77,14 +77,13 @@ const WineModal = (props) => {
       return 'columnSingle fade-in-top5';
     }
   };
-  let currentId = props.dishId;
+  let currentId = props.dish;
 
   let APIUrl = 'https://api.spoonacular.com/recipes/';
   let key = process.env.REACT_APP_API_KEY_M;
 
   useEffect(() => {
     const getWidget = async () => {
-      console.log('entering widget heeeeeere');
       const data = await axios(
         APIUrl + `${currentId}/tasteWidget.json?&apiKey=${key}`
       );
@@ -114,7 +113,6 @@ const WineModal = (props) => {
       });
     };
     const setFiltering = () => {
-      console.log('Entering filter');
       if (recipe.ingredients.includes('beef') && profile.fattiness > 50) {
         let filter = {
           type: 'red',
@@ -153,7 +151,7 @@ const WineModal = (props) => {
 
     const getWines = async () => {
       let filter = setFiltering();
-      console.log(filter);
+
       const wines = await axios(
         BASEUrl + `?type=${filter.type}&character.body=${filter.body}`
       );
@@ -162,7 +160,6 @@ const WineModal = (props) => {
     };
     if (currentId) {
       getWidget();
-      console.log(currentId, 'entering hereeee');
       getWines();
     }
   }, [currentId]);

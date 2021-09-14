@@ -8,10 +8,17 @@
   top: 0;
   z-index: 300;
 }
+.nav-link {
+  font-size: 18px;
+}
+.nav-link > #reset {
+  padding: 0px;
+}
 .linkNav > a {
   text-decoration: none !important;
   color: #d3d6db !important;
   padding: 10px;
+
   transition: all ease-in-out;
 }
 /* .linkNav + a:active {

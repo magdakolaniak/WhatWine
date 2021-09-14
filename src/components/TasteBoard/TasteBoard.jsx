@@ -1,5 +1,5 @@
 import './TasteBoard.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
 
@@ -16,108 +16,372 @@ const TasteBoard = () => {
           ? e.currentTarget.innerHTML
           : grapeColor,
     });
-    console.log(
-      'body:',
-      e.currentTarget.id,
-      'sweetness:',
-      e.currentTarget.innerHTML
-    );
   };
 
   return (
     <>
       <Container
+        fluid
         style={{ background: grapeColor === 'red' ? '#800000' : '#d4af37' }}
-        className="box2 fluid"
+        className="box2"
       >
         <Row>
-          <Col xs={2} md={true}>
-            <div id="light" value="dry" className="box-single" onClick={myFunc}>
-              dry
-            </div>
+          <span className="dry"> DRY</span>
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Dry and light<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="light"
+                value="dry"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                dry
+              </div>
+            </OverlayTrigger>
           </Col>
-          <Col xs={2} md={true}>
-            {' '}
-            <div id="medium minus" className="box-single" onClick={myFunc}>
-              dry
-            </div>
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Dry and less then medium<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="medium minus"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                dry
+              </div>
+            </OverlayTrigger>
           </Col>
-          <Col xs={2} md={true}>
-            <div id="medium" className="box-single" onClick={myFunc}>
-              dry
-            </div>
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Dry and medium<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="medium"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                dry
+              </div>
+            </OverlayTrigger>
           </Col>
-          <Col xs={2} md={true}>
-            {' '}
-            <div id="medium plus" className="box-single" onClick={myFunc}>
-              dry
-            </div>
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Dry and more then medium<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="medium plus"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                dry
+              </div>
+            </OverlayTrigger>
           </Col>
-          <Col xs={2} md={true}>
-            {' '}
-            <div id="full" className="box-single" onClick={myFunc}>
-              dry
-            </div>
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Dry and full<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="full"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                dry
+              </div>
+            </OverlayTrigger>
           </Col>
         </Row>
         <Row>
-          <Col xs={2} md={true}>
-            <div id="light" className="box-single" onClick={myFunc}>
-              off dry
-            </div>
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Off-dry and light<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="light"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                off dry
+              </div>
+            </OverlayTrigger>
           </Col>
-          <Col xs={2} md={true}>
-            <div id="medium minus" className="box-single" onClick={myFunc}>
-              off dry
-            </div>
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Off-dry and less then medium<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="medium minus"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                off dry
+              </div>
+            </OverlayTrigger>
           </Col>
-          <Col xs={2} md={true}>
-            <div id="medium" className="box-single" onClick={myFunc}>
-              off dry
-            </div>
+
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Off-dry and medium<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="medium"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                off dry
+              </div>
+            </OverlayTrigger>
           </Col>
-          <Col xs={2} md={true}>
-            <div id="medium plus" className="box-single" onClick={myFunc}>
-              off dry
-            </div>
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Off-dry and more then medium<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="medium plus"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                off dry
+              </div>
+            </OverlayTrigger>
           </Col>
-          <Col xs={2} md={true}>
-            <div id="full" className="box-single" onClick={myFunc}>
-              off dry
-            </div>
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Off-dry and full<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="full"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                off dry
+              </div>
+            </OverlayTrigger>
           </Col>
         </Row>
         <Row>
-          <Col xs={2} md={true}>
-            <div id="light" className="box-single" onClick={myFunc}>
-              sweet
-            </div>
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Sweet and light<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="light"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                sweet
+              </div>
+            </OverlayTrigger>
           </Col>
-          <Col xs={2} md={true}>
-            <div id="medium minus" className="box-single" onClick={myFunc}>
-              sweet
-            </div>
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Sweet and less then medium<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="medium minus"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                sweet
+              </div>
+            </OverlayTrigger>
           </Col>
-          <Col xs={2} md={true}>
-            <div id="medium" className="box-single" onClick={myFunc}>
-              sweet
-            </div>
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Sweet and medium<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="medium"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                sweet
+              </div>
+            </OverlayTrigger>
           </Col>
-          <Col xs={2} md={true}>
-            <div id="medium plus" className="box-single" onClick={myFunc}>
-              sweet
-            </div>
+          <Col>
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Sweet and more then medium<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="medium plus"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                sweet
+              </div>
+            </OverlayTrigger>
           </Col>
-          <Col xs={2} md={true}>
-            <div id="full" className="box-single" onClick={myFunc}>
-              sweet
-            </div>
+          <Col id="lastCol">
+            <OverlayTrigger
+              style={{ backgroundColor: 'white' }}
+              id="tasteOverlay"
+              key="top"
+              placement="top"
+              overlay={
+                <Tooltip id="tooltip-top">
+                  Sweet and full<br></br> bodied wines
+                </Tooltip>
+              }
+            >
+              <div
+                id="full"
+                className={
+                  grapeColor === 'red' ? 'box-single-red' : 'box-single-white'
+                }
+                onClick={myFunc}
+              >
+                sweet
+              </div>
+            </OverlayTrigger>
+            <span className="lightBody"> LIGHT BODIED</span>
+            <span className="fullBody"> FULL BODIED</span>
           </Col>
         </Row>
-        <span className="lightBody"> LIGHT BODIED</span>
-        <span className="fullBody"> FULL BODIED</span>
         <span className="sweet"> SWEET</span>
-        <span className="dry"> DRY</span>
       </Container>
     </>
   );

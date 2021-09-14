@@ -40,16 +40,16 @@ const NewsCarousel = () => {
                     </Card.Title>
                   </Card.Body>
                   <Card.Footer
-                    style={{ cursor: 'pointer' }}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      console.log('add to ready later');
+                    id={el.url}
+                    style={{
+                      cursor: 'pointer',
+                      fontStyle: 'italic',
+                      textAlign: 'center',
                     }}
                   >
-                    {' '}
-                    add to read later{' '}
+                    add to read later
                   </Card.Footer>
-                </Card>{' '}
+                </Card>
               </Col>
             ))}
           </Row>
@@ -79,6 +79,16 @@ const NewsCarousel = () => {
                       {el.title}
                     </Card.Title>
                   </Card.Body>
+                  <Card.Footer
+                    id={el.url}
+                    style={{
+                      cursor: 'pointer',
+                      fontStyle: 'italic',
+                      textAlign: 'center',
+                    }}
+                  >
+                    add to read later
+                  </Card.Footer>
                 </Card>{' '}
               </Col>
             ))}
@@ -109,6 +119,16 @@ const NewsCarousel = () => {
                       {el.title}
                     </Card.Title>
                   </Card.Body>
+                  <Card.Footer
+                    id={el.url}
+                    style={{
+                      cursor: 'pointer',
+                      fontStyle: 'italic',
+                      textAlign: 'center',
+                    }}
+                  >
+                    add to read later
+                  </Card.Footer>
                 </Card>{' '}
               </Col>
             ))}

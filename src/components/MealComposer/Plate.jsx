@@ -96,13 +96,13 @@ const Plate = () => {
         <WineModal
           show={wineModalShow}
           onHide={() => setWineModalShow(false)}
-          dishId={dishId}
+          dish={dishId}
         />
         <RecipeModal
           show={recipeModalShow}
           onHide={() => setRecipeModalShow(false)}
-          recipeId={recipeDishId}
-          dishName={dishFullName}
+          recipe={recipeDishId}
+          dish={dishFullName}
         />
       </div>
     </>

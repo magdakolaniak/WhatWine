@@ -8,18 +8,20 @@
   border-color: transparent;
   border-radius: 10px !important;
   outline: 0;
+  height: 600px;
 }
-#meModal > .btn-close {
-  position: relative;
-  top: -70px;
+#meModal .btn-close {
+  position: absolute;
+  top: 10;
+  right: 45px;
 
-  box-sizing: content-box;
+  /* box-sizing: content-box;
   width: 2em;
   height: 1em;
   padding: 0.25em 0.8em;
   color: #000;
   background: transparent url('../../assets/images/close.png') center/1.5em auto
-    no-repeat;
+    no-repeat; */
   /* border: 0;
     border-radius: 0.25rem;
     opacity: 0.5; */
@@ -42,10 +44,20 @@
   margin-left: 10px;
 }
 .meLeftCol {
+  margin-left: 10px;
+  margin-top: 20px;
   align-items: center;
+  width: 250px;
 }
 
 .meLogoWrapper {
   display: flex;
   justify-content: center;
+}
+.meRightCol {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
 }

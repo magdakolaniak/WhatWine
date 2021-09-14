@@ -34,6 +34,7 @@
   margin-bottom: 15px;
   box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
   border-radius: 10px;
+
   /* display: flex; */
 }
 #accountDetailsWrapper {
@@ -43,6 +44,9 @@
   padding: 6px;
   height: 40px;
   font-weight: bolder;
+}
+#accountDetails .form-label {
+  margin-left: 12px;
 }
 .fade-in-top {
   -webkit-animation: fade-in-top 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)
@@ -81,7 +85,7 @@
   box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease-in-out;
 }
 .aboutMeClick {
   text-align: center;

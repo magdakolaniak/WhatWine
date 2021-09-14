@@ -11,9 +11,11 @@ import {
   DiVisualstudio,
   DiNodejs,
 } from 'react-icons/di';
+import { FaGoogle } from 'react-icons/fa';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { GiGrapes } from 'react-icons/gi';
-import me from '../../components/assets/images/me.png';
-
+import wset from '../../components/assets/images/wset1.svg';
+import me from '../../components/assets/images/me.jpeg';
 const Behind = (props) => {
   return (
     <>
@@ -22,23 +24,35 @@ const Behind = (props) => {
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        className="modalComponent"
+        // className="modalComponent"
         id="meModal"
       >
         <Modal.Header closeButton>
           <div className="meModalTitle">
-            <div style={{ marginRight: '10px', fontStyle: 'italic' }}>
+            <div
+              style={{
+                marginRight: '10px',
+                fontStyle: 'italic',
+                fontSize: '24px',
+              }}
+            >
               {' '}
               Skills involved while creating{' '}
             </div>
             <div className="meLogoWrapper">
               <GiGrapes style={{ color: '#800', fontSize: '30px' }} />
-              <span style={{ color: '#800', fontWeight: 'bolder' }}>
+              <span
+                style={{
+                  color: '#800',
+                  fontWeight: 'bolder',
+                  fontSize: '24px',
+                }}
+              >
                 WhatWine?
               </span>
             </div>
-            <hr></hr>{' '}
           </div>
+          <div>And litttle "about me" section</div>
         </Modal.Header>
         <Modal.Body className="modalBody">
           <Row
@@ -62,7 +76,7 @@ const Behind = (props) => {
                 {' '}
                 <DiMongodb className="icons" style={{ color: '#4FAA40' }} />
               </span>
-              <br></br>
+
               <span>
                 <DiNpm
                   className="icons"
@@ -80,13 +94,8 @@ const Behind = (props) => {
                   style={{ color: '#0078BA' }}
                 />
               </span>
-              <br></br>
 
-              <span>
-                <DiHtml5 className="icons" style={{ color: '#E44D27' }} />
-              </span>
-
-              <span>
+              <span style={{ marginLeft: '20px' }}>
                 {' '}
                 <DiCss3 className="icons" style={{ color: '#0070B9' }} />
               </span>
@@ -95,13 +104,78 @@ const Behind = (props) => {
                 {' '}
                 <DiJavascript className="icons" style={{ color: '#63A714' }} />
               </span>
+              <span>
+                {' '}
+                <img
+                  src={wset}
+                  style={{
+                    height: '40px',
+                    marginLeft: '20px',
+                    marginTop: '20px',
+                  }}
+                  alt="wset-logo"
+                />
+              </span>
             </Col>
             <Col xs={12} md={6} className="meRightCol">
-              <img src={me} style={{ height: '260px' }} />
-              {/* <a href="https://linktr.ee/magda_kolaniak" target="_blank">
-                {' '}
-                <div>My linkTree</div>
-              </a> */}
+              <div>
+                <img
+                  src={me}
+                  alt="me"
+                  style={{ height: '140px', borderRadius: '100px' }}
+                />
+              </div>
+              <span
+                style={{
+                  padding: '30px',
+                  fontSize: '24px',
+                  fontStyle: 'italic',
+                  fontWeight: 'bold',
+                }}
+              >
+                Magdalena Kolaniak
+              </span>
+              <div
+                style={{
+                  width: '350px',
+                  padding: '10px',
+                  backgroundColor: '#3D3B3C',
+                  marginBottom: '20px',
+                  color: 'whitesmoke',
+                  textAlign: 'center',
+                }}
+              >
+                <FaGoogle style={{ fontSize: '34px', float: 'left' }} />{' '}
+                <span style={{ fontSize: '20px' }}>
+                  magda.kolaniak@gmail.com
+                </span>
+              </div>
+              <div
+                style={{
+                  width: '350px',
+                  padding: '10px',
+                  backgroundColor: '#3D3B3C',
+                  marginBottom: '20px',
+                  color: 'whitesmoke',
+                  textAlign: 'center',
+                }}
+              >
+                <AiFillGithub style={{ fontSize: '34px', float: 'left' }} />{' '}
+                <span style={{ fontSize: '20px' }}>@magdakolaniak</span>
+              </div>
+              <div
+                style={{
+                  width: '350px',
+                  padding: '10px',
+                  backgroundColor: '#3D3B3C',
+                  marginBottom: '20px',
+                  color: 'whitesmoke',
+                  textAlign: 'center',
+                }}
+              >
+                <AiFillLinkedin style={{ fontSize: '34px', float: 'left' }} />{' '}
+                <span style={{ fontSize: '20px' }}>magda-kolaniak</span>
+              </div>
             </Col>
           </Row>
         </Modal.Body>

@@ -99,7 +99,7 @@ const LeftNav = () => {
           APIUrl +
             `query=${recipe.ingredients}&cuisine=${recipe.cuisine}&type=${recipe.mealType}&intolerances=${recipe.intolerances}&number=6&apiKey=${key}`
         );
-        console.log(data.data);
+
         setDishes(data.data.results);
       }
     };
@@ -110,7 +110,7 @@ const LeftNav = () => {
 
   const refresh = () => {
     let list = document.querySelectorAll('.cuisineItemClicked');
-    console.log(list);
+
     list.forEach((el) => el.classList.remove('cuisineItemClicked'));
 
     setRecipe({
@@ -140,9 +140,9 @@ const LeftNav = () => {
                 Select the style of cuisine you would like to find recipe for
                 <hr></hr>
               </div>
-              {cuisineList.map((item) => (
+              {cuisineList.map((item, i) => (
                 <span
-                  key={item}
+                  key={i}
                   className="cuisineItem"
                   id={item}
                   onClick={cuisineChoice}
@@ -160,9 +160,9 @@ const LeftNav = () => {
                 Are you looking to cook main course or...?
                 <hr></hr>
               </div>
-              {mealTypeList.map((item) => (
+              {mealTypeList.map((item, i) => (
                 <span
-                  key={item}
+                  key={i}
                   className="cuisineItem"
                   id={item}
                   onClick={mealTypeChoice}
@@ -179,9 +179,9 @@ const LeftNav = () => {
                 Please select also your food intolerances if you have any
                 <hr></hr>
               </div>
-              {intoleranceList.map((item) => (
+              {intoleranceList.map((item, i) => (
                 <span
-                  key={item}
+                  key={i}
                   className="cuisineItem"
                   id={item}
                   onClick={intoleranceChoice}
@@ -207,16 +207,13 @@ const LeftNav = () => {
                 />
                 <ul id="listIndicators">
                   {recipe && recipe.ingredients.length > 0
-                    ? recipe.ingredients.map((item) => (
-                        <>
-                          <span className="ingredItem">
-                            <li>
-                              {' '}
-                              <TiTick className="tickIcon" />
-                              {item}
-                            </li>
-                          </span>
-                        </>
+                    ? recipe.ingredients.map((item, i) => (
+                        <span className="ingredItem" key={i}>
+                          <li>
+                            <TiTick className="tickIcon" />
+                            {item}
+                          </li>
+                        </span>
                       ))
                     : ''}
                 </ul>

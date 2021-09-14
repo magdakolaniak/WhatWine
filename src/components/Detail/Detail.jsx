@@ -39,14 +39,14 @@ const Detail = () => {
     let URL = process.env.REACT_APP_BE_URL;
     e.preventDefault();
     let id = e.currentTarget.id;
-    console.log(id);
+
     let button = document.getElementById(id);
     button.style.color = '#800';
 
     const addWine = async () => {
       try {
         const res = await axios.post(URL + `/user/${user._id}/addToList/${id}`);
-        console.log(res.data);
+
         if (res.status === 200) {
           setAddedModal(true);
           user.wines.push(id);

@@ -16,13 +16,12 @@ import { IoMdHeartDislike } from 'react-icons/io';
 import NewsCarousel from './NewsCarousel';
 
 const MainUser = () => {
-  const { user, setUserWines, userWines } = useContext(LoginContext);
+  const { user, setUser, setUserWines, userWines } = useContext(LoginContext);
 
   const removeWine = async (e) => {
     let URL = process.env.REACT_APP_BE_URL;
     e.preventDefault();
     let id = e.currentTarget.id;
-    console.log(id);
 
     try {
       const res = await axios.put(
@@ -31,7 +30,7 @@ const MainUser = () => {
 
       if (res.status === 200) {
         const list = userWines;
-        console.log('UserWineBefore', userWines);
+
         const newList = list.filter(
           (element) => element._id.toString() !== id.toString()
         );
@@ -42,7 +41,21 @@ const MainUser = () => {
       console.log(error);
     }
   };
+  const removeRecipe = async (e) => {
+    let URL = process.env.REACT_APP_BE_URL;
+    e.preventDefault();
+    let id = e.currentTarget.id;
 
+    try {
+      const res = await axios.put(URL + `/user/${user._id}/removeRecipe/${id}`);
+
+      if (res.status === 200) {
+        setUser(res.data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     const URL = 'http://localhost:3001/user/';
 
@@ -56,8 +69,6 @@ const MainUser = () => {
       }
     };
     getWines();
-
-    console.log('USER WINES', userWines.length);
   }, [userWines.length, user.recipes.length]);
 
   const count = (type) => {
@@ -89,18 +100,18 @@ const MainUser = () => {
                   </div>
                 ) : (
                   <table>
-                    <tr>
-                      <th style={{ width: '70px' }}> Country</th>
-                      <th style={{ width: '60px' }}> Year</th>
-                      <th style={{ width: '400px' }}>Label</th>
-                      <th style={{ width: '150px' }}> Winery</th>
-                      <th style={{ width: '100px' }}> Action</th>
-                    </tr>
-                    {userWines
-                      .filter((el) => el.type === 'sparkling')
-                      .map((wine) => (
-                        <>
-                          <tr>
+                    <tbody className="fade-in-top">
+                      <tr>
+                        <th style={{ width: '70px' }}> Country</th>
+                        <th style={{ width: '60px' }}> Year</th>
+                        <th style={{ width: '400px' }}>Label</th>
+                        <th style={{ width: '150px' }}> Winery</th>
+                        <th style={{ width: '100px' }}> Action</th>
+                      </tr>
+                      {userWines
+                        .filter((el) => el.type === 'sparkling')
+                        .map((wine, i) => (
+                          <tr key={i} id="sparkling">
                             <td>{wine.origin.country}</td>
                             <td>{wine.year}</td>
                             <td>{wine.fullName}</td>
@@ -121,8 +132,8 @@ const MainUser = () => {
                               </OverlayTrigger>
                             </td>
                           </tr>
-                        </>
-                      ))}
+                        ))}
+                    </tbody>
                   </table>
                 )}
               </Tab>
@@ -133,17 +144,17 @@ const MainUser = () => {
                   </div>
                 ) : (
                   <table>
-                    <tr>
-                      <th style={{ width: '70px' }}> Country</th>
-                      <th style={{ width: '60px' }}> Year</th>
-                      <th style={{ width: '400px' }}>Label</th>
-                      <th style={{ width: '150px' }}> Winery</th>
-                    </tr>
-                    {userWines
-                      .filter((el) => el.type === 'white')
-                      .map((wine) => (
-                        <>
-                          <tr>
+                    <tbody className="fade-in-top">
+                      <tr>
+                        <th style={{ width: '70px' }}> Country</th>
+                        <th style={{ width: '60px' }}> Year</th>
+                        <th style={{ width: '400px' }}>Label</th>
+                        <th style={{ width: '150px' }}> Winery</th>
+                      </tr>
+                      {userWines
+                        .filter((el) => el.type === 'white')
+                        .map((wine, i) => (
+                          <tr key={i}>
                             <td>{wine.origin.country}</td>
                             <td>{wine.year}</td>
                             <td>{wine.fullName}</td>
@@ -164,8 +175,8 @@ const MainUser = () => {
                               </OverlayTrigger>
                             </td>
                           </tr>
-                        </>
-                      ))}
+                        ))}
+                    </tbody>
                   </table>
                 )}
               </Tab>
@@ -177,17 +188,17 @@ const MainUser = () => {
                   </div>
                 ) : (
                   <table>
-                    <tr>
-                      <th style={{ width: '70px' }}> Country</th>
-                      <th style={{ width: '60px' }}> Year</th>
-                      <th style={{ width: '400px' }}>Label</th>
-                      <th style={{ width: '150px' }}> Winery</th>
-                    </tr>
-                    {userWines
-                      .filter((el) => el.type === 'red')
-                      .map((wine) => (
-                        <>
-                          <tr>
+                    <tbody className="fade-in-top">
+                      <tr>
+                        <th style={{ width: '70px' }}> Country</th>
+                        <th style={{ width: '60px' }}> Year</th>
+                        <th style={{ width: '400px' }}>Label</th>
+                        <th style={{ width: '150px' }}> Winery</th>
+                      </tr>
+                      {userWines
+                        .filter((el) => el.type === 'red')
+                        .map((wine, i) => (
+                          <tr key={i}>
                             <td>{wine.origin.country}</td>
                             <td>{wine.year}</td>
                             <td>{wine.fullName}</td>
@@ -208,8 +219,8 @@ const MainUser = () => {
                               </OverlayTrigger>
                             </td>
                           </tr>
-                        </>
-                      ))}
+                        ))}
+                    </tbody>
                   </table>
                 )}
               </Tab>
@@ -223,17 +234,31 @@ const MainUser = () => {
                     Your saved recipes will show up here!
                   </div>
                 ) : (
-                  <Row>
+                  <Row className="fade-in-top">
                     {user.recipes.map((recipe) => (
-                      <Col xs={12} s={6} md={4} className="recipeCol">
+                      <Col
+                        xs={12}
+                        s={6}
+                        md={4}
+                        className="recipeCol"
+                        key={recipe._id}
+                      >
                         <div className="recipeWrapper">
                           {' '}
-                          <span>{recipe.fullName}</span>
+                          <span
+                            id={recipe._id}
+                            style={{ width: '150px' }}
+                            className="recipeName"
+                            onClick={removeRecipe}
+                          >
+                            {recipe.fullName}
+                          </span>
                           <img
                             src={recipe.url}
                             alt="recipe-img"
                             className="imageRecipe img-fluid"
                             style={{
+                              width: '80px',
                               height: '100px',
                               cursor: 'pointer',
                               paddingLeft: '10px',
@@ -245,15 +270,6 @@ const MainUser = () => {
                             }}
                           />
                         </div>
-                        {/* <span
-                          style={{
-                            marginLeft: '10px',
-                            fontSize: '18px',
-                            fontWeight: 'bold',
-                          }}
-                        >
-                          {recipe.fullName}
-                        </span> */}
                       </Col>
                     ))}
                   </Row>
@@ -263,17 +279,8 @@ const MainUser = () => {
           </Col>{' '}
         </Row>
         <Row>
-          <Col md={12} className="mainBoardUser">
-            <h5
-              style={{
-                padding: '10px',
-                marginLeft: '180px',
-                fontWeight: 'bold',
-                fontStyle: 'italic',
-              }}
-            >
-              Read latest news from wine world!
-            </h5>
+          <Col md={12} className="newsHeader">
+            <div className="header">Read some news from wine world!</div>
           </Col>
         </Row>
         <Row style={{ marginBottom: '60px' }}>

@@ -42,21 +42,19 @@ const LoginPage = ({ history }) => {
         `https://newsapi.org/v2/everything?q=winery&from=2021-08-15&sortBy=publishedAt&apiKey=${key}`
       );
       setNews(news.data.articles);
-      console.log('NEWS', news.data.articles);
     } catch (error) {
       console.log(error);
     }
   };
 
   const submitHandler = async () => {
-    console.log(email, password);
     if (email !== '' && password !== '') {
       const res = await axios(URL + `/user/login`, {
         headers: {
           Authorization: `Basic ${base64([email, password].join(':'))}`,
         },
       });
-      console.log(res.data);
+
       if (res.status === 200) {
         setLoggedIn(true);
         setUser(res.data);
