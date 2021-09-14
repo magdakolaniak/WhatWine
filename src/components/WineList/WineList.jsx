@@ -8,13 +8,13 @@ import axios from 'axios';
 
 const WineList = () => {
   const { setMainData, query } = useContext(LoginContext);
-  const BASEUrl = process.env.REACT_APP_API;
-  const searchURL = BASEUrl + `/search/${query}`;
+  const BASEUrl = process.env.REACT_APP_BE_URL;
+  const searchURL = BASEUrl + `/wines/search/${query}`;
 
   useEffect(() => {
     const getWines = async () => {
       if (!query) {
-        const wines = await axios(BASEUrl + `/`);
+        const wines = await axios(BASEUrl + `/wines`);
 
         setMainData(wines.data);
       } else {

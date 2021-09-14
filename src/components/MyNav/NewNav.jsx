@@ -10,10 +10,9 @@ import { GiGrapes } from 'react-icons/gi';
 
 import { withRouter } from 'react-router';
 import { Link, useLocation } from 'react-router-dom';
-import glass from './wines.png';
+
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
-import clean from '../../components/assets/images/clean2.png';
 
 const NewNav = () => {
   const { setQuery, loggedIn, user, query } = useContext(LoginContext);
@@ -44,7 +43,11 @@ const NewNav = () => {
             <GiGrapes className="iconNav" />
             WhatWine?
           </span>
-          <img src={glass} alt="glass" className="glass"></img>
+          <img
+            src="https://res.cloudinary.com/dii3cculv/image/upload/v1631646743/wines_xsnuew.png"
+            alt="glass"
+            className="glass"
+          ></img>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -69,7 +72,7 @@ const NewNav = () => {
               style={{ display: query?.length > 1 ? 'inline' : 'none' }}
             >
               <img
-                src={clean}
+                src="https://res.cloudinary.com/dii3cculv/image/upload/v1631646826/clean2_lau9xn.png"
                 style={{
                   height: '50px',
                   color: 'white',

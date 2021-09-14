@@ -2,7 +2,8 @@
   margin-top: 70px;
   border: 50px solid transparent;
   border-radius: 10px;
-  border-image: url(./wine.png) 60 round;
+  border-image: url('https://res.cloudinary.com/dii3cculv/image/upload/v1631646645/wine_znzcpk.png')
+    60 round;
   display: flex;
   /* height: 80vh;
   width: 80vw; */

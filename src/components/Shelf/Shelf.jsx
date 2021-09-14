@@ -8,7 +8,7 @@ import { useHistory } from 'react-router';
 
 const Shelf = () => {
   const history = useHistory();
-  const BASEUrl = process.env.REACT_APP_API;
+  const BASEUrl = process.env.REACT_APP_BE_URL;
 
   const {
     tasteProfile,
@@ -60,7 +60,7 @@ const Shelf = () => {
       } else {
         const wines = await axios(
           BASEUrl +
-            `?type=${tasteProfile.type},sparkling&character.body=${tasteProfile.body}&character.sweetness=${tasteProfile.sweetness}`
+            `/wines?type=${tasteProfile.type},sparkling&character.body=${tasteProfile.body}&character.sweetness=${tasteProfile.sweetness}`
         );
 
         setPickedFromBoard(wines.data);

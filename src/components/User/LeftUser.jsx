@@ -2,7 +2,7 @@ import './Styles/LeftUser.css';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import { useState, useContext } from 'react';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
-import door from '../../components/assets/images/door.png';
+
 import Behind from './Behind';
 
 const LeftUser = () => {
@@ -148,7 +148,7 @@ const LeftUser = () => {
           onClick={() => {
             setBehindModal(true);
           }}
-          src={door}
+          src="https://res.cloudinary.com/dii3cculv/image/upload/v1631648519/door_zx4zit.png"
           alt="door"
           style={{
             cursor: 'pointer',

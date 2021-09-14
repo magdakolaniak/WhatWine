@@ -5,7 +5,6 @@ import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
 import { TiTick } from 'react-icons/ti';
 import { useEffect } from 'react';
-import bake from '../assets/images/bake.png';
 
 const LeftNav = () => {
   const { recipe, setRecipe, setDishes } = useContext(LoginContext);
@@ -128,7 +127,11 @@ const LeftNav = () => {
         <div className="instructions">
           What is in your mind today?
           <div>
-            <img src={bake} className="bakeIcon" alt="bake-icon" />
+            <img
+              src="https://res.cloudinary.com/dii3cculv/image/upload/v1631648182/bake_dd5bs2.png"
+              className="bakeIcon"
+              alt="bake-icon"
+            />
           </div>
         </div>
         <Accordion id="myAccordion">
