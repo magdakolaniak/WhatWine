@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Carousel, Container, Card, Button, Row, Col } from 'react-bootstrap';
+import { Carousel, Card, Row, Col } from 'react-bootstrap';
 import './Styles/NewsCarousel.css';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 

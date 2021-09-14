@@ -7,7 +7,7 @@ import Behind from './Behind';
 
 const LeftUser = () => {
   const { user } = useContext(LoginContext);
-  const [disable, setDisable] = useState(true);
+  const [disable] = useState(true);
   const [behindModal, setBehindModal] = useState(false);
 
   const showProfile = () => {

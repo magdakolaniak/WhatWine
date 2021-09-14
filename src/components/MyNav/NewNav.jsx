@@ -4,7 +4,6 @@ import {
   Container,
   Nav,
   FormControl,
-  NavItem,
 } from 'react-bootstrap';
 import './MyNav.css';
 import { GiGrapes } from 'react-icons/gi';
