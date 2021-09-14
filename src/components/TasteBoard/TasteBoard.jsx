@@ -4,8 +4,7 @@ import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
 
 const TasteBoard = () => {
-  const { tasteProfile, setTasteProfile, grapeColor } =
-    useContext(LoginContext);
+  const { setTasteProfile, grapeColor } = useContext(LoginContext);
 
   const myFunc = (e) => {
     setTasteProfile({

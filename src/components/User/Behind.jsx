@@ -7,7 +7,6 @@ import {
   DiReact,
   DiNpm,
   DiJavascript,
-  DiHtml5,
   DiVisualstudio,
   DiNodejs,
 } from 'react-icons/di';

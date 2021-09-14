@@ -7,7 +7,6 @@ import { GiGrapes } from 'react-icons/gi';
 import cuisine from '../assets/images/cuisine.png';
 
 import RecipeModal from './RecipeModal';
-import axios from 'axios';
 
 const Plate = () => {
   const { dishes, recipe } = useContext(LoginContext);

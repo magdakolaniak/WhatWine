@@ -5,7 +5,7 @@ import Shelf from '../Shelf/Shelf.jsx';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext } from 'react';
 import { GiGrapes, GiReturnArrow } from 'react-icons/gi';
-import { Link } from 'react-router-dom';
+
 import NewNav from '../MyNav/NewNav';
 
 const TasteProfiler = () => {
@@ -27,15 +27,6 @@ const TasteProfiler = () => {
     }
   };
 
-  let description = '';
-  const styleDescription = (tasteProfile) => {
-    if (tasteProfile.body === 'medDry') {
-      description = 'medium bodied, dry wine with high level of acidity';
-    } else {
-      description = 'something to think of later on';
-    }
-    return description;
-  };
   const grapeClick = (e) => {
     e.preventDefault();
     setGrapeColor(e.currentTarget.id);

@@ -10,8 +10,8 @@ import { LoginContext } from '../GlobalState/GlobalState.jsx';
 let text = '{ Your personal Sommelier }';
 
 const LoginPage = ({ history }) => {
-  const [signUp, setSignUp] = useState(false);
-  const [validation, setValidation] = useState(true);
+  const [setSignUp] = useState(false);
+  const [validation] = useState(true);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

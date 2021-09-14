@@ -8,11 +8,10 @@ import { GiGrapes } from 'react-icons/gi';
 
 const WineModal = (props) => {
   const BASEUrl = process.env.REACT_APP_API;
-  const { recipe, dishes } = useContext(LoginContext);
+  const { recipe } = useContext(LoginContext);
   const [choice, setChoice] = useState([]);
 
-  const [pickedBottles, setPickedBottles] = useState([]);
-  const [chart, setChart] = useState({
+  const [chart] = useState({
     options: {
       chart: {
         id: 'apexchart-example',

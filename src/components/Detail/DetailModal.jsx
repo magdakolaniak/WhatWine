@@ -1,4 +1,4 @@
-import { Modal, Row, Col } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import './Detail.css';
 
 const DetailModal = (props) => {
