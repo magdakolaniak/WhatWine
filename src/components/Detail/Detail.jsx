@@ -7,8 +7,7 @@ import { ImLibrary, ImArrowRight } from 'react-icons/im';
 import { BsFillHeartFill } from 'react-icons/bs';
 import Geocode from 'react-geocode';
 import { Link } from 'react-router-dom';
-import book from '../../components/assets/images/book.png';
-import winery from '../../components/assets/images/winery.png';
+
 import DetailModal from './DetailModal.jsx';
 import { useState } from 'react';
 
@@ -170,7 +169,7 @@ const Detail = () => {
                       <div>
                         <a href={detailed[0].link}>
                           <img
-                            src={winery}
+                            src="https://res.cloudinary.com/dii3cculv/image/upload/v1631648300/winery_yvwmub.png"
                             style={{
                               height: '40px',
                               paddingBottom: 'px',
@@ -183,7 +182,7 @@ const Detail = () => {
                       </div>
                       <div>
                         <img
-                          src={book}
+                          src="https://res.cloudinary.com/dii3cculv/image/upload/v1631648327/book_cil97r.png"
                           style={{
                             height: '40px',
                             paddingBottom: 'px',

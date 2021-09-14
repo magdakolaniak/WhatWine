@@ -4,7 +4,6 @@ import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import { useContext, useState } from 'react';
 import WineModal from './WineModal';
 import { GiGrapes } from 'react-icons/gi';
-import cuisine from '../assets/images/cuisine.png';
 
 import RecipeModal from './RecipeModal';
 
@@ -62,7 +61,7 @@ const Plate = () => {
                           }}
                         >
                           <img
-                            src={cuisine}
+                            src="https://res.cloudinary.com/dii3cculv/image/upload/v1631648257/cuisine_zxw2f6.png"
                             className="recipeIcon"
                             alt="recipe-icon"
                           />

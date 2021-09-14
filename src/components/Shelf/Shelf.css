@@ -1,13 +1,13 @@
 .mainShelf {
   position: relative;
-  background-image: url(./shelf.jpeg);
+  background-image: url('https://res.cloudinary.com/dii3cculv/image/upload/v1631647694/shelfnew_geb3vc.jpg');
   background-size: cover;
 
   color: white;
   transition: all ease-in-out;
 }
 .mainSingleShelf {
-  background-image: url(./single.png);
+  background-image: url('https://res.cloudinary.com/dii3cculv/image/upload/v1631648077/single_nnc2rk.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

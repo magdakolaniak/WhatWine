@@ -13,8 +13,7 @@ import {
 import { FaGoogle } from 'react-icons/fa';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { GiGrapes } from 'react-icons/gi';
-import wset from '../../components/assets/images/wset1.svg';
-import me from '../../components/assets/images/me.jpeg';
+
 const Behind = (props) => {
   return (
     <>
@@ -106,7 +105,7 @@ const Behind = (props) => {
               <span>
                 {' '}
                 <img
-                  src={wset}
+                  src="https://res.cloudinary.com/dii3cculv/image/upload/v1631648468/wset1_j8czai.svg"
                   style={{
                     height: '40px',
                     marginLeft: '20px',
@@ -119,7 +118,7 @@ const Behind = (props) => {
             <Col xs={12} md={6} className="meRightCol">
               <div>
                 <img
-                  src={me}
+                  src="https://res.cloudinary.com/dii3cculv/image/upload/v1631648362/me_tc5v5j.jpg"
                   alt="me"
                   style={{ height: '140px', borderRadius: '100px' }}
                 />
