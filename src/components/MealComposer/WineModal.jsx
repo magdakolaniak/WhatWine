@@ -7,7 +7,7 @@ import Chart from 'react-apexcharts';
 import { GiGrapes } from 'react-icons/gi';
 
 const WineModal = (props) => {
-  const BASEUrl = process.env.REACT_APP_API;
+  const BASEUrl = process.env.REACT_APP_BE_URL;
   const { recipe } = useContext(LoginContext);
   const [choice, setChoice] = useState([]);
 
@@ -152,7 +152,7 @@ const WineModal = (props) => {
       let filter = setFiltering();
 
       const wines = await axios(
-        BASEUrl + `?type=${filter.type}&character.body=${filter.body}`
+        BASEUrl + `/wines?type=${filter.type}&character.body=${filter.body}`
       );
 
       setChoice(wines.data);
