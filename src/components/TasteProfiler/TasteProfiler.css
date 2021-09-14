@@ -1,0 +1,211 @@
+#taste-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 90vh;
+  align-items: center;
+  align-content: center;
+  background-color: rgba(22, 26, 29, 1);
+  padding-right: 3rem;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.box1 {
+  visibility: hidden;
+
+  animation-name: entrance-left;
+  animation-duration: 2s;
+
+  animation-fill-mode: forwards;
+}
+.cornerSign {
+  position: absolute;
+  display: flex;
+  transform: rotate(-45deg);
+  top: 50px;
+  left: -70px;
+  width: 200px;
+  height: 100px;
+  z-index: 5;
+  text-align: center;
+  align-items: flex-end;
+  padding-left: 60px;
+  padding-bottom: 10px;
+
+  background-color: #d3d6db;
+
+  color: #303841;
+  font-size: 20px;
+  cursor: pointer;
+  /* writing-mode: vertical-lr; */
+}
+.narrow {
+  position: absolute;
+  bottom: 40px;
+  left: 80px;
+  font-size: 26px;
+}
+@keyframes entrance-left {
+  0% {
+    visibility: visible;
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes entrance-right {
+  0% {
+    visibility: visible;
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.profilerTextWrapper {
+  border-top: 10px solid;
+  border-image-slice: 1;
+  border-width: 10px;
+  border-image-source: linear-gradient(to right, #d3d6db, #303841);
+  color: #d3d6db;
+}
+.titleTaste {
+  font-size: 36px;
+  margin-left: 50px;
+}
+.tasteText {
+  color: #d3d6db;
+}
+.infoDesc {
+  font-size: 20px;
+  font-style: italic;
+  padding-left: 50px;
+  /* text-align: center; */
+  padding-bottom: 15px;
+  color: white;
+}
+.welcomePage {
+  background-color: rgba(22, 26, 29, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  height: 90vh;
+  flex-direction: column;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.writingText {
+  color: linear-gradient(red, yellow);
+  width: 18ch;
+  animation: typing 2s steps(15), blink 1s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 64px;
+}
+#mainText {
+  background: -webkit-linear-gradient(#d3d6db, #303841);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 72px;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+#reflection {
+  color: white;
+  font-size: 72px;
+  -moz-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-2);
+  -moz-transform: rotateX(210deg);
+  -o-transform: rotateX(210deg);
+  -webkit-transform: rotateX(210deg);
+  transform: rotateX(210deg);
+  perspective: 200px;
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    right top,
+    right bottom,
+    from(transparent),
+    color-stop(20%, transparent),
+    to(rgba(0, 0, 0, 0.4))
+  );
+}
+.buttons {
+  color: white;
+}
+.pickRed {
+  font-size: 96px;
+  animation: blur 3s ease 0s forwards;
+  -webkit-animation: blur 4s ease 0s forwards;
+  -moz-animation: blur 4s ease 0s forwards;
+  fill: #800000;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+.pickRed:hover {
+  transform: scale(1.3);
+}
+.pickRedWrapper {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.pickWhite {
+  font-size: 96px;
+  animation: blur 4s ease 0s forwards;
+  -webkit-animation: blur 4s ease 0s forwards;
+  -moz-animation: blur 4s ease 0s forwards;
+  fill: #d4af37;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+.pickWhite:hover {
+  transform: scale(1.3);
+}
+.pickWhiteWrapper {
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+@keyframes blur {
+  0% {
+    -webkit-filter: blur(50px);
+    -moz-filter: blur(50px);
+    -o-filter: blur(50px);
+    -ms-filter: blur(50px);
+  }
+  /* 50% {
+    -webkit-filter: blur(25px);
+    -moz-filter: blur(25px);
+    -o-filter: blur(25px);
+    -ms-filter: blur(25px);
+  }
+  75% {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+  } */
+  90% {
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+  }
+}

@@ -1,0 +1,126 @@
+.box2 {
+  display: flex;
+
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* align-content: stretch;
+  align-items: stretch; */
+
+  color: rgb(8, 8, 8);
+  visibility: hidden;
+  background-color: #800000;
+
+  /* margin-right: 70px; */
+  animation-name: entrance-right;
+  animation-duration: 2s;
+
+  animation-fill-mode: forwards;
+
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 20px;
+  border-image: linear-gradient(45deg, #d3d6db, #303841) 1;
+  color: #3d353b;
+}
+
+.box-single-red {
+  position: relative;
+  display: flex;
+  height: 100px;
+  /* max-width: 150px; */
+  opacity: 0;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  align-items: flex-start;
+  transition: all 0.3s;
+  color: transparent;
+  background-color: transparent;
+}
+.box-single-white {
+  position: relative;
+  display: flex;
+  height: 100px;
+  /* max-width: 150px; */
+  opacity: 0;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  align-items: flex-start;
+  transition: all 0.3s;
+  color: transparent;
+  background-color: transparent;
+}
+.box-single-white:hover {
+  color: transparent;
+  opacity: 1;
+  transform: scale(0.9);
+
+  animation: white-hover 0.3s forwards;
+}
+.box-single-red:hover {
+  color: transparent;
+  opacity: 1;
+  transform: scale(0.9);
+
+  animation: red-hover 0.3s forwards;
+}
+
+@keyframes red-hover {
+  0% {
+    background-color: #800;
+  }
+  25% {
+    background-color: #730000;
+  }
+  50% {
+    background-color: #660000;
+  }
+  100% {
+    background-color: #5a0000;
+  }
+}
+@keyframes white-hover {
+  0% {
+    background-color: #d4af37;
+  }
+  25% {
+    background-color: #bf9e32;
+  }
+  50% {
+    background-color: #aa8c2c;
+  }
+  100% {
+    background-color: #947a27;
+  }
+}
+
+.fullBody {
+  position: absolute;
+
+  bottom: 3px;
+  right: 30px;
+  color: aliceblue;
+  font-weight: bold;
+}
+.lightBody {
+  position: absolute;
+  bottom: 3px;
+  left: 30px;
+  color: aliceblue;
+  width: 180px;
+}
+
+.dry {
+  position: relative;
+  left: 50%;
+  color: aliceblue;
+  padding: 5px;
+}
+.sweet {
+  position: relative;
+  left: 50%;
+
+  color: aliceblue;
+  padding: 5px;
+}

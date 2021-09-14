@@ -1,0 +1,181 @@
+.cont-main {
+  margin-top: 70px;
+  border: 50px solid transparent;
+  border-radius: 10px;
+  border-image: url(./wine.png) 60 round;
+  display: flex;
+  /* height: 80vh;
+  width: 80vw; */
+  align-self: center;
+  justify-content: center;
+  background-color: #d3d6db;
+}
+.cornerSignDetail {
+  position: absolute;
+  display: flex;
+  transform: rotate(-45deg);
+  top: -15px;
+  left: -70px;
+  width: 200px;
+  height: 100px;
+  z-index: 5;
+  text-align: center;
+  align-items: flex-end;
+  padding-left: 60px;
+  padding-bottom: 10px;
+
+  background-color: #d3d6db;
+
+  color: #303841;
+  font-size: 20px;
+  cursor: pointer;
+  /* writing-mode: vertical-lr; */
+}
+.bookmarkDetail {
+  position: relative;
+  font-size: 86px;
+  color: #303841;
+  fill: #d3d6db;
+  stroke-width: 0.5px;
+}
+.saveDetailed {
+  position: absolute;
+  color: #303841;
+  top: 20px;
+  left: 24px;
+  z-index: 1;
+}
+.bookmarkWrapper {
+  position: absolute;
+  top: 55px;
+  right: 200px;
+}
+.addToFavWrapper {
+  cursor: pointer;
+  float: right;
+  margin-right: 100px;
+
+  font-size: 36px;
+  color: #303841;
+  /* color: transparent; */
+}
+.addToFavWrapperClicked {
+  cursor: pointer;
+  float: right;
+
+  margin-right: 100px;
+
+  font-size: 36px;
+  color: #800;
+}
+.checkedIcon {
+  font-size: 36px;
+}
+.narrow {
+  position: absolute;
+  bottom: 40px;
+  left: 80px;
+  font-size: 26px;
+}
+.img-styling {
+  height: auto;
+
+  padding-bottom: 10px;
+  filter: drop-shadow(8px -2px 2px rgba(0, 0, 0, 0.468));
+}
+.col-left {
+  width: 20%;
+}
+.horizontalLine {
+  border-top: 5px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #d3d6db, #303841);
+  margin-top: 5px;
+  border-radius: 10px;
+  border-width: 10px;
+}
+.fingerIcon {
+  color: #800;
+  stroke-width: 1px;
+  font-size: 20px;
+  padding-bottom: 3px;
+  margin-left: 30px;
+}
+
+.full-name-wrapper {
+  color: #800;
+
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.winery {
+  font-style: italic;
+}
+.winery-icon {
+  color: #800;
+  font-size: 20px;
+  margin-right: 5px;
+  padding-bottom: 4px;
+}
+.grape-wrapper {
+  margin-top: 20px;
+}
+.icon1 {
+  font-size: 40px;
+  color: #800;
+  stroke-width: 10px;
+  padding-bottom: 5px;
+}
+.details-column {
+  margin-left: 2rem;
+}
+
+.description-wrapper {
+  font-weight: bold;
+}
+
+.map-styling {
+  box-shadow: #303841;
+  border-radius: 20px;
+}
+.map-wrapper {
+  position: relative;
+
+  overflow: hidden;
+}
+.map-wrapper:after {
+  content: '';
+  position: absolute;
+  /* border-bottom-left-radius: 30px;
+  border: 3px solid black; */
+  height: 20px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  transform: rotate(0deg);
+
+  background: #d3d6db;
+}
+.cardPreview {
+  width: 150px;
+  /* display: none; */
+  font-size: 10px;
+  color: whitesmoke;
+  background-color: #303841;
+  position: absolute;
+  z-index: 100;
+  top: 125px;
+  /* bottom: 30px; */
+  left: 72%;
+  transform: translateX(-50%);
+}
+.cardImgPreview {
+  width: 150px;
+  height: 150px;
+}
+.wrapperPreview {
+  position: absolute;
+}
+#linkPreview {
+  position: relative;
+}

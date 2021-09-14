@@ -1,0 +1,63 @@
+#meModal > .modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #d3d6db;
+  border-color: transparent;
+  border-radius: 10px !important;
+  outline: 0;
+  height: 600px;
+}
+#meModal .btn-close {
+  position: absolute;
+  top: 10;
+  right: 45px;
+
+  /* box-sizing: content-box;
+  width: 2em;
+  height: 1em;
+  padding: 0.25em 0.8em;
+  color: #000;
+  background: transparent url('../../assets/images/close.png') center/1.5em auto
+    no-repeat; */
+  /* border: 0;
+    border-radius: 0.25rem;
+    opacity: 0.5; */
+}
+.meModalTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding-left: 35px;
+  font-size: 22px;
+}
+.icons {
+  font-size: 56px;
+  margin: 10px;
+}
+.icons2 {
+  font-size: 68px;
+  margin-left: 10px;
+}
+.meLeftCol {
+  margin-left: 10px;
+  margin-top: 20px;
+  align-items: center;
+  width: 250px;
+}
+
+.meLogoWrapper {
+  display: flex;
+  justify-content: center;
+}
+.meRightCol {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+}

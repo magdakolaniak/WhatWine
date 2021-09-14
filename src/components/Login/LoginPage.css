@@ -1,0 +1,222 @@
+/* //--------FROM LOGIN PAGE--------// */
+
+.background {
+  height: 100vh;
+  background-color: #800;
+}
+.mainDiv {
+  background-color: #d3d6db;
+  border-radius: 15px;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.loginTitle {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  align-content: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  align-items: center;
+}
+.logoTitle {
+  padding-top: 20px;
+  color: #800;
+  font-size: 36px;
+}
+.loginIcon {
+  padding-bottom: 8px;
+  font-size: 50px;
+}
+.underText {
+  /* font-weight: 600; */
+  /* font-style: italic; */
+  padding-left: 10px;
+  padding-bottom: 1px;
+
+  position: relative;
+  top: 50%;
+  /* width: 10em; */
+  color: #303841;
+  margin: 0 auto;
+  border-right: 2px solid #303841;
+  font-size: 18px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+.underTextWrapper {
+  padding-top: 10px;
+  padding-left: 33px;
+}
+.anim-typewriter {
+  animation: typewriter 4s steps(30) 1s 1 normal both,
+    blinkTextCursor 500ms steps(30) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 237px;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: #303841;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.quote {
+  font-style: italic;
+  font-size: 18px;
+  padding-bottom: 10px;
+  /* margin-top: 30px; */
+}
+.underQuote {
+  font-size: 14px;
+  color: #303841;
+}
+.LoginLi {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4a4a4a;
+}
+
+.LiBold {
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+@media (min-width: 900px) {
+  .LoginTitle {
+    margin-bottom: 36px;
+    font-size: 28px;
+  }
+  .LoginLi {
+    line-height: 28px;
+    font-size: 18px;
+  }
+  .LiBold {
+    line-height: 24px;
+    font-size: 18px;
+  }
+  .mainDiv {
+    min-width: 908px;
+  }
+}
+@media only screen and (min-width: 661px) and (max-width: 899px) {
+  .mainDiv {
+    top: 93px;
+  }
+  .LoginTitle {
+    margin-bottom: 28px;
+    font-size: 26px;
+  }
+  .LoginLi {
+    line-height: 25px;
+    font-size: 16px;
+  }
+  .LiBold {
+    line-height: 25px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 660px) {
+  .LoginTitle {
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+  .LoginLi {
+    line-height: 24px;
+    font-size: 16px;
+  }
+  .LiBold {
+    line-height: 24px;
+    font-size: 16px;
+  }
+}
+
+.disabledButton {
+  background-color: #303841;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  transition: 0.2s linear;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  cursor: not-allowed;
+}
+.login-main {
+  margin-top: 150px;
+  padding-left: 250px;
+  padding-right: 250px;
+}
+
+.login-header {
+  margin-bottom: 30px;
+  font-size: large;
+  font-weight: bold;
+}
+.buttonLoginPage {
+  background-color: #3a4750;
+  border: none;
+  color: #d3d6db;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  font-weight: bolder;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  /* position: absolute;
+  bottom: 10px;
+  left: 40px; */
+}
+.buttonLoginPage:hover {
+  transform: scale(0.9);
+}
+.rightColumnLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.righSectionLogin {
+  font-weight: bolder;
+  display: flex;
+  padding: 20px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.loginInputs {
+  display: inline !important;
+  border-left-style: none !important;
+  border-right-style: none !important;
+  border-top-style: none !important;
+  border-bottom-style: none !important;
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  border-top-left-radius: 8px !important;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px !important;
+  background-color: white !important;
+  padding-left: 20px !important;
+  height: 45px;
+  transition: all 0.2s;
+}
+.loginInputs:focus {
+  color: black;
+  border: 2px solid #800 !important;
+  border-left-style: none;
+  box-shadow: none !important;
+  outline: none !important;
+  background-color: whitesmoke !important;
+}

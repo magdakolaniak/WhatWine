@@ -1,0 +1,144 @@
+.userMainDiv {
+  background-color: #800000;
+  height: 100vh;
+  color: #303841;
+  /* /* overflow: hidden; */
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
+}
+.mainBoardUser {
+  background-color: #d3d6db;
+  margin-bottom: 15px;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  border-radius: 10px;
+}
+.newsHeader {
+  display: flex;
+  background-color: #d3d6db;
+  margin-bottom: 25px;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  border-radius: 10px;
+  justify-content: center;
+}
+.header {
+  font-size: 24px;
+  font-weight: bolder;
+  font-style: italic;
+  padding: 5px;
+  display: flex;
+  transition: all 1s ease-in-out;
+  animation: header 1.1s infinite;
+}
+
+.recipeName {
+  transition: all ease-in-out;
+  cursor: pointer;
+}
+.recipeName:hover {
+  text-decoration: line-through;
+}
+
+@keyframes header {
+  0% {
+    opacity: 0;
+  }
+  /* 50% {
+    transform: translateY(0px);
+  } */
+  100% {
+    opacity: 1;
+  }
+}
+.recipeList {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.recipeCol {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-right: 40px;
+}
+.recipeWrapper {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.imageRecipe {
+  height: 250px;
+
+  cursor: pointer;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  transition: all 0.2s ease-in-out;
+  filter: drop-shadow(8px 10px 15px rgba(0, 0, 0, 0.468));
+}
+.imageRecipe:hover {
+  transform: scale(0.9);
+}
+.nav-link {
+  display: block;
+  padding: 10px;
+  color: #303841;
+  text-decoration: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: #d3d6db;
+  background-color: #303841;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+}
+
+.nav-link:hover {
+  color: #303841;
+}
+.nav-tabs .nav-link {
+  background: 0 0;
+  border: none;
+}
+.emptyTable {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.removeIcon {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+table {
+  margin: 15px;
+}
+.fade-in-top {
+  -webkit-animation: fade-in-top 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+    both;
+  animation: fade-in-top 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+}
+@keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

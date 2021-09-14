@@ -1,0 +1,19 @@
+.bottle-size {
+  height: 500px;
+  filter: drop-shadow(30px 10px 4px #4444dd);
+}
+#bottleRow {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+#singleBottle {
+  /* perspective: 400px; */
+  flex-shrink: 0;
+  width: 20%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
+  cursor: pointer;
+}

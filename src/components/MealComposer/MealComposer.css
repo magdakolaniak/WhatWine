@@ -1,0 +1,405 @@
+/* ------------------STYLING FOR MEAL MAIN----------------*/
+.mealMainDiv {
+  background-color: #800000;
+  height: 100vh;
+  color: #303841;
+  /* /* overflow: hidden; */
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
+}
+.mealMainRightCol {
+  padding-top: 30px;
+
+  padding-right: 30px;
+  padding-left: 30px;
+  scroll-behavior: smooth;
+}
+.welcomePart {
+  font-size: 18px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+}
+.dotsLoading {
+  display: block;
+  position: relative;
+  bottom: -10%;
+  left: 42%;
+}
+.loading span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  background: #800000;
+  border-radius: 10em;
+  animation: loading 1s infinite alternate;
+}
+.loading span:nth-of-type(2) {
+  background: #303841;
+  animation-delay: 0.2s;
+}
+.loading span:nth-of-type(3) {
+  background: #616264;
+  animation-delay: 0.4s;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ------------------STYLING FOR LEFT NAV----------------*/
+
+.navMainDiv {
+  flex-direction: column;
+  margin-left: 10px;
+}
+#listIndicators {
+  list-style-type: none;
+  padding: 0;
+}
+.ingredItem {
+  display: inline-block;
+
+  padding: 5px;
+  width: 100px;
+}
+.inputLeftNav {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  display: inline !important;
+
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  border-top-left-radius: 8px !important;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px !important;
+  background-color: white !important;
+  padding-left: 20px !important;
+  height: 45px;
+}
+.inputLeftNav:focus {
+  color: black;
+  border: 1px solid #1f2122 !important;
+  border-left-style: none;
+  box-shadow: none !important;
+  outline: none !important;
+  background-color: #d3d6db !important;
+}
+.bakeIcon {
+  height: 60px;
+
+  padding-top: 10px;
+}
+/* .cuisineIcon {
+  height: 50px;
+  margin-left: 70px;
+  cursor: pointer;
+  padding-top: 10px;
+  transition: transform 1s ease-in-out;
+}
+.cuisineIcon:hover {
+  transform: scale(1.4);
+
+  filter: drop-shadow(3px -1px 1px rgba(0, 0, 0, 0.468));
+} */
+.cuisineStyleHeader {
+  font-weight: bolder;
+  text-align: center;
+  font-style: italic;
+  padding-bottom: 10px;
+}
+
+.tickIcon {
+  color: green;
+  font-size: 30px;
+}
+.instructions {
+  font-style: italic;
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  background-color: #d3d6db;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+}
+.instructionsDown {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #d3d6db;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+}
+.accordion-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  color: #303841;
+  text-align: left;
+  background-color: #d3d6db;
+  border: 0;
+  border-radius: 0;
+  overflow-anchor: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+    border-radius 0.15s ease;
+}
+.accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  content: '';
+  background-image: url('https://image.flaticon.com/icons/png/512/748/748113.png');
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 0.2s ease-in-out;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url('https://img.icons8.com/material/24/ffffff/minus--v2.png');
+}
+.accordion-button:focus {
+  z-index: 3;
+  border-color: black;
+  box-shadow: none !important;
+}
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #d3d6db;
+  background-color: #3a4750;
+}
+.recipeIcon {
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.recipeIcon:hover {
+  height: 50px;
+  transform: scale(0.8);
+}
+.buttonRecipe {
+  background-color: transparent;
+  border: none;
+}
+
+.cuisineItem {
+  margin: 2px;
+  padding: 10px;
+
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+}
+.cuisineItem:hover {
+  background-color: #d3d6db;
+  transform: scale(0.9);
+  padding: 10px;
+}
+.cuisineItemClicked {
+  background-color: #d3d6db;
+
+  border-bottom: black solid 2px;
+}
+#mainIngred {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.dishTitle {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  text-align: center;
+
+  height: 60px;
+
+  padding-top: 10px;
+}
+.buttonDiv {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.recipeDiv {
+  padding-top: 15px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.buttonWineModal {
+  width: 250px;
+  background-color: #3a4750;
+  border: none;
+  padding: 5px;
+  color: #d3d6db;
+
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+}
+.buttonStylingClear {
+  background-color: #3a4750;
+  border: none;
+  color: #d3d6db;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  bottom: 10px;
+  left: 40px;
+}
+.buttonWineModal:hover {
+  transform: scale(0.9);
+}
+.buttonStylingClear:hover {
+  transform: scale(0.9);
+}
+
+/* ------------------STYLING FOR MAIN PLATE----------------*/
+
+.plateMainDiv {
+  background-color: #d3d6db;
+  border-radius: 3px;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  min-height: 220px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 300px;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a4750;
+  border-radius: 10px;
+}
+.entranceList {
+  -webkit-animation: bounce-in-top 1.5s ease-in-out both;
+  animation: bounce-in-top 1.5s ease-in-out both;
+  padding: 10px;
+}
+/* .choiceColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+/* .listColumn {
+  padding-left: 60px;
+} */
+.plateTitle {
+  padding-top: 70px;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: large;
+}
+.cardWrapper {
+  height: 450px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  transition: transform 0.5s ease-in;
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+}
+.cardWrapper:hover {
+  transform: scale(1.1);
+}
+.imgCard {
+  padding: 10px;
+  border-radius: 20px;
+}
+/* .whatWineButton {
+  position: absolute;
+} */
+
+*p {
+  margin-bottom: 0px !important;
+}
+@keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+    transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+    transform: translateY(-65px);
+    font-size: 20px;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+    transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    font-size: 14px;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
