@@ -3,7 +3,6 @@ import './HomePage.css';
 import { GiGrapes } from 'react-icons/gi';
 
 import { Link } from 'react-router-dom';
-import video from './movie.mp4';
 
 const HomePage = () => {
   let text = '{ Your personal Sommelier }';
@@ -18,7 +17,10 @@ const HomePage = () => {
   return (
     <>
       <video autoPlay loop muted id="myVideo">
-        <source src={video} type="video/mp4" />
+        <source
+          src="https://res.cloudinary.com/dii3cculv/video/upload/v1631645972/movie_sycszk.mp4"
+          type="video/mp4"
+        />
       </video>
 
       <div className="home-main">
