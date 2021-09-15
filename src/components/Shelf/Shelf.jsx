@@ -53,7 +53,7 @@ const Shelf = () => {
       if (grapeColor === 'white') {
         const wines = await axios(
           BASEUrl +
-            `?type=${tasteProfile.type},sparkling&character.body=${tasteProfile.body}&character.sweetness=${tasteProfile.sweetness}`
+            `/wines?type=${tasteProfile.type},sparkling&character.body=${tasteProfile.body}&character.sweetness=${tasteProfile.sweetness}`
         );
 
         setPickedFromBoard(wines.data);
