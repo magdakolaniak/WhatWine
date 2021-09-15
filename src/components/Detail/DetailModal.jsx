@@ -10,6 +10,7 @@ const DetailModal = (props) => {
         aria-labelledby="contained-modal-title-vcenter"
         centered
         className="modalDetail"
+        id="detailModal"
       >
         <Modal.Header closeButton>
           <Modal.Title

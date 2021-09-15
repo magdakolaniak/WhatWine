@@ -88,23 +88,27 @@ const Detail = () => {
                 <span>
                   {' '}
                   {detailed[0].fullName}
-                  <OverlayTrigger
-                    key="top"
-                    placement="top"
-                    overlay={
-                      <Tooltip id="tooltip-top">
-                        Click to add to your list
-                      </Tooltip>
-                    }
-                  >
-                    <span
-                      className="addToFavWrapper"
-                      id={detailed[0]._id}
-                      onClick={handleClick}
+                  {user && user._id && user._id.length > 0 ? (
+                    <OverlayTrigger
+                      key="top"
+                      placement="top"
+                      overlay={
+                        <Tooltip id="tooltip-top">
+                          Click to add to your list
+                        </Tooltip>
+                      }
                     >
-                      <BsFillHeartFill style={{ marginBottom: '25px' }} />
-                    </span>
-                  </OverlayTrigger>
+                      <span
+                        className="addToFavWrapper"
+                        id={detailed[0]._id}
+                        onClick={handleClick}
+                      >
+                        <BsFillHeartFill style={{ marginBottom: '25px' }} />
+                      </span>
+                    </OverlayTrigger>
+                  ) : (
+                    ''
+                  )}
                 </span>
               </div>
 

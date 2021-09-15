@@ -174,9 +174,15 @@
   width: 150px;
   height: 150px;
 }
-.wrapperPreview {
-  position: absolute;
+#detailModal {
+  display: flex;
 }
-#linkPreview {
-  position: relative;
+#detailModal .modal-header {
+  align-self: left;
+  flex-direction: row;
+}
+#detailModal .btn-close {
+  position: absolute;
+  top: 5%;
+  left: 83%;
 }

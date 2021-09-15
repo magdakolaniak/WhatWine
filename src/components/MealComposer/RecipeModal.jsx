@@ -68,19 +68,23 @@ const RecipeModal = (props) => {
               Here is your full &nbsp;
               <span className="propsTitle">{props.dish} &nbsp;</span>
               recipe
-              <OverlayTrigger
-                key="right"
-                placement="right"
-                overlay={<Tooltip id="tooltip-right">Click to save</Tooltip>}
-              >
-                <span style={{ paddingLeft: '30px' }}>
-                  <BsFillHeartFill
-                    id="recipeAddHeart"
-                    onClick={addRecipe}
-                    className="addToRecipe"
-                  />
-                </span>
-              </OverlayTrigger>
+              {user._id && user._id.length > 0 ? (
+                <OverlayTrigger
+                  key="right"
+                  placement="right"
+                  overlay={<Tooltip id="tooltip-right">Click to save</Tooltip>}
+                >
+                  <span style={{ paddingLeft: '30px' }}>
+                    <BsFillHeartFill
+                      id="recipeAddHeart"
+                      onClick={addRecipe}
+                      className="addToRecipe"
+                    />
+                  </span>
+                </OverlayTrigger>
+              ) : (
+                ''
+              )}
               <br></br>
             </div>
           </Modal.Title>
