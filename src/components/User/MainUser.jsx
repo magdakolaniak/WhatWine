@@ -20,7 +20,6 @@ const MainUser = () => {
     useContext(LoginContext);
 
   const removeWine = async (e) => {
-    let URL = process.env.REACT_APP_BE_URL;
     e.preventDefault();
     let id = e.currentTarget.id;
 
@@ -43,7 +42,6 @@ const MainUser = () => {
     }
   };
   const removeRecipe = async (e) => {
-    let URL = process.env.REACT_APP_BE_URL;
     e.preventDefault();
     let id = e.currentTarget.id;
 
@@ -58,11 +56,9 @@ const MainUser = () => {
     }
   };
   useEffect(() => {
-    const URL = 'http://localhost:3001/user/';
-
     const getWines = async () => {
       try {
-        const data = await axios(URL + `${user._id}/wines`);
+        const data = await axios(URL + `/user/${user._id}/wines`);
 
         setUserWines(data.data.wines);
       } catch (error) {

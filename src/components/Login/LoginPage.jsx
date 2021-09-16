@@ -4,13 +4,14 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { GiGrapes } from 'react-icons/gi';
 import { useState, useContext } from 'react';
+import RegisterModal from './RegisterModal';
 
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 
 let text = '{ Your personal Sommelier }';
 
 const LoginPage = ({ history }) => {
-  const [setSignUp] = useState(false);
+  const [signUp, setSignUp] = useState(false);
   const [validation] = useState(true);
 
   const [email, setEmail] = useState('');
@@ -20,13 +21,17 @@ const LoginPage = ({ history }) => {
     useContext(LoginContext);
   const URL = process.env.REACT_APP_BE_URL;
 
+  const hideModal = () => {
+    setSignUp(false);
+  };
+
   const base64 = (input) => {
     return new Buffer(input).toString('base64');
   };
 
   const getUserWeather = async (city) => {
     try {
-      const api = '5a17452b42ea63a877f8f2b5ea332bf5';
+      const api = process.env.REACT_APP_WEATHER;
       const data = await axios(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}`
       );
@@ -37,7 +42,7 @@ const LoginPage = ({ history }) => {
   };
   const getNews = async () => {
     try {
-      const key = 'b26bae29738f43acaa41e51752b4186b';
+      const key = process.env.REACT_APP_NEWS;
       const news = await axios(
         `https://newsapi.org/v2/everything?q=winery&from=2021-08-15&sortBy=publishedAt&apiKey=${key}`
       );
@@ -142,7 +147,8 @@ const LoginPage = ({ history }) => {
                       className="GreenLink ml-2 ml-md-0"
                       onClick={() => setSignUp(true)}
                     >
-                      Don't have an account ? Sign Up!
+                      Don't have an account ?{' '}
+                      <span className="signUp">Sign Up!</span>
                     </div>
                   </div>
                 </Form>
@@ -158,10 +164,7 @@ const LoginPage = ({ history }) => {
             </Row>
           </Container>
         </div>
-        {/* <RegisterForm
-          show={loginModalShow}
-          onHide={() => setLoginModalShow(false)}
-        /> */}
+        <RegisterModal showModal={signUp} hideModal={hideModal} />
       </div>
     </div>
   );

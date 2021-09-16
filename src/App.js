@@ -12,6 +12,7 @@ import TasteBoard from './components/TasteBoard/TasteBoard';
 import MealMain from './components/MealComposer/MealMain.jsx';
 import LoginPage from './components/Login/LoginPage';
 import UserCard from './components/User/UserCard';
+import RegisterModal from './components/Login/RegisterModal';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route component={TasteBoard} path="/tasteBoard" exact />
       <Route component={MealMain} path="/mealComposer" exact />
       <Route component={UserCard} path="/userProfile" exact />
+      <Route component={RegisterModal} path="/register" exact />
     </Router>
   );
 }
