@@ -16,9 +16,9 @@ import { IoMdHeartDislike } from 'react-icons/io';
 import NewsCarousel from './NewsCarousel';
 
 const MainUser = () => {
-  const { user, setUser, setUserWines, userWines, news } =
+  const { user, setUser, setUserWines, userWines, news, weather } =
     useContext(LoginContext);
-
+  let URL = process.env.REACT_APP_BE_URL;
   const removeWine = async (e) => {
     e.preventDefault();
     let id = e.currentTarget.id;
@@ -78,9 +78,18 @@ const MainUser = () => {
     <>
       <Container>
         <Row className="mainBoardUser d-flex">
-          <Col md={12}>
-            <Weather />
-          </Col>
+          {weather && weather.name ? (
+            <Col md={12}>
+              <Weather />
+            </Col>
+          ) : (
+            <Col md={12} className="weatherEmpty">
+              <div className="weatherHeader">
+                Please chceck your city, looks like name is incorrect:(<br></br>{' '}
+                Provide valid name to get your daily reccomendations here
+              </div>
+            </Col>
+          )}
         </Row>
 
         <Row>

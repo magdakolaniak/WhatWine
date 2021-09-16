@@ -47,6 +47,7 @@ const Detail = () => {
         const res = await axios.post(URL + `/user/${user._id}/addToList/${id}`);
 
         if (res.status === 200) {
+          console.log(res);
           setAddedModal(true);
           user.wines.push(id);
         }

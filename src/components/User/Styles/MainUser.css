@@ -30,6 +30,22 @@
   transition: all 1s ease-in-out;
   animation: header 1.1s infinite;
 }
+.weatherEmpty {
+  display: flex;
+  background-color: #d3d6db;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  justify-content: center;
+}
+.weatherHeader {
+  font-size: 20px;
+  font-weight: bolder;
+  font-style: italic;
+  text-align: center;
+  padding: 5px;
+  display: flex;
+}
 
 .recipeName {
   transition: all ease-in-out;
@@ -141,4 +157,10 @@ table {
     transform: translateY(0);
     opacity: 1;
   }
+}
+tr td {
+  padding: 10px;
+}
+tr th {
+  padding: 10px;
 }

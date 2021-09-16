@@ -116,106 +116,115 @@ const Weather = () => {
   return (
     <>
       <Container>
-        <Row>
-          <Col xs={6} className="weatherReccom">
+        {weather && weather.name && weather.main.temp ? (
+          <>
             <Row>
-              <Col xs={6} style={{ paddingTop: '10px' }}>
-                {' '}
-                <MyClock />
+              <Col xs={6} className="weatherReccom">
+                <Row>
+                  <Col xs={6} style={{ paddingTop: '10px' }}>
+                    {' '}
+                    <MyClock />
+                  </Col>
+                  <Col xs={6} className="calendarColumn">
+                    <div>
+                      <span className="dayWrapper"> {calendar[0]}</span>
+                      <span className="monthWrapper"> {calendar[1]}</span>
+                    </div>
+                    <div></div>
+                    <div>{calendar[2]}</div>{' '}
+                  </Col>
+                </Row>
               </Col>
+
               <Col xs={6} className="calendarColumn">
-                <div>
-                  <span className="dayWrapper"> {calendar[0]}</span>
-                  <span className="monthWrapper"> {calendar[1]}</span>
-                </div>
-                <div></div>
-                <div>{calendar[2]}</div>{' '}
-              </Col>
-            </Row>
-          </Col>
-
-          <Col xs={6} className="calendarColumn">
-            <Row>
-              <Col xs={6} md={6}>
-                <div className="mainCity">{weather.name}</div>
-                <img
-                  src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-                  alt="weather"
-                  className="weather-icon"
-                />
-                <span className="main-temp">{celsius(weather.main.temp)}°</span>
-                <div className="sky-description">
-                  {weather.weather[0].description}
-                </div>
-              </Col>
-              <Col xs={6} md={6}>
-                <div className="feelsLike">
-                  Feels like {celsius(weather.main.feels_like)}°
-                </div>
-
-                <span>
-                  <ImArrowUp className="weather-icons" />{' '}
-                  <span className="deg">{celsius(weather.main.temp_max)}°</span>
-                </span>
-                <span>
-                  {' '}
-                  <ImArrowDown className="weather-icons" />{' '}
-                  <span className="deg">
-                    {celsius(weather.main.temp_min)}°{' '}
-                  </span>
-                </span>
-                <div className="main-features">
-                  <span>
-                    {' '}
-                    <BsDropletHalf className="weather-icons" />{' '}
-                    <span className="results">{weather.main.humidity} %</span>
-                  </span>
-                </div>
-                <div className="main-features">
-                  <span>
-                    {' '}
-                    <CgArrowsMergeAltV className="weather-icons" />{' '}
-                    <span className="results">
-                      {weather.main.pressure} hPa{' '}
+                <Row>
+                  <Col xs={6} md={6}>
+                    <div className="mainCity">{weather.name}</div>
+                    <img
+                      src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                      alt="weather"
+                      className="weather-icon"
+                    />
+                    <span className="main-temp">
+                      {celsius(weather.main.temp)}°
                     </span>
-                  </span>
-                </div>
+                    <div className="sky-description">
+                      {weather.weather[0].description}
+                    </div>
+                  </Col>
+                  <Col xs={6} md={6}>
+                    <div className="feelsLike">
+                      Feels like {celsius(weather.main.feels_like)}°
+                    </div>
+
+                    <span>
+                      <ImArrowUp className="weather-icons" />{' '}
+                      <span className="deg">
+                        {celsius(weather.main.temp_max)}°
+                      </span>
+                    </span>
+                    <span>
+                      {' '}
+                      <ImArrowDown className="weather-icons" />{' '}
+                      <span className="deg">
+                        {celsius(weather.main.temp_min)}°{' '}
+                      </span>
+                    </span>
+                    <div className="main-features">
+                      <span>
+                        {' '}
+                        <BsDropletHalf className="weather-icons" />{' '}
+                        <span className="results">
+                          {weather.main.humidity} %
+                        </span>
+                      </span>
+                    </div>
+                    <div className="main-features">
+                      <span>
+                        {' '}
+                        <CgArrowsMergeAltV className="weather-icons" />{' '}
+                        <span className="results">
+                          {weather.main.pressure} hPa{' '}
+                        </span>
+                      </span>
+                    </div>
+                  </Col>
+                </Row>
               </Col>
             </Row>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12} className="wineOfTheDay">
-            {' '}
-            <div className="pickedWrapper">
-              Looks like this afternoon will be the perfect weather for a glass
-              of...
-            </div>
-            <div style={{ padding: '10px' }}>
-              <span id="wineOfTheDayDesc">"{picked[0]}" </span>
-              <span id="showHideWine" onClick={showPicked}>
-                Show
-              </span>
-            </div>
-            <div
-              id="collapse"
-              style={{ padding: '10px', display: 'none' }}
-              className="fade-in-top"
-            >
-              {picked[1].map((wine) => (
-                <span style={{ padding: '20px' }}>
-                  <img
-                    src={wine.image}
-                    style={{
-                      height: '150px',
-                      filter: 'drop-shadow(8px 5px 8px rgba(0, 0, 0, 0.468)',
-                      cursor: 'pointer',
-                    }}
-                    alt="reccom"
-                  />
-                </span>
-              ))}
-              {/* {picked[1][1].map((wine) => (
+            <Row>
+              <Col md={12} className="wineOfTheDay">
+                {' '}
+                <div className="pickedWrapper">
+                  Looks like this afternoon will be the perfect weather for a
+                  glass of...
+                </div>
+                <div style={{ padding: '10px' }}>
+                  <span id="wineOfTheDayDesc">"{picked[0]}" </span>
+                  <span id="showHideWine" onClick={showPicked}>
+                    Show
+                  </span>
+                </div>
+                <div
+                  id="collapse"
+                  style={{ padding: '10px', display: 'none' }}
+                  className="fade-in-top"
+                >
+                  {picked[1].map((wine) => (
+                    <span style={{ padding: '20px' }}>
+                      <img
+                        src={wine.image}
+                        style={{
+                          height: '150px',
+                          filter:
+                            'drop-shadow(8px 5px 8px rgba(0, 0, 0, 0.468)',
+                          cursor: 'pointer',
+                        }}
+                        alt="reccom"
+                      />
+                    </span>
+                  ))}
+                  {/* {picked[1][1].map((wine) => (
                 <span style={{ padding: '20px' }}>
                   <img
                     src={wine.image}
@@ -228,9 +237,13 @@ const Weather = () => {
                   />
                 </span>
               ))} */}
-            </div>
-          </Col>
-        </Row>
+                </div>
+              </Col>
+            </Row>
+          </>
+        ) : (
+          <div>Please provide valid name city to get wetaher reccom</div>
+        )}
       </Container>
     </>
   );
