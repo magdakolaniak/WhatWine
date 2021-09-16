@@ -190,22 +190,52 @@
     -o-filter: blur(50px);
     -ms-filter: blur(50px);
   }
-  /* 50% {
-    -webkit-filter: blur(25px);
-    -moz-filter: blur(25px);
-    -o-filter: blur(25px);
-    -ms-filter: blur(25px);
-  }
-  75% {
-    -webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -o-filter: blur(10px);
-    -ms-filter: blur(10px);
-  } */
+
   90% {
     -webkit-filter: blur(0px);
     -moz-filter: blur(0px);
     -o-filter: blur(0px);
     -ms-filter: blur(0px);
+  }
+}
+@media (max-width: 651px) {
+  .writingText {
+    color: linear-gradient(red, yellow);
+    width: 15ch;
+    animation: typing 2s steps(15), blink 1s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 40px;
+  }
+  #mainText {
+    background: -webkit-linear-gradient(#d3d6db, #303841);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
+  }
+  #reflection {
+    color: white;
+    font-size: 40px;
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-2);
+    -moz-transform: rotateX(210deg);
+    -o-transform: rotateX(210deg);
+    -webkit-transform: rotateX(210deg);
+    transform: rotateX(210deg);
+    perspective: 200px;
+    -webkit-mask-image: -webkit-gradient(
+      linear,
+      right top,
+      right bottom,
+      from(transparent),
+      color-stop(20%, transparent),
+      to(rgba(0, 0, 0, 0.4))
+    );
+  }
+  .pickRed,
+  .pickWhite {
+    font-size: 56px;
   }
 }
