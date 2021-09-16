@@ -74,98 +74,97 @@ const LoginPage = ({ history }) => {
 
   return (
     <div className="background">
-      <div className="mainDiv">
-        <Container>
-          <Row className="mt-5 ml-5 d-flex">
-            <Col sm={12} className="px-5">
-              <div className="loginTitle">
-                <span className="logoTitle">
-                  <GiGrapes className="loginIcon" />
-                  WhatWine?
-                </span>
-                <span className="underTextWrapper">
-                  <p className="underText anim-typewriter"> {text}</p>
-                </span>
-              </div>
-              <div className="quote">
-                “I cook with wine, sometimes I even add it to the food.”
-              </div>
-              <div className="underQuote">― W.C. Fields</div>
-            </Col>
-          </Row>
-        </Container>
-        <div
-          style={{
-            width: '100%',
-            backgroundColor: '#d3d6db',
-          }}
-        >
-          <Container>
-            <Row>
-              <Col md={6}>
-                <Form
-                  className="py-5 px-5 w-sm-100 w-lg-50 mx-auto"
-                  onSubmit={(e) => e.preventDefault()}
-                >
-                  <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                      isInvalid={!validation}
-                      type="text"
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your email"
-                      className="loginInputs"
-                    />
-                  </Form.Group>
+      <Container className="mainDiv">
+        <Row className="row-1">
+          <Col sm={8} className="px-5">
+            <div className="loginTitle">
+              <span className="logoTitle">
+                <GiGrapes className="loginIcon" />
+                WhatWine?
+              </span>
+              <span className="underTextWrapper">
+                <p className="underText anim-typewriter"> {text}</p>
+              </span>
+            </div>
+          </Col>
+        </Row>
+        <Row className="row-2">
+          <Col xs={12}>
+            <div className="quote">
+              “I cook with wine, sometimes I even add it to the food.”
+            </div>
+            <div className="underQuote">― W.C. Fields</div>
+          </Col>
+        </Row>
 
-                  <Form.Group className="mb-3">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                      isInvalid={!validation}
-                      type="password"
-                      onChange={(e) => setPassword(e.target.value)}
-                      placeholder="Password"
-                      className="loginInputs"
-                    />
-                  </Form.Group>
-                  {!validation && (
-                    <p className="wrongValidation">Wrong Credentials </p>
-                  )}
+        <Row className="row-3">
+          <Col xs={12} md={6}>
+            <Form
+              className="py-5 px-5 w-sm-100 w-lg-50 mx-auto"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  isInvalid={!validation}
+                  type="text"
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="loginInputs"
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  isInvalid={!validation}
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password"
+                  className="loginInputs"
+                />
+              </Form.Group>
+              <Row>
+                <Col xs={12} md={6}>
                   <div
                     style={{
                       display: 'flex',
                       flexDirection: 'row',
                       justifyContent: 'space-between',
                       alignItems: 'center',
+                      marginRight: '10px',
                     }}
                   >
                     <button onClick={submitHandler} className="buttonLoginPage">
                       Jump in!
                     </button>
+                  </div>
+                </Col>
+                <Col xs={12} md={6}>
+                  <div
+                    style={{ textAlign: 'center' }}
+                    onClick={() => setSignUp(true)}
+                  >
+                    Don't have an account ?<br></br>
+                    <span className="signUp">Sign Up!</span>
+                  </div>
+                </Col>
+              </Row>
+            </Form>
+          </Col>
 
-                    <div
-                      className="GreenLink ml-2 ml-md-0"
-                      onClick={() => setSignUp(true)}
-                    >
-                      Don't have an account ?{' '}
-                      <span className="signUp">Sign Up!</span>
-                    </div>
-                  </div>
-                </Form>
-              </Col>
-              <Col md={6} className="rightColumnLogin">
-                <Link to="/home">
-                  {' '}
-                  <div className="righSectionLogin buttonLoginPage">
-                    Explore as a guest
-                  </div>
-                </Link>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-        <RegisterModal showModal={signUp} hideModal={hideModal} />
-      </div>
+          <Col xs={12} md={6} className="rightColumnLogin">
+            <Link to="/home">
+              {' '}
+              <div className="righSectionLogin buttonLoginPage">
+                Explore as a guest
+              </div>
+            </Link>
+          </Col>
+        </Row>
+      </Container>
+
+      <RegisterModal showModal={signUp} hideModal={hideModal} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 body {
   font-family: 'PT Serif', serif;
-  /* font-family: 'Bangers', cursive; */
+
   background-color: black;
   height: 100%;
 }
@@ -8,13 +8,10 @@ a {
   text-decoration: none;
 }
 #myVideo {
-  position: absolute;
-  /* right: 0; */
-  bottom: 0;
-  top: 0;
+  position: fixed;
+
+  height: auto;
   z-index: -1;
-  width: 100%;
-  opacity: 1;
 }
 .colLogoHome {
   display: flex;
@@ -29,23 +26,25 @@ a {
   justify-content: center;
   margin-bottom: 30px;
   align-items: center;
+  border-radius: 10px;
   background-color: rgba(163, 180, 158, 0.632);
-  width: 350px;
 }
 .logoTitleHome {
-  padding-top: 20px;
+  padding: 15px;
   color: #800;
   font-size: 36px;
+  font-weight: bold;
 
   letter-spacing: 0.1em;
 }
 
 .home-main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   height: 100vh;
   align-items: center;
+
   /* background-image: url('winery.jpg'); */
 }
 .columns {
@@ -74,7 +73,7 @@ a {
   font-style: oblique;
   font-weight: bold;
   border-radius: 50%;
-  left: 23%;
+
   opacity: 0;
   background-color: #30384189;
   padding: 5px;
@@ -102,7 +101,7 @@ a {
 .middleMeal {
   position: relative;
   bottom: 53%;
-  left: 25%;
+  left: 5%;
   font-size: 22px;
   font-style: oblique;
   font-weight: bold;
@@ -134,7 +133,7 @@ a {
 .middleList {
   position: relative;
   bottom: 53%;
-  left: 29%;
+  left: 10%;
   font-size: 22px;
   font-style: oblique;
   font-weight: bold;
@@ -178,12 +177,45 @@ a {
 .linkTest {
   background-color: black;
 }
-/* .logo-main {
-  height: 250px;
+.home-main-row {
+  display: flex;
+  flex-direction: row;
+}
 
-  position: absolute;
-  left: 50%;
-  right: 50%;
+@media (min-aspect-ratio: 16/9) {
+  #myVideo {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  #myViedo {
+    width: auto;
+    height: 100%;
+  }
+}
 
-  transform: translate(-50%);
-} */
+@media (max-width: 738px) {
+  .circle-styling-list,
+  .circle-styling,
+  .circle-styling-meal {
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 100px;
+    background-color: rgba(232, 242, 242, 0.488);
+    border-radius: 50%;
+    border: white 2px solid;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .logoTitleHome {
+    padding-top: 20px;
+    color: #800;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+  }
+}

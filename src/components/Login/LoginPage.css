@@ -6,14 +6,29 @@
 }
 .mainDiv {
   background-color: #d3d6db;
+
   border-radius: 15px;
   box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
   z-index: 1;
   position: absolute;
   top: 50%;
   left: 50%;
+  padding: 20px;
 
+  /* width: 90vw;
+  height: 90vh; */
   transform: translate(-50%, -50%);
+}
+.row-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row-2 {
+  padding-left: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .loginTitle {
@@ -86,65 +101,6 @@
 .underQuote {
   font-size: 14px;
   color: #303841;
-}
-.LoginLi {
-  font-size: 16px;
-  font-weight: 400;
-  color: #4a4a4a;
-}
-
-.LiBold {
-  font-weight: 500;
-  color: #4a4a4a;
-}
-
-@media (min-width: 900px) {
-  .LoginTitle {
-    margin-bottom: 36px;
-    font-size: 28px;
-  }
-  .LoginLi {
-    line-height: 28px;
-    font-size: 18px;
-  }
-  .LiBold {
-    line-height: 24px;
-    font-size: 18px;
-  }
-  .mainDiv {
-    min-width: 908px;
-  }
-}
-@media only screen and (min-width: 661px) and (max-width: 899px) {
-  .mainDiv {
-    top: 93px;
-  }
-  .LoginTitle {
-    margin-bottom: 28px;
-    font-size: 26px;
-  }
-  .LoginLi {
-    line-height: 25px;
-    font-size: 16px;
-  }
-  .LiBold {
-    line-height: 25px;
-    font-size: 16px;
-  }
-}
-@media (max-width: 660px) {
-  .LoginTitle {
-    margin-bottom: 24px;
-    font-size: 24px;
-  }
-  .LoginLi {
-    line-height: 24px;
-    font-size: 16px;
-  }
-  .LiBold {
-    line-height: 24px;
-    font-size: 16px;
-  }
 }
 
 .disabledButton {
@@ -249,4 +205,30 @@
 }
 .signUp:hover {
   text-decoration: underline;
+}
+@media (max-width: 460px) {
+  .rightColumnLogin {
+    margin-top: 0px;
+  }
+  form {
+    margin-top: 0px;
+    padding: 0px;
+  }
+  .py-5 {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+  .logoTitle {
+    font-size: 26px;
+  }
+  .buttonLoginPage {
+    background-color: #3a4750;
+    border: none;
+    color: #d3d6db;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+
+    box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  }
 }
