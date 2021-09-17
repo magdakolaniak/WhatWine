@@ -7,8 +7,14 @@ import Behind from './Behind';
 
 const LeftUser = () => {
   const { user } = useContext(LoginContext);
-  const [disable, setDisable] = useState(true);
+
   const [behindModal, setBehindModal] = useState(false);
+  const [newUser, setNewUser] = useState({
+    firstname: `${user.firstname}`,
+    lastname: `${user.lastname}`,
+    email: `${user.email}`,
+    city: `${user.city}`,
+  });
 
   const showProfile = () => {
     let content = document.getElementById('accountDetails');
@@ -67,6 +73,13 @@ const LeftUser = () => {
       });
     }
   };
+  const handleChange = (e) => {
+    let id = e.target.id;
+    setNewUser({ ...newUser, [`${id}`]: e.target.value });
+  };
+  const submitChange = () => {
+    console.log(newUser);
+  };
   return (
     <>
       <Container className="mainLeft">
@@ -99,31 +112,39 @@ const LeftUser = () => {
           >
             <Form.Label>Name</Form.Label>
             <Form.Control
+              id="firstname"
               defaultValue={user.firstname}
               type="text"
               className="input"
               disabled
+              onChange={handleChange}
             />
             <Form.Label>Last name</Form.Label>
             <Form.Control
+              id="lastname"
               defaultValue={user.lastname}
               type="text"
               className="input"
               disabled
+              onChange={handleChange}
             />
             <Form.Label>E-mail address</Form.Label>
             <Form.Control
+              id="email"
               defaultValue={user.email}
               type="text"
               className="input"
               disabled
+              onChange={handleChange}
             />
             <Form.Label>City</Form.Label>
             <Form.Control
+              id="city"
               defaultValue={user.city}
               type="text"
               className="input"
               disabled
+              onChange={handleChange}
             />
 
             <Row>
@@ -139,6 +160,7 @@ const LeftUser = () => {
                   id="saveProfile"
                   className="showHideClick"
                   style={{ backgroundColor: ' #006633', display: 'none' }}
+                  onClick={submitChange}
                 >
                   Save
                 </span>
@@ -164,7 +186,9 @@ const LeftUser = () => {
         </Row>
         <Row>
           <Col xs={12} md={12} id="wineriesRow" style={{ display: 'none' }}>
-            <div>here will be google maps</div>
+            <div style={{ padding: '20px', textAlign: 'center' }}>
+              Come back later for some more content!
+            </div>
           </Col>
         </Row>
       </Container>
@@ -185,7 +209,9 @@ const LeftUser = () => {
         </Row>
         <Row>
           <Col xs={12} md={12} id="articlesRow" style={{ display: 'none' }}>
-            <div>Here you can go back to your articles</div>
+            <div style={{ padding: '20px', textAlign: 'center' }}>
+              Come back later for some more content!
+            </div>
           </Col>
         </Row>
       </Container>
