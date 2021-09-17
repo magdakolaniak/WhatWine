@@ -7,11 +7,12 @@ import Behind from './Behind';
 
 const LeftUser = () => {
   const { user } = useContext(LoginContext);
-  const [disable] = useState(true);
+  const [disable, setDisable] = useState(true);
   const [behindModal, setBehindModal] = useState(false);
 
   const showProfile = () => {
     let content = document.getElementById('accountDetails');
+
     let button = document.getElementById('showHideButton');
     if (content.style.display === 'block') {
       content.style.display = 'none';
@@ -43,7 +44,29 @@ const LeftUser = () => {
       button.innerText = 'Hide';
     }
   };
-
+  const enableEdit = () => {
+    let info = document.getElementById('editMode');
+    let editButton = document.getElementById('editProfile');
+    let inputs = document.querySelectorAll('input');
+    let saveButton = document.getElementById('saveProfile');
+    if (editButton.innerText === 'Edit') {
+      editButton.innerText = 'Skip';
+      editButton.style.backgroundColor = ' #800';
+      saveButton.style.display = 'block';
+      info.style.display = 'flex';
+      inputs.forEach((el) => {
+        el.removeAttribute('disabled');
+      });
+    } else if (editButton.innerText === 'Skip') {
+      editButton.innerText = 'Edit';
+      editButton.style.backgroundColor = '#303841';
+      saveButton.style.display = 'none';
+      info.style.display = 'none';
+      inputs.forEach((el) => {
+        el.setAttribute('disabled', true);
+      });
+    }
+  };
   return (
     <>
       <Container className="mainLeft">
@@ -60,6 +83,13 @@ const LeftUser = () => {
               </span>
             </div>
           </Col>
+          <div
+            id="editMode"
+            className="fade-in-top"
+            style={{ display: 'none' }}
+          >
+            Click on a field to edit!
+          </div>
         </Row>
         <Row>
           <Col
@@ -72,29 +102,48 @@ const LeftUser = () => {
               defaultValue={user.firstname}
               type="text"
               className="input"
-              disabled={disable}
+              disabled
             />
             <Form.Label>Last name</Form.Label>
             <Form.Control
               defaultValue={user.lastname}
               type="text"
               className="input"
-              disabled={disable}
+              disabled
             />
             <Form.Label>E-mail address</Form.Label>
             <Form.Control
               defaultValue={user.email}
               type="text"
               className="input"
-              disabled={disable}
+              disabled
             />
             <Form.Label>City</Form.Label>
             <Form.Control
               defaultValue={user.city}
               type="text"
               className="input"
-              disabled={disable}
+              disabled
             />
+
+            <Row>
+              <div style={{ width: '345px' }}>
+                <span
+                  id="editProfile"
+                  className="editSkipButton"
+                  onClick={enableEdit}
+                >
+                  Edit
+                </span>
+                <span
+                  id="saveProfile"
+                  className="showHideClick"
+                  style={{ backgroundColor: ' #006633', display: 'none' }}
+                >
+                  Save
+                </span>
+              </div>
+            </Row>
           </Col>
         </Row>
       </Container>
