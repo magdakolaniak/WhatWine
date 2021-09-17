@@ -4,9 +4,11 @@ import { useState, useContext } from 'react';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 
 import Behind from './Behind';
+import axios from 'axios';
 
 const LeftUser = () => {
-  const { user } = useContext(LoginContext);
+  const URL = process.env.REACT_APP_BE_URL;
+  const { user, setUser } = useContext(LoginContext);
 
   const [behindModal, setBehindModal] = useState(false);
   const [newUser, setNewUser] = useState({
@@ -77,8 +79,15 @@ const LeftUser = () => {
     let id = e.target.id;
     setNewUser({ ...newUser, [`${id}`]: e.target.value });
   };
-  const submitChange = () => {
+  const submitChange = async () => {
     console.log(newUser);
+    try {
+      const res = await axios.put(URL + `/user/edit/${user._id}`, newUser);
+      if (res.status === 200) {
+        alert('Sucesfully changed');
+        setUser(res.data);
+      }
+    } catch (error) {}
   };
   return (
     <>
