@@ -1,58 +1,102 @@
 import { Row, Col, Container } from 'react-bootstrap';
 import './HomePage.css';
 import { GiGrapes } from 'react-icons/gi';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
-  // const BASEUrl = process.env.REACT_APP_API;
-  // const { setMainData } = useContext(LoginContext);
+  const [loading, setLoading] = useState(true);
 
-  // const mainDataWines = async () => {
-  //   let data = await axios(BASEUrl + `/`);
-  //   setMainData(data.data);
-  // };
-  // mainDataWines();
+  function play() {
+    let background = document.getElementById('myVideo');
+    let mainDiv = document.getElementById('myNewId');
+    mainDiv.style.backgroundColor = 'transparent';
+    console.log(background);
+    if (background.readyState === 4) {
+      setLoading(false);
+
+      background.style.display = 'inline';
+      background.play();
+    }
+  }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      play();
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
-      <video autoPlay loop muted id="myVideo">
+      <video loop muted id="myVideo" style={{ display: 'none' }}>
         <source
           src="https://res.cloudinary.com/dii3cculv/video/upload/v1631645972/movie_sycszk.mp4"
           type="video/mp4"
         />
       </video>
-
-      <Container className="home-main" fluid>
-        <Row className="home-main-row">
-          <Col xs={12} md={12} className="colLogoHome">
-            <div className="loginTitleHome">
-              <span className="logoTitleHome">
-                <GiGrapes className="loginIcon" />
-                WhatWine?
-              </span>
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={12} md={4}>
-            <Link to="/wineList">
-              <div id="wine-list-circle" className="circle-styling-list"></div>
-              <span className="middleList">Wine List</span>
-            </Link>
-          </Col>
-          <Col xs={12} md={4}>
-            <Link to="/tasteProfiler">
-              <div id="taste-profiler-circle" className="circle-styling"></div>
-              <span className="middle">Taste profiler</span>
-            </Link>
-          </Col>
-          <Col xs={12} md={4}>
-            <Link to="/mealComposer">
-              <div id="create-circle" className="circle-styling-meal"></div>
-              <span className="middleMeal">Dish Section</span>
-            </Link>
-          </Col>
-        </Row>
+      <Container className="home-main" id="myNewId" fluid>
+        {loading ? (
+          <>
+            <span className="loadingWrapper">
+              <div
+                className="loadingText"
+                style={{ fontSize: '18px', fontWeight: 'bolder' }}
+              >
+                {' '}
+                We are setting you up!
+              </div>
+              <div className="dotsLoadingHome">
+                <div className="loadingHome mb-4">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </span>
+          </>
+        ) : (
+          <>
+            <Row className="home-main-row">
+              <Col xs={12} md={12} className="colLogoHome">
+                <div className="loginTitleHome">
+                  <span className="logoTitleHome">
+                    <GiGrapes className="loginIcon" />
+                    WhatWine?
+                  </span>
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} md={4}>
+                <Link to="/wineList">
+                  <div
+                    id="wine-list-circle"
+                    className="circle-styling-list"
+                  ></div>
+                  <span className="middleList">Wine List</span>
+                </Link>
+              </Col>
+              <Col xs={12} md={4}>
+                <Link to="/tasteProfiler">
+                  <div
+                    id="taste-profiler-circle"
+                    className="circle-styling"
+                  ></div>
+                  <span className="middle">Taste profiler</span>
+                </Link>
+              </Col>
+              <Col xs={12} md={4}>
+                <Link to="/mealComposer">
+                  <div id="create-circle" className="circle-styling-meal"></div>
+                  <span className="middleMeal">Dish Section</span>
+                </Link>
+              </Col>
+            </Row>{' '}
+          </>
+        )}
       </Container>
     </>
   );
