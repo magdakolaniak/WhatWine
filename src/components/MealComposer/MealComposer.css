@@ -101,18 +101,7 @@
 
   padding-top: 10px;
 }
-/* .cuisineIcon {
-  height: 50px;
-  margin-left: 70px;
-  cursor: pointer;
-  padding-top: 10px;
-  transition: transform 1s ease-in-out;
-}
-.cuisineIcon:hover {
-  transform: scale(1.4);
 
-  filter: drop-shadow(3px -1px 1px rgba(0, 0, 0, 0.468));
-} */
 .cuisineStyleHeader {
   font-weight: bolder;
   text-align: center;
@@ -237,6 +226,12 @@ button:focus:not(:focus-visible) {
   height: 60px;
 
   padding-top: 10px;
+  /* display: inline-block;
+  width: 180px;
+  height: 60px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis; */
 }
 .buttonDiv {
   padding-top: 10px;
@@ -309,14 +304,7 @@ button:focus:not(:focus-visible) {
   animation: bounce-in-top 1.5s ease-in-out both;
   padding: 10px;
 }
-/* .choiceColumn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-/* .listColumn {
-  padding-left: 60px;
-} */
+
 .plateTitle {
   padding-top: 70px;
   width: 50%;
@@ -341,9 +329,6 @@ button:focus:not(:focus-visible) {
   padding: 10px;
   border-radius: 20px;
 }
-/* .whatWineButton {
-  position: absolute;
-} */
 
 *p {
   margin-bottom: 0px !important;
@@ -401,5 +386,78 @@ button:focus:not(:focus-visible) {
 
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
+  }
+}
+@media (max-width: 564px) {
+  .dishTitle {
+    padding-top: 50px;
+    font-size: 18px;
+  }
+  .recipeDiv {
+    padding-top: 65px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .buttonWineModal {
+    background-color: #3a4750;
+    border: none;
+    width: 80px;
+    color: #d3d6db;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  }
+  .grapesButtonPlate {
+    display: none;
+  }
+}
+@media (min-width: 564px) and (max-width: 768px) {
+  .recipeDiv {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+@media (min-width: 771px) and (max-width: 983px) {
+  .dishTitle {
+    padding-top: 70px;
+    font-size: 20px;
+  }
+  .recipeDiv {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 90px;
+    padding-bottom: 10px;
+  }
+}
+@media (min-width: 985px) and (max-width: 1275px) {
+  .dishTitle {
+    padding-top: 40px;
+    font-size: 20px;
+  }
+  .recipeDiv {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+}
+@media (min-width: 1543px) {
+  .dishTitle {
+    padding-top: 00px;
+    font-size: 20px;
+  }
+  .recipeDiv {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 00px;
+    padding-bottom: 10px;
   }
 }

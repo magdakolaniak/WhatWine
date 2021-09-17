@@ -131,7 +131,9 @@
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
   font-weight: bolder;
-  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+  /* box-shadow: 0 1px 3px rgb(0 0 0 / 30%); */
+  box-shadow: 0 3px 4px 0 rgb(0 0 0 / 30%);
+
   /* position: absolute;
   bottom: 10px;
   left: 40px; */

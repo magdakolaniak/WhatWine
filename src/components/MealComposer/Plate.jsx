@@ -43,7 +43,7 @@ const Plate = () => {
         <Row className="d-flex">
           {dishes.length > 0
             ? dishes.map((dish) => (
-                <Col md={4} key={dish.id}>
+                <Col xs={6} md={4} key={dish.id}>
                   <Card className="cardWrapper entranceList">
                     <Card.Img src={dish.image} className="imgCard" />
                     <Card.Body>
@@ -81,7 +81,7 @@ const Plate = () => {
                             <GiGrapes
                               style={{ fontSize: '36px', padding: '2px' }}
                             />
-                            WhatWine?
+                            <span className="grapesButtonPlate">WhatWine?</span>
                           </span>
                         </button>
                       </div>

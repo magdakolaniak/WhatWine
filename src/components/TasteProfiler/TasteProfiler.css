@@ -12,6 +12,8 @@
 }
 .box1 {
   visibility: hidden;
+  display: flex;
+  flex-direction: column;
 
   animation-name: entrance-left;
   animation-duration: 2s;
@@ -182,6 +184,9 @@
   margin-right: 30px;
   margin-top: 20px;
 }
+.boardMain {
+  display: flex;
+}
 
 @keyframes blur {
   0% {
@@ -237,5 +242,21 @@
   .pickRed,
   .pickWhite {
     font-size: 56px;
+  }
+}
+@media (max-width: 774px) {
+  .box1 {
+    padding-top: 10px;
+    display: block;
+    margin-left: auto;
+    text-align: center;
+  }
+}
+@media (max-width: 481px) {
+  .box1 {
+    padding-top: 200px;
+    display: block;
+    margin-left: auto;
+    text-align: center;
   }
 }
