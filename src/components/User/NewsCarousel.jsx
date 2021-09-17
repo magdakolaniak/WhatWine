@@ -16,16 +16,16 @@ const NewsCarousel = () => {
       <Carousel activeIndex={index} onSelect={handleSelect} id="newsCarousel">
         <Carousel.Item>
           <Row>
-            {news.slice(6, 9).map((el, i) => (
-              <Col xs={4} key={i} style={{ padding: '10px;' }}>
+            {news.slice(0, 3).map((el, i) => (
+              <Col xs={4} key={i} style={{ padding: '10px' }}>
                 <Card className="cardNews" style={{ height: '350px' }}>
                   <Card.Img
                     className="cardNewsImg"
-                    src={el.urlToImage}
+                    src={el.media}
                     style={{ minHeight: '150px' }}
                     onClick={(e) => {
                       e.preventDefault();
-                      window.open(`${el.url}`, '_blank');
+                      window.open(`${el.link}`, '_blank');
                     }}
                   />
                   <Card.Body style={{ height: '350px', paddingTop: '30px' }}>
@@ -40,7 +40,7 @@ const NewsCarousel = () => {
                     </Card.Title>
                   </Card.Body>
                   <Card.Footer
-                    id={el.url}
+                    id={el.link}
                     style={{
                       cursor: 'pointer',
                       fontStyle: 'italic',
@@ -56,16 +56,16 @@ const NewsCarousel = () => {
         </Carousel.Item>
         <Carousel.Item>
           <Row>
-            {news.slice(11, 14).map((el, i) => (
+            {news.slice(4, 7).map((el, i) => (
               <Col xs={4} key={i}>
                 <Card className="cardNews" style={{ height: '350px' }}>
                   <Card.Img
                     className="cardNewsImg"
-                    src={el.urlToImage}
+                    src={el.media}
                     style={{ minHeight: '150px' }}
                     onClick={(e) => {
                       e.preventDefault();
-                      window.open(`${el.url}`, '_blank');
+                      window.open(`${el.link}`, '_blank');
                     }}
                   />
                   <Card.Body style={{ height: '250px', paddingTop: '30px' }}>
@@ -80,7 +80,7 @@ const NewsCarousel = () => {
                     </Card.Title>
                   </Card.Body>
                   <Card.Footer
-                    id={el.url}
+                    id={el.link}
                     style={{
                       cursor: 'pointer',
                       fontStyle: 'italic',
@@ -96,16 +96,16 @@ const NewsCarousel = () => {
         </Carousel.Item>
         <Carousel.Item>
           <Row>
-            {news.slice(15, 18).map((el, i) => (
+            {news.slice(8, 11).map((el, i) => (
               <Col xs={4} key={i}>
                 <Card className="cardNews" style={{ height: '350px' }}>
                   <Card.Img
                     className="cardNewsImg"
-                    src={el.urlToImage}
+                    src={el.media}
                     style={{ minHeight: '150px' }}
                     onClick={(e) => {
                       e.preventDefault();
-                      window.open(`${el.url}`, '_blank');
+                      window.open(`${el.link}`, '_blank');
                     }}
                   />
                   <Card.Body style={{ height: '250px', paddingTop: '30px' }}>
@@ -120,7 +120,7 @@ const NewsCarousel = () => {
                     </Card.Title>
                   </Card.Body>
                   <Card.Footer
-                    id={el.url}
+                    id={el.link}
                     style={{
                       cursor: 'pointer',
                       fontStyle: 'italic',

@@ -2,12 +2,14 @@ import { Row, Col, Container } from 'react-bootstrap';
 import './HomePage.css';
 import { GiGrapes } from 'react-icons/gi';
 import { useState } from 'react';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+import { LoginContext } from '../GlobalState/GlobalState';
 
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
+  const { user } = useContext(LoginContext);
 
   function play() {
     let background = document.getElementById('myVideo');
@@ -46,7 +48,14 @@ const HomePage = () => {
                 style={{ fontSize: '18px', fontWeight: 'bolder' }}
               >
                 {' '}
-                We are setting you up!
+                {user && user.firstname ? (
+                  <>
+                    <span> Welcome back </span>
+                    {user.firstname}!
+                  </>
+                ) : (
+                  'We are setting you up!'
+                )}
               </div>
               <div className="dotsLoadingHome">
                 <div className="loadingHome mb-4">

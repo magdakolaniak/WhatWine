@@ -20,7 +20,7 @@
 .cardNews {
   box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
   border-radius: 40px;
-  transition: transform 0.8s ease-in;
+  transition: all 0.2s ease-in-out;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 30px;

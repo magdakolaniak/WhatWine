@@ -40,13 +40,24 @@ const LoginPage = ({ history }) => {
       console.log(error);
     }
   };
-  const getNews = async () => {
+  const getNews = () => {
     try {
-      const key = process.env.REACT_APP_NEWS;
-      const news = await axios(
-        `https://newsapi.org/v2/everything?q=winery&from=2021-08-15&sortBy=publishedAt&apiKey=${key}`
-      );
-      setNews(news.data.articles);
+      const newsKey = process.env.REACT_APP_NEWS;
+      let options = {
+        method: 'GET',
+        url: 'https://free-news.p.rapidapi.com/v1/search',
+        params: { q: 'winery', lang: 'en', page_size: '13' },
+        headers: {
+          'x-rapidapi-host': 'free-news.p.rapidapi.com',
+          'x-rapidapi-key': `${newsKey}`,
+        },
+      };
+      axios.request(options).then(function (response) {
+        console.log(response.data.articles);
+        if (response.status === 200) {
+          setNews(response.data.articles);
+        }
+      });
     } catch (error) {
       console.log(error);
     }

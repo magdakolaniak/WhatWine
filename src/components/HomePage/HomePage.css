@@ -15,14 +15,15 @@ a {
 .dotsLoadingHome {
   position: absolute;
   top: 60px;
-  left: 40px;
+  margin-top: 5px;
+  left: 95px;
 }
 .loadingHome span {
   display: inline-block;
   vertical-align: middle;
-  width: 30px;
-  height: 30px;
-  margin: 20px;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
   background: #800000;
   border-radius: 10em;
   animation: loading 1s infinite alternate;
@@ -40,7 +41,7 @@ a {
   background-image: url(../assets/images/speech-bubble.png);
   filter: drop-shadow(14px 10px 7px rgba(0, 0, 0, 0.468));
   opacity: 0.9;
-  background-size: 250px 150px;
+  background-size: 300px 150px;
   background-position: top;
 
   background-repeat: no-repeat;
@@ -68,7 +69,7 @@ a {
 .loadingText {
   position: absolute;
   top: 37px;
-  left: 65px;
+  left: 50px;
   color: black;
 }
 .colLogoHome {
