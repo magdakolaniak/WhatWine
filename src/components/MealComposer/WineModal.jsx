@@ -8,9 +8,42 @@ import { GiGrapes } from 'react-icons/gi';
 
 const WineModal = (props) => {
   const BASEUrl = process.env.REACT_APP_BE_URL;
-  const { recipe } = useContext(LoginContext);
+  const { recipe, mainData } = useContext(LoginContext);
   const [choice, setChoice] = useState([]);
-
+  const redMeat = [
+    'beef',
+    'lamb',
+    'pork',
+    'veal',
+    'venison',
+    'goat',
+    'duck',
+    'goose',
+    'bison',
+  ];
+  const whiteMeat = [
+    'chicken',
+    'fish',
+    'rabbit',
+    'turkey',
+    'shrimp',
+    'octopus',
+    'salmon',
+    'tuna',
+    'seafood',
+    'cod',
+    'heering',
+    'halibut',
+  ];
+  const veggies = [
+    'onion',
+    'tomato',
+    'carrot',
+    'parsley',
+    'salat',
+    'cucumber',
+    'potato',
+  ];
   const [chart] = useState({
     options: {
       chart: {
@@ -111,56 +144,37 @@ const WineModal = (props) => {
         sweetness: data.data.sweetness,
       });
     };
-    const setFiltering = () => {
-      if (recipe.ingredients.includes('beef') && profile.fattiness > 50) {
-        let filter = {
-          type: 'red',
-          body: 'full',
-        };
-        return filter;
-      }
-      if (recipe.ingredients.includes('beef') && profile.fattiness < 50) {
-        let filter = {
-          type: 'red',
-          body: 'medium plus',
-        };
-        return filter;
-      }
-      if (recipe.ingredients.includes('cheese') && profile.fattiness < 50) {
-        let filter = {
-          type: 'white',
-          body: 'medium',
-        };
-        return filter;
-      }
-      if (recipe.ingredients.includes('cheese') && profile.fattiness > 50) {
-        let filter = {
-          type: 'white',
-          body: 'medium plus',
-        };
-        return filter;
-      } else {
-        let filter = {
-          type: 'red',
-          body: 'medium',
-        };
-        return filter;
-      }
-    };
-
-    const getWines = async () => {
-      let filter = setFiltering();
-
-      const wines = await axios(
-        BASEUrl + `/wines?type=${filter.type}&character.body=${filter.body}`
-      );
-
-      setChoice(wines.data);
-    };
     if (currentId) {
       getWidget();
-      getWines();
     }
+    const setFiltering = () => {
+      console.log(recipe.ingredients[0]);
+
+      if (redMeat.indexOf(recipe.ingredients[0] !== -1)) {
+        let type = mainData.filter((wine) => wine.type === 'red');
+        let body = [];
+        profile.sweetness > 80 && profile.fattiness > 50
+          ? (body = type.filter(
+              (wine) =>
+                wine.character.acidity === 'medium plus' &&
+                wine.character.body === 'full'
+            ))
+          : (body = type.filter(
+              (wine) => wine.character.body === 'medium minus'
+            ));
+        console.log('WINES', body);
+        setChoice(body);
+      } else if (whiteMeat.indexOf(recipe.ingredients[0] !== -1)) {
+        console.log('filter2nd');
+      } else if (veggies.indexOf(recipe.ingredients[0] !== undefined)) {
+        console.log('filter3rdd');
+      }
+    };
+
+    setFiltering();
+
+    console.log(currentId);
+    console.log(profile);
   }, [currentId]);
 
   return (
