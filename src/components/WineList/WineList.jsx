@@ -40,7 +40,11 @@ const WineList = () => {
             <span className="loadingWrapperWine">
               <div
                 className="loadingText"
-                style={{ fontSize: '18px', fontWeight: 'bolder' }}
+                style={{
+                  fontSize: '18px',
+                  fontWeight: 'bolder',
+                  paddingTop: '40px',
+                }}
               >
                 {' '}
                 We are setting you up!

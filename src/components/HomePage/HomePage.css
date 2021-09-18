@@ -13,17 +13,14 @@ a {
   height: auto;
 }
 .dotsLoadingHome {
-  position: absolute;
-  top: 60px;
-  margin-top: 5px;
-  left: 95px;
+  margin-right: 6px;
 }
 .loadingHome span {
   display: inline-block;
   vertical-align: middle;
-  width: 20px;
-  height: 20px;
-  margin: 10px;
+  width: 12px;
+  height: 12px;
+  margin: 5px;
   background: #800000;
   border-radius: 10em;
   animation: loading 1s infinite alternate;
@@ -67,9 +64,7 @@ a {
   height: 200px;
 }
 .loadingText {
-  position: absolute;
-  top: 37px;
-  left: 50px;
+  padding-top: 30px;
   color: black;
 }
 .colLogoHome {

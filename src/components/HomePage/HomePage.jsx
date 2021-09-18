@@ -50,11 +50,14 @@ const HomePage = () => {
                 {' '}
                 {user && user.firstname ? (
                   <>
-                    <span> Welcome back </span>
-                    {user.firstname}!
+                    <span style={{ textAlign: 'center' }}> Welcome back </span>
+                    <br></br>
+                    <div>{user.firstname}!</div>
                   </>
                 ) : (
-                  'We are setting you up!'
+                  <div style={{ paddingLeft: '15px', marginTop: '20px' }}>
+                    We are setting you up!
+                  </div>
                 )}
               </div>
               <div className="dotsLoadingHome">
