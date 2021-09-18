@@ -32,12 +32,37 @@
 }
 .weatherEmpty {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #d3d6db;
   margin-top: 25px;
-  margin-bottom: 25px;
+  font-weight: bold;
   border-radius: 10px;
   justify-content: center;
 }
+.dotsLoadingUserCard {
+  display: flex;
+}
+.loadingUserCard span {
+  display: inline-block;
+
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  background: #800000;
+  border-radius: 10em;
+  animation: loading 1s infinite alternate;
+}
+.loadingUserCard span:nth-of-type(2) {
+  background: #303841;
+  animation-delay: 0.2s;
+}
+.loadingUserCard span:nth-of-type(3) {
+  background: #616264;
+  animation-delay: 0.4s;
+}
+
 .weatherHeader {
   font-size: 20px;
   font-weight: bolder;

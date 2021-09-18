@@ -9,15 +9,16 @@ import {
   Tooltip,
 } from 'react-bootstrap';
 import Weather from './Weather';
-import { useEffect, useContext } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import axios from 'axios';
 import { IoMdHeartDislike } from 'react-icons/io';
 import NewsCarousel from './NewsCarousel';
 
 const MainUser = () => {
-  const { user, setUser, setUserWines, userWines, news, weather } =
+  const { user, setUser, setUserWines, userWines, news, setWeather, weather } =
     useContext(LoginContext);
+  const [loading, setLoading] = useState(true);
   let URL = process.env.REACT_APP_BE_URL;
   const removeWine = async (e) => {
     e.preventDefault();
@@ -56,6 +57,21 @@ const MainUser = () => {
     }
   };
   useEffect(() => {
+    const getUserWeather = async () => {
+      try {
+        const api = process.env.REACT_APP_WEATHER;
+        const data = await axios(
+          `https://api.openweathermap.org/data/2.5/weather?q=${user.city}&appid=${api}`
+        );
+        console.log(data);
+        if (data.status === 200) {
+          setWeather(data.data);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
     const getWines = async () => {
       try {
         const data = await axios(URL + `/user/${user._id}/wines`);
@@ -66,7 +82,8 @@ const MainUser = () => {
       }
     };
     getWines();
-  }, [userWines.length, user.recipes.length]);
+    getUserWeather();
+  }, [userWines.length, user.recipes.length, user.city]);
 
   const count = (type) => {
     let filtered = userWines.filter((el) => el.type === `${type}`);
@@ -74,20 +91,28 @@ const MainUser = () => {
   };
 
   count('red');
+
   return (
     <>
       <Container>
         <Row className="mainBoardUser d-flex">
-          {weather && weather.name ? (
+          {!loading ? (
             <Col md={12}>
               <Weather />
             </Col>
           ) : (
             <Col md={12} className="weatherEmpty">
-              <div className="weatherHeader">
-                Please chceck your city, looks like name is incorrect:(<br></br>{' '}
-                Provide valid name to get your daily reccomendations here
+              <div className="weatherEmpty">
+                We're checking what's the weather like today in {user.city}!
+                <div className="dotsLoadingUserCard">
+                  <div className="loadingUserCard">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
               </div>
+              <br></br>
             </Col>
           )}
         </Row>

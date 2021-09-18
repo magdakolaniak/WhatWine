@@ -1,7 +1,8 @@
 import './Styles/LeftUser.css';
-import { Container, Row, Col, Form } from 'react-bootstrap';
+import { Container, Row, Col, Form, Alert, Spinner } from 'react-bootstrap';
 import { useState, useContext } from 'react';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
+import { IoMdDoneAll } from 'react-icons/io';
 
 import Behind from './Behind';
 import axios from 'axios';
@@ -17,7 +18,8 @@ const LeftUser = () => {
     email: `${user.email}`,
     city: `${user.city}`,
   });
-
+  const [show, setShow] = useState(false);
+  const [saving, setSaving] = useState(false);
   const showProfile = () => {
     let content = document.getElementById('accountDetails');
 
@@ -52,6 +54,7 @@ const LeftUser = () => {
       button.innerText = 'Hide';
     }
   };
+
   const enableEdit = () => {
     let info = document.getElementById('editMode');
     let editButton = document.getElementById('editProfile');
@@ -80,18 +83,49 @@ const LeftUser = () => {
     setNewUser({ ...newUser, [`${id}`]: e.target.value });
   };
   const submitChange = async () => {
+    let saveButton = document.getElementById('saveProfile');
+    saveButton.style.display = 'none';
+    let info = document.getElementById('editMode');
+    info.style.display = 'none';
+    setSaving(true);
     console.log(newUser);
     try {
       const res = await axios.put(URL + `/user/edit/${user._id}`, newUser);
       if (res.status === 200) {
-        alert('Sucesfully changed');
+        let ticks = document.getElementById('doneTicks');
+        ticks.style.display = 'block';
+        setShow(true);
+        setSaving(false);
         setUser(res.data);
       }
     } catch (error) {}
   };
+  const onAlertClose = () => {
+    let editButton = document.getElementById('editProfile');
+    let inputs = document.querySelectorAll('input');
+    inputs.forEach((el) => {
+      el.setAttribute('disabled', true);
+    });
+    editButton.innerText = 'Edit';
+    editButton.style.backgroundColor = '#303841';
+    setSaving(false);
+    setShow(false);
+    let ticks = document.getElementById('doneTicks');
+    ticks.style.display = 'none';
+  };
   return (
     <>
       <Container className="mainLeft">
+        {show ? (
+          <Alert variant="success" onClose={onAlertClose} dismissible>
+            <Alert.Heading style={{ textAlign: 'center', fontSize: '16px' }}>
+              Your changes has been saved
+            </Alert.Heading>
+          </Alert>
+        ) : (
+          ''
+        )}
+
         <Row>
           <Col xs={12} md={12}>
             <div style={{ padding: '10px' }}>
@@ -165,6 +199,7 @@ const LeftUser = () => {
                 >
                   Edit
                 </span>
+
                 <span
                   id="saveProfile"
                   className="showHideClick"
@@ -172,6 +207,30 @@ const LeftUser = () => {
                   onClick={submitChange}
                 >
                   Save
+                </span>
+                {saving ? (
+                  <span style={{ float: 'right' }}>
+                    {' '}
+                    <Spinner animation="border" variant="success" />
+                  </span>
+                ) : (
+                  ''
+                )}
+                <span
+                  id="doneTicks"
+                  style={{
+                    float: 'right',
+                    marginRight: '20px',
+                    display: 'none',
+                  }}
+                >
+                  <IoMdDoneAll
+                    style={{
+                      fontSize: '30px',
+                      fontWeight: 'bold',
+                      color: '#006633',
+                    }}
+                  />
                 </span>
               </div>
             </Row>

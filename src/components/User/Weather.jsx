@@ -4,14 +4,13 @@ import celsius from './helper/index.js';
 import { ImArrowUp, ImArrowDown } from 'react-icons/im';
 import { BsDropletHalf } from 'react-icons/bs';
 import { CgArrowsMergeAltV } from 'react-icons/cg';
-
 import { useContext, useState, useEffect } from 'react';
-
+import axios from 'axios';
 import { LoginContext } from '../GlobalState/GlobalState.jsx';
 import MyClock from './MyClock';
 
 const Weather = () => {
-  const { weather, mainData } = useContext(LoginContext);
+  const { user, weather, mainData } = useContext(LoginContext);
   const [calendar, setCalendar] = useState([]);
 
   const wineOfTheDay = () => {
@@ -97,7 +96,7 @@ const Weather = () => {
     };
 
     getDay();
-  }, []);
+  }, [user.city]);
 
   const showPicked = () => {
     let content = document.getElementById('collapse');
@@ -118,7 +117,7 @@ const Weather = () => {
       <Container>
         {weather && weather.name && weather.main.temp ? (
           <>
-            <Row>
+            <Row className="mt-3">
               <Col xs={6} className="weatherReccom">
                 <Row>
                   <Col xs={6} style={{ paddingTop: '10px' }}>

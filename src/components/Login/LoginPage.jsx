@@ -1,4 +1,4 @@
-import { Container, Row, Col, Form } from 'react-bootstrap';
+import { Container, Row, Col, Form, Spinner } from 'react-bootstrap';
 import './LoginPage.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -13,12 +13,12 @@ let text = '{ Your personal Sommelier }';
 const LoginPage = ({ history }) => {
   const [signUp, setSignUp] = useState(false);
   const [validation] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { setLoggedIn, setUser, setWeather, setNews } =
-    useContext(LoginContext);
+  const { setLoggedIn, setUser, setNews } = useContext(LoginContext);
   const URL = process.env.REACT_APP_BE_URL;
 
   const hideModal = () => {
@@ -29,17 +29,6 @@ const LoginPage = ({ history }) => {
     return new Buffer(input).toString('base64');
   };
 
-  const getUserWeather = async (city) => {
-    try {
-      const api = process.env.REACT_APP_WEATHER;
-      const data = await axios(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}`
-      );
-      setWeather(data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   const getNews = () => {
     try {
       const newsKey = process.env.REACT_APP_NEWS;
@@ -64,6 +53,7 @@ const LoginPage = ({ history }) => {
   };
 
   const submitHandler = async () => {
+    setLoading(true);
     if (email !== '' && password !== '') {
       const res = await axios(URL + `/user/login`, {
         headers: {
@@ -74,10 +64,7 @@ const LoginPage = ({ history }) => {
       if (res.status === 200) {
         setLoggedIn(true);
         setUser(res.data);
-
-        getUserWeather(res.data.city);
         getNews();
-
         history.push('/home');
       }
     }
@@ -146,9 +133,18 @@ const LoginPage = ({ history }) => {
                       marginRight: '10px',
                     }}
                   >
-                    <button onClick={submitHandler} className="buttonLoginPage">
-                      Jump in!
-                    </button>
+                    {!loading ? (
+                      <button
+                        onClick={submitHandler}
+                        className="buttonLoginPage"
+                      >
+                        Jump in!
+                      </button>
+                    ) : (
+                      <span style={{ marginLeft: '25px' }}>
+                        <Spinner animation="border" variant="secondary" />
+                      </span>
+                    )}
                   </div>
                 </Col>
                 <Col xs={12} md={6}>
