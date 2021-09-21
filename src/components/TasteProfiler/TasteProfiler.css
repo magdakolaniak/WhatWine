@@ -1,12 +1,13 @@
 #taste-main {
+  margin-top: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  height: 90vh;
+  /* height: 90vh; */
   align-items: center;
   align-content: center;
-  background-color: rgba(22, 26, 29, 1);
-  padding-right: 3rem;
+  /* background-color: rgba(22, 26, 29, 1); */
+  padding-right: 30px;
   overflow-x: hidden;
   overflow-y: hidden;
 }
