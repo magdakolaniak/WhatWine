@@ -3,15 +3,16 @@
   background-color: #800000;
   height: 100vh;
   color: #303841;
-  /* /* overflow: hidden; */
-  overflow-x: hidden;
+  /* overflow: hidden; */
+  overflow-y: scroll;
 
   scroll-behavior: smooth;
 }
+
 .mealMainRightCol {
   padding-top: 30px;
-
   padding-right: 30px;
+
   padding-left: 30px;
   scroll-behavior: smooth;
 }

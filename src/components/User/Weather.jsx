@@ -135,7 +135,7 @@ const Weather = () => {
                 </Row>
               </Col>
 
-              <Col xs={6} className="calendarColumn">
+              <Col xs={6} className="weatherColumn">
                 <Row>
                   <Col xs={6} md={6}>
                     <div className="mainCity">{weather.name}</div>

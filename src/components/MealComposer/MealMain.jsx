@@ -17,6 +17,7 @@ const MealMain = () => {
             <Plate />
           </Col>
         </Row>
+        <div className="footter">footter</div>
       </div>
     </>
   );
