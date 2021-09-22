@@ -25,6 +25,7 @@ const WineList = () => {
         const wines = await axios(searchURL);
 
         setMainData(wines.data);
+        setLoading(false);
       }
     };
     getWines();
