@@ -17,7 +17,9 @@ const MealMain = () => {
             <Plate />
           </Col>
         </Row>
-        <div className="footter">footter</div>
+        <div className="footter" style={{ color: 'transparent' }}>
+          footter
+        </div>
       </div>
     </>
   );
