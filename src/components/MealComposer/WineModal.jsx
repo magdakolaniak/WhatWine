@@ -112,28 +112,28 @@ const WineModal = (props) => {
       });
     };
     const setFiltering = () => {
-      if (recipe.ingredients.includes('beef') && profile.fattiness > 50) {
+      if (recipe.ingredients.includes('beef')) {
         let filter = {
           type: 'red',
           body: 'full',
         };
         return filter;
       }
-      if (recipe.ingredients.includes('beef') && profile.fattiness < 50) {
+      if (recipe.ingredients.includes('beef')) {
         let filter = {
           type: 'red',
           body: 'medium plus',
         };
         return filter;
       }
-      if (recipe.ingredients.includes('cheese') && profile.fattiness < 50) {
+      if (recipe.ingredients.includes('cheese')) {
         let filter = {
           type: 'white',
           body: 'medium',
         };
         return filter;
       }
-      if (recipe.ingredients.includes('cheese') && profile.fattiness > 50) {
+      if (recipe.ingredients.includes('cheese')) {
         let filter = {
           type: 'white',
           body: 'medium plus',
