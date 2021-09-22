@@ -119,7 +119,10 @@ const WineModal = (props) => {
         };
         return filter;
       }
-      if (recipe.ingredients.includes('beef')) {
+      if (
+        recipe.ingredients.includes('beef') &&
+        recipe.ingredients.includes('cheese')
+      ) {
         let filter = {
           type: 'red',
           body: 'medium plus',
