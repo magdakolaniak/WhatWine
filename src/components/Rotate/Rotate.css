@@ -22,8 +22,6 @@
 
   position: absolute;
   top: 0;
-
-  /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); */
 }
 
 /* 3d reflection effect */
@@ -52,9 +50,7 @@
 
 .btn-next {
   font-size: 80px;
-
   position: absolute;
-
   top: 50%;
   right: 0px;
   cursor: pointer;
