@@ -164,7 +164,7 @@ const WineModal = (props) => {
       getWidget();
       getWines();
     }
-  }, [currentId]);
+  }, [currentId, recipe.ingredients]);
 
   return (
     <>
